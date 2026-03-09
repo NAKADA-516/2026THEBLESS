@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1C1C1A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>THE BLESS AWAJI — Farm to Table Auberge, Awaji Island</title>
+  <meta name="description" content="淡路島の食材と薪火料理、全8室の宿泊施設、マグマサウナ。THE BLESS AWAJIは魂に響く滞在を提供するオーベルジュです。">
+  <meta property="og:title" content="THE BLESS AWAJI">
+  <meta property="og:description" content="Farm to Table — 淡路島のオーベルジュ">
+  <meta property="og:image" content="images/dining/dining-04.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ─── Hero Slideshow ─── */
+
+    /* Ken Burns + crossfade slideshow */
+    .hero-slides {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    /* Dark overlay for text readability */
+    .hero-slides::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(28, 28, 26, 0.72) 0%,
+        rgba(28, 28, 26, 0.25) 55%,
+        rgba(28, 28, 26, 0.15) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform-origin: center center;
+      opacity: 0;
+      will-change: opacity, transform;
+    }
+
+    /* 5 slides × 7s = 35s cycle */
+    @keyframes kb-zoom-in-right {
+      0%   { opacity: 0; transform: scale(1.12) translate(-1.5%, 0.5%); }
+      6%   { opacity: 1; }
+      80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
+      92%  { opacity: 0; }
+      100% { opacity: 0; transform: scale(1.0); }
+    }
+    @keyframes kb-zoom-in-left {
+      0%   { opacity: 0; transform: scale(1.12) translate(1.5%, -0.5%); }
+      6%   { opacity: 1; }
+      80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
+      92%  { opacity: 0; }
+      100% { opacity: 0; transform: scale(1.0); }
+    }
+    @keyframes kb-zoom-in-up {
+      0%   { opacity: 0; transform: scale(1.1) translate(0%, 1%); }
+      6%   { opacity: 1; }
+      80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
+      92%  { opacity: 0; }
+      100% { opacity: 0; transform: scale(1.0); }
+    }
+    @keyframes kb-zoom-in-down {
+      0%   { opacity: 0; transform: scale(1.1) translate(0%, -1%); }
+      6%   { opacity: 1; }
+      80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
+      92%  { opacity: 0; }
+      100% { opacity: 0; transform: scale(1.0); }
+    }
+
+    @keyframes kb-zoom-in-center {
+      0%   { opacity: 0; transform: scale(1.08); }
+      6%   { opacity: 1; }
+      80%  { opacity: 1; transform: scale(1.0); }
+      92%  { opacity: 0; }
+      100% { opacity: 0; transform: scale(1.0); }
+    }
+
+    /* opacity + Ken Burns — 5 slides × 35s */
+    .hero-slide:nth-child(1) img { animation: kb-zoom-in-right  35s ease-in-out infinite 0s  both; }
+    .hero-slide:nth-child(2) img { animation: kb-zoom-in-left   35s ease-in-out infinite 7s  both; }
+    .hero-slide:nth-child(3) img { animation: kb-zoom-in-up     35s ease-in-out infinite 14s both; }
+    .hero-slide:nth-child(4) img { animation: kb-zoom-in-down   35s ease-in-out infinite 21s both; }
+    .hero-slide:nth-child(5) img { animation: kb-zoom-in-center 35s ease-in-out infinite 28s both; }
+
+    /* Slide indicators */
+    .hero-indicators {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .hero-indicator {
+      width: 24px;
+      height: 1px;
+      background: rgba(242,237,230,0.35);
+      cursor: pointer;
+      transition: background 0.3s, width 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-indicator::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: var(--cream);
+    }
+
+    .hero-indicator.active {
+      width: 40px;
+    }
+
+    .hero-indicator.active::after {
+      animation: indicatorProgress 7s linear forwards;
+    }
+
+    @keyframes indicatorProgress {
+      from { width: 0%; }
+      to   { width: 100%; }
+    }
+
+    /* ─── TOP exclusive ─── */
+
+    /* Concept block */
+    .concept {
+      background: var(--cream);
+      padding: 9rem 2rem;
+      text-align: center;
+    }
+    .concept-catch {
+      display: block;
+      font-family: var(--font-en);
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.35;
+      letter-spacing: 0.02em;
+      margin-bottom: 2rem;
+    }
+    .concept-body {
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      font-size: 0.88rem;
+      line-height: 2.4;
+      color: var(--gray-mid);
+    }
+
+    /* Silent full-bleed image */
+    .silent-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      display: block;
+    }
+    .silent-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* JOSPER split */
+    .josper-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+    }
+    .josper-split-text {
+      background: var(--charcoal);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 5rem;
+      color: var(--cream);
+    }
+    .josper-split-title {
+      font-family: var(--font-en);
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--cream);
+      margin: 1.2rem 0 1.8rem;
+      letter-spacing: -0.01em;
+    }
+    .josper-split-body {
+      font-size: 0.85rem;
+      line-height: 2.5;
+      color: var(--gray-light);
+      max-width: 360px;
+      margin-bottom: 2.5rem;
+    }
+    .josper-split-image {
+      overflow: hidden;
+    }
+    .josper-split-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Photo strip — 3 images, equal width */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .photo-strip-cell {
+      aspect-ratio: 2/3;
+      overflow: hidden;
+    }
+    .photo-strip-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 1s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .photo-strip-cell:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Stay — dark split (image L, text R) */
+    .stay-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 65vh;
+    }
+    .stay-split-image {
+      overflow: hidden;
+    }
+    .stay-split-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .stay-split-text {
+      background: var(--charcoal);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4.5rem;
+      color: var(--cream);
+    }
+    .stay-split-text h2 {
+      font-family: var(--font-en);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.15;
+      margin: 1rem 0 1.5rem;
+    }
+    .stay-split-text p {
+      font-size: 0.85rem;
+      line-height: 2.5;
+      color: var(--gray-light);
+      max-width: 320px;
+      margin-bottom: 2rem;
+    }
+
+    /* Story */
+    .story {
+      background: var(--cream);
+      padding: 11rem 2rem;
+      text-align: center;
+    }
+    .story-quote {
+      display: block;
+      font-family: var(--font-en);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.4;
+      margin-bottom: 3rem;
+      letter-spacing: 0.01em;
+    }
+    .story-body {
+      max-width: 440px;
+      margin: 0 auto 3rem;
+      font-size: 0.85rem;
+      line-height: 2.6;
+      color: var(--gray-mid);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .concept { padding: 6rem 1.5rem; }
+
+      .silent-image { aspect-ratio: 4/5; }
+
+      .josper-split {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .josper-split-image { aspect-ratio: 1/1; order: -1; }
+      .josper-split-text {
+        padding: 4rem 1.5rem;
+        order: 1;
+      }
+      .josper-split-body { max-width: 100%; }
+
+      .photo-strip { grid-template-columns: 1fr; }
+      .photo-strip-cell { aspect-ratio: 3/2; }
+
+      .stay-split {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .stay-split-image { aspect-ratio: 1/1; }
+      .stay-split-text { padding: 4rem 1.5rem; }
+      .stay-split-text p { max-width: 100%; }
+
+      .story { padding: 7rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="site-header">
+    <a href="index.html" class="header-logo en">THE BLESS AWAJI |</a>
+    <div class="header-right">
+      <div class="lang-toggle">
+        <span data-lang="jp" class="active">JP</span>
+        <span class="lang-sep">｜</span>
+        <span data-lang="en" class="inactive">EN</span>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Nav Overlay -->
+  <nav id="nav-overlay" aria-label="メインナビゲーション">
+    <ul class="nav-menu">
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="dining.html" data-i18n="nav_dining">Dining</a></li>
+      <li><a href="stay.html" data-i18n="nav_stay">Stay</a></li>
+      <li><a href="spa.html" data-i18n="nav_spa">Spa</a></li>
+      <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="private.html" data-i18n="nav_reserve">Reservation</a></li>
+    </ul>
+    <div class="nav-sub">
+      <a href="tel:0799227775">0799-22-7775</a>
+      <a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Online Reserve</a>
+      <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </nav>
+
+  <!-- Dot Nav -->
+  <aside id="dot-nav" aria-label="セクションナビゲーション">
+    <div class="dot-nav-item active" data-label="Top"></div>
+    <div class="dot-nav-item" data-label="Dining"></div>
+    <div class="dot-nav-item" data-label="JOSPER"></div>
+    <div class="dot-nav-item" data-label="Stay"></div>
+    <div class="dot-nav-item" data-label="Story"></div>
+  </aside>
+
+  <main>
+
+    <!-- ① Hero Slideshow -->
+    <section class="hero" id="hero-section" data-section="hero">
+
+      <!-- Slides -->
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide">
+          <img
+            src="images/hero/dining-04.webp"
+            alt="THE BLESS AWAJI — JOSPER® 薪火料理"
+            loading="eager"
+          >
+        </div>
+        <div class="hero-slide">
+          <img
+            src="images/hero/dining-01.webp"
+            alt="THE BLESS AWAJI — ダイニングホール"
+            loading="lazy"
+          >
+        </div>
+        <div class="hero-slide">
+          <img
+            src="images/hero/hero-04.webp"
+            alt="THE BLESS AWAJI — 料理の一皿"
+            loading="lazy"
+          >
+        </div>
+        <div class="hero-slide">
+          <img
+            src="images/hero/dining-07.webp"
+            alt="THE BLESS AWAJI — 炎と食材"
+            loading="lazy"
+          >
+        </div>
+        <div class="hero-slide">
+          <img
+            src="images/hero/meat-cutting-01.webp"
+            alt="THE BLESS AWAJI — 肉料理"
+            loading="lazy"
+          >
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="hero-content">
+        <h1 class="hero-catch en" data-i18n="hero_catch">A Meal That Moves Your Soul</h1>
+        <span class="hero-catch-jp" data-i18n="hero_catch_jp">魂が震える食事</span>
+        <a
+          href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily"
+          target="_blank" rel="noopener"
+          class="btn btn--light"
+        ><span data-i18n="hero_btn">Reserve a Table</span></a>
+      </div>
+
+      <!-- Indicators -->
+      <div class="hero-indicators" aria-label="スライドインジケーター">
+        <div class="hero-indicator active" data-slide="0"></div>
+        <div class="hero-indicator" data-slide="1"></div>
+        <div class="hero-indicator" data-slide="2"></div>
+        <div class="hero-indicator" data-slide="3"></div>
+        <div class="hero-indicator" data-slide="4"></div>
+      </div>
+
+      <div class="hero-scroll"><span data-i18n="scroll_down">Scroll</span></div>
+    </section>
+
+    <!-- ② Concept -->
+    <section class="concept" data-section="dining">
+      <span class="section-label reveal">Dining</span>
+      <span class="section-line reveal reveal-delay-1" style="margin:1.2rem auto 2rem;"></span>
+      <span class="concept-catch reveal reveal-delay-2">Farm to Table,<br>Awaji Island</span>
+      <p class="concept-body reveal reveal-delay-3">
+        淡路島が育てた食材を、JOSPER®の炎で。<br>
+        日本初導入の薪炭グリルが奏でる、一夜限りの9品コース。
+      </p>
+      <a href="dining.html" class="btn reveal reveal-delay-4"><span>Explore Dining</span></a>
+    </section>
+
+    <!-- ③ Silent full-bleed image -->
+    <div class="silent-image" data-section="img1">
+      <img
+        src="images/cuisine/dining-scene-01.webp"
+        alt="THE BLESS AWAJI — ダイニング、薪火料理、個室"
+        loading="lazy"
+      >
+    </div>
+
+    <!-- ④ JOSPER Split -->
+    <section class="josper-split" data-section="josper">
+      <div class="josper-split-text">
+        <span class="section-label section-label--light reveal">JOSPER® Grill</span>
+        <span class="section-line section-line--light reveal reveal-delay-1" style="margin-left:0;"></span>
+        <h2 class="josper-split-title reveal reveal-delay-2">The Art<br>of Fire</h2>
+        <p class="josper-split-body reveal reveal-delay-3">
+          スペイン発、世界のシェフが認める密閉型薪炭グリル。炭火と薪の相乗効果が、素材の奥底に眠る旨みを引き出す。日本初導入のオーベルジュとして、THE BLESS AWAJIは炎の哲学を食卓へ届ける。
+        </p>
+        <a href="dining.html" class="btn btn--light reveal reveal-delay-4"><span>Dining →</span></a>
+      </div>
+      <div class="josper-split-image">
+        <img
+          src="images/cuisine/chef-josper-01.webp"
+          alt="JOSPER® — シェフと炎"
+          loading="lazy"
+        >
+      </div>
+    </section>
+
+    <!-- ⑤ Photo Strip -->
+    <div class="photo-strip" data-section="strip" aria-label="料理写真">
+      <div class="photo-strip-cell">
+        <img src="images/cuisine/cuisine-01.webp" alt="THE BLESS AWAJI — 料理の一場面" loading="lazy">
+      </div>
+      <div class="photo-strip-cell">
+        <img src="images/cuisine/steak-grill-01.webp" alt="薪火焼き — 肉の断面" loading="lazy">
+      </div>
+      <div class="photo-strip-cell">
+        <img src="images/cuisine/dining-05.webp" alt="前菜 — 淡路島の旬" loading="lazy">
+      </div>
+    </div>
+
+    <!-- ⑥ Stay Split -->
+    <section class="stay-split" data-section="stay">
+      <div class="stay-split-image">
+        <img
+          src="images/rooms/room-02.webp"
+          alt="オーシャンスイート — 淡路島の海を望む客室"
+          loading="lazy"
+        >
+      </div>
+      <div class="stay-split-text">
+        <span class="section-label section-label--light reveal">Stay</span>
+        <span class="section-line section-line--light reveal reveal-delay-1" style="margin-left:0;"></span>
+        <h2 class="reveal reveal-delay-2">Rest in<br>Silence</h2>
+        <p class="reveal reveal-delay-3">全8室。海を望む朝は、言葉を失うほど美しい。マグマサウナ、宿泊者無料。</p>
+        <a href="stay.html" class="btn btn--light reveal reveal-delay-4"><span>View Rooms</span></a>
+      </div>
+    </section>
+
+    <!-- ⑦ Story + CTA -->
+    <section class="story" data-section="story">
+      <span class="section-line reveal" style="margin:0 auto 3rem;"></span>
+      <span class="story-quote reveal reveal-delay-1">"The island breathes."</span>
+      <p class="story-body reveal reveal-delay-2">
+        食べる、眠る、整う。<br>
+        ただそれだけの時間が、あなたを新しく生まれ変わらせる。
+      </p>
+      <a
+        href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily"
+        target="_blank" rel="noopener"
+        class="btn reveal reveal-delay-3"
+      ><span>Reserve Now</span></a>
+    </section>
+
+    <!-- Access -->
+    <div class="access-strip">
+      <div class="access-item">
+        <span class="access-from en">洲本IC</span>
+        <span class="access-time en">10 min</span>
+      </div>
+      <div class="access-item">
+        <span class="access-from en">新神戸</span>
+        <span class="access-time en">60 min</span>
+      </div>
+      <div class="access-item">
+        <span class="access-from en">大阪梅田</span>
+        <span class="access-time en">90 min</span>
+      </div>
+      <div class="access-item">
+        <span class="access-from en">京都</span>
+        <span class="access-time en">120 min</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo en">THE BLESS AWAJI</span>
+          <p>兵庫県洲本市炬口247</p>
+          <p><a href="tel:0799227775">0799-22-7775</a></p>
+          <p><a href="mailto:awajiauberge@gmail.com">awajiauberge@gmail.com</a></p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="stay.html">Stay</a></li>
+            <li><a href="spa.html">Spa</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Reserve</h4>
+          <ul>
+            <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
+            <li><a href="group.html">Group &amp; Private</a></li>
+            <li><a href="private.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="private.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="en">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
+        <span class="en">Awaji Island, Hyogo, Japan</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

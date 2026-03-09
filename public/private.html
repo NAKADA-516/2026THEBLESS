@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1C1C1A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Reservation — ご予約・お問い合わせ | THE BLESS AWAJI</title>
+  <meta name="description" content="THE BLESS AWAJIへのご予約・お問い合わせ。宿泊、ダイニング、プライベートプランのご相談はこちら。">
+  <meta property="og:title" content="Reservation | THE BLESS AWAJI">
+  <meta property="og:description" content="ご予約・お問い合わせ — THE BLESS AWAJI">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header id="site-header">
+    <a href="index.html" class="header-logo en">THE BLESS AWAJI |</a>
+    <div class="header-right">
+      <div class="lang-toggle">
+        <span data-lang="jp" class="active">JP</span>
+        <span class="lang-sep">｜</span>
+        <span data-lang="en" class="inactive">EN</span>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Nav Overlay ── -->
+  <nav id="nav-overlay" aria-label="メインナビゲーション">
+    <ul class="nav-menu">
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="dining.html" data-i18n="nav_dining">Dining</a></li>
+      <li><a href="stay.html" data-i18n="nav_stay">Stay</a></li>
+      <li><a href="spa.html" data-i18n="nav_spa">Spa</a></li>
+      <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="private.html" data-i18n="nav_reserve">Reservation</a></li>
+    </ul>
+    <div class="nav-sub">
+      <a href="tel:0799227775">0799-22-7775</a>
+      <a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Online Reserve</a>
+      <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Page Hero ── -->
+    <section class="page-hero" data-section="hero">
+      <div class="page-hero-bg">
+        <img
+          src="images/rooms/room-ocean-view.webp"
+          alt="THE BLESS AWAJI — ご予約・お問い合わせ"
+          class="page-hero-img"
+          loading="eager"
+        >
+      </div>
+      <div class="page-hero-content">
+        <span class="section-label section-label--light">Reservation</span>
+        <h1 class="en" data-i18n="reserve_hero_title">Reservation</h1>
+        <p data-i18n="reserve_hero_sub">ご予約・お問い合わせ</p>
+      </div>
+    </section>
+
+    <!-- ── Reserve Options ── -->
+    <section class="section-a" data-section="options">
+      <div class="inner">
+        <span class="section-label reveal">Reserve</span>
+        <span class="section-line reveal reveal-delay-1"></span>
+        <h2 class="section-title en reveal reveal-delay-2">How to Reserve</h2>
+        <div class="reserve-cards reveal reveal-delay-3" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;">
+          <a
+            href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily"
+            target="_blank"
+            rel="noopener"
+            class="btn"
+            style="display:flex;flex-direction:column;align-items:center;padding:2.5rem 2rem;text-align:center;gap:0.75rem;"
+          >
+            <span class="en" style="font-size:1.5rem;">Online</span>
+            <span style="font-size:0.8rem;letter-spacing:0.1em;">オンライン予約（24時間受付）</span>
+          </a>
+          <a
+            href="tel:0799227775"
+            class="btn"
+            style="display:flex;flex-direction:column;align-items:center;padding:2.5rem 2rem;text-align:center;gap:0.75rem;"
+          >
+            <span class="en" style="font-size:1.5rem;">Tel</span>
+            <span style="font-size:0.8rem;letter-spacing:0.1em;">0799-22-7775</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Info & Map ── -->
+    <section class="info-block section-a" data-section="info">
+      <div class="inner" style="max-width:800px;">
+        <span class="section-label reveal">Access &amp; Info</span>
+        <span class="section-line reveal reveal-delay-1"></span>
+        <div class="info-grid reveal reveal-delay-2" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;">
+          <div>
+            <h4 class="en" style="margin-bottom:1rem;font-size:0.8rem;letter-spacing:0.15em;">ADDRESS</h4>
+            <p style="font-size:0.9rem;line-height:2;">〒656-0011<br>兵庫県洲本市炬口247</p>
+          </div>
+          <div>
+            <h4 class="en" style="margin-bottom:1rem;font-size:0.8rem;letter-spacing:0.15em;">CONTACT</h4>
+            <p style="font-size:0.9rem;line-height:2;">
+              <a href="tel:0799227775">0799-22-7775</a><br>
+              <a href="mailto:awajiauberge@gmail.com">awajiauberge@gmail.com</a>
+            </p>
+          </div>
+          <div>
+            <h4 class="en" style="margin-bottom:1rem;font-size:0.8rem;letter-spacing:0.15em;">CHECK-IN / OUT</h4>
+            <p style="font-size:0.9rem;line-height:2;" data-i18n="checkin">チェックイン 15:00（最終18:00）</p>
+            <p style="font-size:0.9rem;" data-i18n="checkout">チェックアウト 11:00</p>
+          </div>
+          <div>
+            <h4 class="en" style="margin-bottom:1rem;font-size:0.8rem;letter-spacing:0.15em;">PAYMENT</h4>
+            <p style="font-size:0.85rem;line-height:2;color:var(--gray-mid);">VISA / MASTER / AMEX / JCB<br>PayPay / d払い / Suica / iD / QUICPay</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Map ── -->
+    <section class="map-section" data-section="map" style="background:var(--charcoal);">
+      <div class="map-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d134.893456!3d34.354669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDIxJzE2LjgiTiAxMzTCsDUzJzM2LjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="THE BLESS AWAJI 地図"
+        ></iframe>
+      </div>
+      <div class="map-info-bar">
+        <div class="map-info-item">
+          <span class="map-info-label en">Address</span>
+          <span class="map-info-value">〒656-0011 兵庫県洲本市炬口247</span>
+        </div>
+        <div class="map-info-item">
+          <span class="map-info-label en">Tel</span>
+          <span class="map-info-value"><a href="tel:0799227775">0799-22-7775</a></span>
+        </div>
+        <div class="map-info-item">
+          <span class="map-info-label en">Google Maps</span>
+          <span class="map-info-value">
+            <a href="https://www.google.com/maps?ll=34.354669,134.893456&z=18&t=m&hl=ja&gl=US&mapclient=embed&q=%E3%80%92656-0011+%E5%85%B5%E5%BA%AB%E7%9C%8C%E6%B4%B2%E6%9C%AC%E5%B8%82%E7%82%AC%E5%8F%A3%EF%BC%92%EF%BC%94%EF%BC%97" target="_blank" rel="noopener">
+              地図を開く / Open Map
+            </a>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Access Strip ── -->
+    <div class="access-strip">
+      <div class="access-item">
+        <span class="access-from en" data-i18n="access1_from">洲本IC</span>
+        <span class="access-time en" data-i18n="access1_time">10 min</span>
+      </div>
+      <div class="access-item">
+        <span class="access-from en" data-i18n="access2_from">新神戸</span>
+        <span class="access-time en" data-i18n="access2_time">60 min</span>
+      </div>
+      <div class="access-item">
+        <span class="access-from en" data-i18n="access3_from">大阪梅田</span>
+        <span class="access-time en" data-i18n="access3_time">90 min</span>
+      </div>
+      <div class="access-item">
+        <span class="access-from en" data-i18n="access4_from">京都</span>
+        <span class="access-time en" data-i18n="access4_time">120 min</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo en">THE BLESS AWAJI</span>
+          <p data-i18n="address">兵庫県洲本市炬口247</p>
+          <p><a href="tel:0799227775" data-i18n="tel">0799-22-7775</a></p>
+          <p><a href="mailto:awajiauberge@gmail.com" data-i18n="email">awajiauberge@gmail.com</a></p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="dining.html" data-i18n="nav_dining">Dining</a></li>
+            <li><a href="stay.html" data-i18n="nav_stay">Stay</a></li>
+            <li><a href="spa.html" data-i18n="nav_spa">Spa</a></li>
+            <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Reserve</h4>
+          <ul>
+            <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener" data-i18n="footer_reserve">Reserve</a></li>
+            <li><a href="group.html">Group &amp; Private</a></li>
+            <li><a href="private.html" data-i18n="nav_reserve">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
+            <li><a href="private.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="en" data-i18n="footer_copyright">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
+        <span class="en">Awaji Island, Hyogo, Japan</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

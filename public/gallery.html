@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1C1C1A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Gallery — 写真ギャラリー | THE BLESS AWAJI</title>
+  <meta name="description" content="THE BLESS AWAJIのギャラリー。ダイニング、客室、スパ、外観の写真をお楽しみください。">
+  <meta property="og:title" content="Gallery | THE BLESS AWAJI">
+  <meta property="og:description" content="写真で見る THE BLESS AWAJI">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header id="site-header">
+    <a href="index.html" class="header-logo en">THE BLESS AWAJI |</a>
+    <div class="header-right">
+      <div class="lang-toggle">
+        <span data-lang="jp" class="active">JP</span>
+        <span class="lang-sep">｜</span>
+        <span data-lang="en" class="inactive">EN</span>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Nav Overlay ── -->
+  <nav id="nav-overlay" aria-label="メインナビゲーション">
+    <ul class="nav-menu">
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="dining.html" data-i18n="nav_dining">Dining</a></li>
+      <li><a href="stay.html" data-i18n="nav_stay">Stay</a></li>
+      <li><a href="spa.html" data-i18n="nav_spa">Spa</a></li>
+      <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="private.html" data-i18n="nav_reserve">Reservation</a></li>
+    </ul>
+    <div class="nav-sub">
+      <a href="tel:0799227775">0799-22-7775</a>
+      <a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Online Reserve</a>
+      <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Page Hero ── -->
+    <section class="page-hero" data-section="hero">
+      <div class="page-hero-bg">
+        <img
+          src="images/dining/dining-01.webp"
+          alt="THE BLESS AWAJI ダイニングホール"
+          class="page-hero-img"
+          loading="eager"
+        >
+      </div>
+      <div class="page-hero-content">
+        <span class="section-label section-label--light">Gallery</span>
+        <h1 class="en" data-i18n="gallery_hero_title">Gallery</h1>
+        <p data-i18n="gallery_hero_sub">写真で見る THE BLESS AWAJI</p>
+      </div>
+    </section>
+
+    <!-- ── Gallery Section ── -->
+    <section class="gallery-section section-a" data-section="gallery" style="padding-top:4rem;">
+      <div class="inner" style="max-width:1100px;">
+
+        <!-- Filter -->
+        <div class="gallery-filter">
+          <button class="filter-btn active" data-filter="all" data-i18n="gallery_all">All</button>
+          <button class="filter-btn" data-filter="dining" data-i18n="gallery_dining">Dining</button>
+          <button class="filter-btn" data-filter="spa" data-i18n="gallery_spa">Spa</button>
+          <button class="filter-btn" data-filter="rooms" data-i18n="gallery_rooms">Rooms</button>
+          <button class="filter-btn" data-filter="exterior" data-i18n="gallery_exterior">Exterior</button>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div class="gallery-masonry">
+
+          <div class="gallery-item reveal" data-cat="dining">
+            <img src="images/dining/dining-08.webp" alt="ダイニングホール — JOSPER® オープンキッチン" loading="lazy">
+            <div class="gallery-overlay"><span>Dining</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="rooms">
+            <img src="images/rooms/room-01.webp" alt="客室 — 海を望むリビング" loading="lazy">
+            <div class="gallery-overlay"><span>Rooms</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="spa">
+            <img src="images/spa/spa-03.webp" alt="マグマサウナ内部" loading="lazy">
+            <div class="gallery-overlay"><span>Spa</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="exterior">
+            <img src="images/exterior-01.webp" alt="THE BLESS オリジナルアメニティ" loading="lazy">
+            <div class="gallery-overlay"><span>Exterior</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="dining">
+            <img src="images/misc-01.webp" alt="JOSPER® 薪炭の炎" loading="lazy">
+            <div class="gallery-overlay"><span>Dining</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="rooms">
+            <img src="images/rooms/room-ocean-view.webp" alt="オーシャンビュールーム" loading="lazy">
+            <div class="gallery-overlay"><span>Rooms</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="dining">
+            <img src="images/bar-01.webp" alt="バーカウンター" loading="lazy">
+            <div class="gallery-overlay"><span>Dining</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="spa">
+            <img src="images/spa/spa-02.webp" alt="スパ — 浴室とリラクゼーション" loading="lazy">
+            <div class="gallery-overlay"><span>Spa</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="rooms">
+            <img src="images/rooms/room-02.webp" alt="ガーデンビュールーム" loading="lazy">
+            <div class="gallery-overlay"><span>Rooms</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="exterior">
+            <img src="images/exterior-02.webp" alt="Aesop バスアメニティ" loading="lazy">
+            <div class="gallery-overlay"><span>Exterior</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="dining">
+            <img src="images/dining/dining-12.webp" alt="JOSPER® Charcoal Oven" loading="lazy">
+            <div class="gallery-overlay"><span>Dining</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="spa">
+            <img src="images/spa/spa-01.webp" alt="富士山 — 溶岩石の産地" loading="lazy">
+            <div class="gallery-overlay"><span>Spa</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="exterior">
+            <img src="images/exterior-03.webp" alt="THE BLESS ロゴ入りタオル" loading="lazy">
+            <div class="gallery-overlay"><span>Exterior</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="exterior">
+            <img src="images/exterior-04.webp" alt="THE BLESS ロゴ入りバスローブ" loading="lazy">
+            <div class="gallery-overlay"><span>Exterior</span></div>
+          </div>
+
+          <div class="gallery-item reveal" data-cat="dining">
+            <img src="images/dining/dining-09.webp" alt="ダイニング夜景" loading="lazy">
+            <div class="gallery-overlay"><span>Dining</span></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Lightbox ── -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="画像拡大表示">
+      <button class="lightbox-close" aria-label="閉じる">×</button>
+      <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+      <h2 class="en reveal" data-i18n="cta_title">Begin Your Journey</h2>
+      <p class="reveal reveal-delay-1" data-i18n="cta_sub">特別な体験をご予約ください</p>
+      <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+        <a
+          href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily"
+          target="_blank"
+          rel="noopener"
+          class="btn btn--light reveal reveal-delay-2"
+        ><span data-i18n="cta_btn">Reserve Now</span></a>
+        <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener" class="btn btn--light reveal reveal-delay-3">
+          <span>Instagram</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo en">THE BLESS AWAJI</span>
+          <p data-i18n="address">兵庫県洲本市炬口247</p>
+          <p><a href="tel:0799227775" data-i18n="tel">0799-22-7775</a></p>
+          <p><a href="mailto:awajiauberge@gmail.com" data-i18n="email">awajiauberge@gmail.com</a></p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="dining.html" data-i18n="nav_dining">Dining</a></li>
+            <li><a href="stay.html" data-i18n="nav_stay">Stay</a></li>
+            <li><a href="spa.html" data-i18n="nav_spa">Spa</a></li>
+            <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Reserve</h4>
+          <ul>
+            <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener" data-i18n="footer_reserve">Reserve</a></li>
+            <li><a href="group.html">Group &amp; Private</a></li>
+            <li><a href="private.html" data-i18n="nav_reserve">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
+            <li><a href="private.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="en" data-i18n="footer_copyright">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
+        <span class="en">Awaji Island, Hyogo, Japan</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

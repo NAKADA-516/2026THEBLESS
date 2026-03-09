@@ -1,0 +1,668 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1C1C1A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>団体・貸切予約 | THE BLESS AWAJI</title>
+  <meta name="description" content="THE BLESS AWAJIの団体・貸切予約。ダイニング貸切、宿泊プラン、法人接待、記念日ディナー等ご相談ください。最大30名まで対応。">
+  <meta property="og:title" content="団体・貸切予約 | THE BLESS AWAJI">
+  <meta property="og:description" content="淡路島のオーベルジュ THE BLESS AWAJIの団体・貸切予約">
+  <meta property="og:image" content="images/steak-grill-01.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Group Page Additional Styles ── */
+    .group-intro {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 7rem 2rem;
+      text-align: center;
+    }
+
+    .group-intro p {
+      max-width: 640px;
+      margin: 0 auto;
+      color: var(--gray-light);
+      line-height: 2.1;
+      font-size: 0.95rem;
+    }
+
+    .plan-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .plan-card {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .plan-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .plan-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .plan-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(28,28,26,0.9) 0%, rgba(28,28,26,0.1) 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+    }
+
+    .plan-card-label {
+      font-family: var(--font-en);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .plan-card-title {
+      font-family: var(--font-en);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-card-desc {
+      font-size: 0.78rem;
+      color: var(--gray-light);
+      line-height: 1.8;
+    }
+
+    .capacity-strip {
+      background: var(--charcoal);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .capacity-item {
+      flex: 1;
+      max-width: 220px;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .capacity-item:last-child {
+      border-right: none;
+    }
+
+    .capacity-num {
+      display: block;
+      font-family: var(--font-en);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .capacity-label {
+      font-size: 0.72rem;
+      color: var(--gray-mid);
+      letter-spacing: 0.12em;
+    }
+
+    .flow-section {
+      background: var(--charcoal);
+      padding: 7rem 2rem;
+    }
+
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      max-width: 900px;
+      margin: 3rem auto 0;
+    }
+
+    .flow-step {
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+
+    .flow-step::after {
+      content: '→';
+      position: absolute;
+      right: -0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-en);
+      color: var(--gray-mid);
+      font-size: 1.2rem;
+    }
+
+    .flow-step:last-child::after {
+      display: none;
+    }
+
+    .flow-num {
+      display: block;
+      font-family: var(--font-en);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gray-mid);
+      margin-bottom: 0.75rem;
+    }
+
+    .flow-title {
+      display: block;
+      font-family: var(--font-en);
+      font-size: 0.85rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .flow-desc {
+      font-size: 0.72rem;
+      color: var(--gray-mid);
+      line-height: 1.9;
+    }
+
+    .floormap-section {
+      background: var(--cream);
+      padding: 7rem 2rem;
+      text-align: center;
+    }
+
+    .floormap-img {
+      max-width: 700px;
+      margin: 2.5rem auto 0;
+      border: 1px solid var(--cream-dark);
+    }
+
+    .group-contact {
+      background: var(--charcoal-mid);
+      padding: 7rem 2rem;
+    }
+
+    .group-contact-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .contact-methods {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-method {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      border: 1px solid rgba(242,237,230,0.12);
+      color: var(--cream);
+      text-align: center;
+      gap: 0.5rem;
+      transition: background var(--transition);
+    }
+
+    .contact-method:hover {
+      background: rgba(242,237,230,0.05);
+    }
+
+    .contact-method-type {
+      font-family: var(--font-en);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+    }
+
+    .contact-method-value {
+      font-family: var(--font-en);
+      font-size: 1.3rem;
+      color: var(--cream);
+    }
+
+    .contact-method-note {
+      font-size: 0.72rem;
+      color: var(--gray-mid);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .plan-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .plan-card {
+        aspect-ratio: 4/3;
+      }
+
+      .capacity-strip {
+        flex-wrap: wrap;
+      }
+
+      .capacity-item {
+        min-width: 50%;
+        flex: 0 0 50%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .capacity-item:nth-child(1),
+      .capacity-item:nth-child(3) {
+        border-right: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .flow-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+
+      .flow-step::after {
+        display: none;
+      }
+
+      .flow-step {
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .contact-methods {
+        grid-template-columns: 1fr;
+      }
+
+      .group-intro,
+      .flow-section,
+      .floormap-section,
+      .group-contact {
+        padding: 4rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header id="site-header">
+    <a href="index.html" class="header-logo en">THE BLESS AWAJI |</a>
+    <div class="header-right">
+      <div class="lang-toggle">
+        <span data-lang="jp" class="active">JP</span>
+        <span class="lang-sep">｜</span>
+        <span data-lang="en" class="inactive">EN</span>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Nav Overlay ── -->
+  <nav id="nav-overlay" aria-label="メインナビゲーション">
+    <ul class="nav-menu">
+      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+      <li><a href="dining.html" data-i18n="nav_dining">Dining</a></li>
+      <li><a href="stay.html" data-i18n="nav_stay">Stay</a></li>
+      <li><a href="spa.html" data-i18n="nav_spa">Spa</a></li>
+      <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="private.html" data-i18n="nav_reserve">Reservation</a></li>
+    </ul>
+    <div class="nav-sub">
+      <a href="tel:0799227775">0799-22-7775</a>
+      <a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Online Reserve</a>
+      <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Page Hero ── -->
+    <section class="page-hero" data-section="hero">
+      <div class="page-hero-bg">
+        <img
+          src="images/dining/dining-10.webp"
+          alt="THE BLESS AWAJI — 団体・貸切ダイニング"
+          class="page-hero-img"
+          loading="eager"
+        >
+      </div>
+      <div class="page-hero-content">
+        <span class="section-label section-label--light">Group &amp; Private</span>
+        <h1 class="en">Group</h1>
+        <p>団体・貸切予約</p>
+      </div>
+    </section>
+
+    <!-- ── Intro ── -->
+    <section class="group-intro" data-section="intro">
+      <span class="section-label section-label--light reveal">Private Reservation</span>
+      <span class="section-line section-line--light reveal reveal-delay-1"></span>
+      <h2 class="section-title en reveal reveal-delay-2">Exclusively Yours</h2>
+      <span class="section-title-jp reveal reveal-delay-2" style="display:block;margin-bottom:1.5rem;color:var(--gray-light);">あなただけの特別な空間</span>
+      <p class="reveal reveal-delay-3">
+        THE BLESS AWAJIでは、ダイニング貸切・宿泊付きプランなど、<br>
+        グループのニーズに合わせた多彩なプライベートプランをご用意しています。<br>
+        法人接待、記念日ディナー、同窓会、家族の集い——<br>
+        淡路島の自然とJOSPER®の炎が、忘れられない一夜を演出します。
+      </p>
+    </section>
+
+    <!-- ── Plan Cards ── -->
+    <section data-section="plans">
+      <div class="plan-grid">
+        <div class="plan-card reveal">
+          <img src="images/dining/dining-11.webp" alt="ダイニング貸切プラン" loading="lazy">
+          <div class="plan-card-overlay">
+            <span class="plan-card-label">Plan A</span>
+            <h3 class="plan-card-title en">Dining Private</h3>
+            <p class="plan-card-desc">ダイニング貸切プラン<br>最大20名 / JOSPER®フルコース</p>
+          </div>
+        </div>
+        <div class="plan-card reveal">
+          <img src="images/rooms/room-ocean-view.webp" alt="宿泊付き貸切プラン" loading="lazy">
+          <div class="plan-card-overlay">
+            <span class="plan-card-label">Plan B</span>
+            <h3 class="plan-card-title en">Stay &amp; Dine</h3>
+            <p class="plan-card-desc">宿泊付き貸切プラン<br>全8室 / 最大16名 + ダイニング</p>
+          </div>
+        </div>
+        <div class="plan-card reveal">
+          <img src="images/meat-cutting-01.webp" alt="JOSPER® 特別ディナー" loading="lazy">
+          <div class="plan-card-overlay">
+            <span class="plan-card-label">Plan C</span>
+            <h3 class="plan-card-title en">JOSPER® Special</h3>
+            <p class="plan-card-desc">JOSPER®特別コース<br>シェフズテーブル / 要相談</p>
+          </div>
+        </div>
+        <div class="plan-card reveal">
+          <img src="images/dining/dining-13.webp" alt="バー・ラウンジ貸切" loading="lazy">
+          <div class="plan-card-overlay">
+            <span class="plan-card-label">Plan D</span>
+            <h3 class="plan-card-title en">Bar &amp; Lounge</h3>
+            <p class="plan-card-desc">バー・ラウンジ貸切<br>立食スタイル / 最大30名</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Capacity Strip ── -->
+    <div class="capacity-strip" data-section="capacity">
+      <div class="capacity-item reveal">
+        <span class="capacity-num en">30</span>
+        <span class="capacity-label">最大収容 / Max Guests</span>
+      </div>
+      <div class="capacity-item reveal reveal-delay-1">
+        <span class="capacity-num en">8</span>
+        <span class="capacity-label">客室数 / Rooms</span>
+      </div>
+      <div class="capacity-item reveal reveal-delay-2">
+        <span class="capacity-num en">9</span>
+        <span class="capacity-label">コース品数 / Courses</span>
+      </div>
+      <div class="capacity-item reveal reveal-delay-3">
+        <span class="capacity-num en">1</span>
+        <span class="capacity-label">完全予約制 / Reservation Only</span>
+      </div>
+    </div>
+
+    <!-- ── Detail: Dining Private ── -->
+    <section class="section-c" data-section="dining-detail">
+      <div class="section-c-inner">
+        <div class="section-c-text">
+          <span class="section-label reveal">Dining Private</span>
+          <span class="section-line reveal reveal-delay-1"></span>
+          <h2 class="en reveal reveal-delay-2">Restaurant<br>Exclusive</h2>
+          <span class="section-title-jp reveal reveal-delay-2">ダイニング貸切</span>
+          <p class="reveal reveal-delay-3">
+            THE BLESS AWAJIのダイニングを丸ごと貸し切り。オープンキッチンを望むカウンター席と個室感覚のテーブル席、合わせて最大20名様まで対応可能です。
+          </p>
+          <ul class="reveal reveal-delay-4" style="list-style:none;padding:0;margin-top:1.5rem;color:var(--gray-mid);font-size:0.85rem;line-height:2.4;">
+            <li>— 収容人数：最大 20名</li>
+            <li>— ディナーコース：9品 JOSPER®フルコース</li>
+            <li>— ドリンクペアリング：別途オプション</li>
+            <li>— 最低利用金額：要ご相談</li>
+            <li>— 貸切時間：19:00〜22:00（応相談）</li>
+          </ul>
+        </div>
+        <div class="section-c-photos">
+          <img src="images/dining/dining-08.webp" alt="ダイニングホール全景" loading="lazy">
+          <img src="images/dining/dining-14.webp" alt="JOSPER® 炭火の炎" loading="lazy">
+          <img src="images/dining/dining-09.webp" alt="バーカウンター" class="photo-wide" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Detail: Stay & Dine ── -->
+    <section class="section-a" style="background:var(--charcoal);color:var(--cream);" data-section="stay-detail">
+      <div class="inner" style="max-width:800px;">
+        <span class="section-label section-label--light reveal">Stay &amp; Dine</span>
+        <span class="section-line section-line--light reveal reveal-delay-1"></span>
+        <h2 class="section-title en reveal reveal-delay-2">Full Buyout</h2>
+        <span class="section-title-jp reveal reveal-delay-2" style="color:var(--gray-light);display:block;margin-bottom:1.5rem;">館内貸切プラン</span>
+        <p class="reveal reveal-delay-3" style="color:var(--gray-light);line-height:2.1;">
+          全8室・ダイニング・バーをすべて貸し切る、完全プライベートプラン。法人の特別招待、大切な家族の集い、クローズドなVIPイベントに。淡路島の自然の中で、世界に一つだけの夜を。
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;" class="reveal reveal-delay-4">
+          <div style="padding:1.5rem;border:1px solid rgba(242,237,230,0.1);">
+            <h4 class="en" style="font-size:0.8rem;letter-spacing:0.15em;margin-bottom:0.75rem;color:var(--cream);">ACCOMMODATION</h4>
+            <p style="font-size:0.82rem;color:var(--gray-mid);line-height:2;">全8室 宿泊<br>最大16名様<br>チェックイン 15:00〜<br>チェックアウト 11:00</p>
+          </div>
+          <div style="padding:1.5rem;border:1px solid rgba(242,237,230,0.1);">
+            <h4 class="en" style="font-size:0.8rem;letter-spacing:0.15em;margin-bottom:0.75rem;color:var(--cream);">DINING</h4>
+            <p style="font-size:0.82rem;color:var(--gray-mid);line-height:2;">JOSPER®フルコース 9品<br>ドリンクペアリング 別途<br>ランチ・ブランチもご相談<br>19:00〜（時間変更可）</p>
+          </div>
+          <div style="padding:1.5rem;border:1px solid rgba(242,237,230,0.1);">
+            <h4 class="en" style="font-size:0.8rem;letter-spacing:0.15em;margin-bottom:0.75rem;color:var(--cream);">SPA &amp; AMENITY</h4>
+            <p style="font-size:0.82rem;color:var(--gray-mid);line-height:2;">マグマサウナ 貸切可<br>Aesop バスアメニティ<br>オリジナルバスローブ<br>Wi-Fi・駐車場 完備</p>
+          </div>
+          <div style="padding:1.5rem;border:1px solid rgba(242,237,230,0.1);">
+            <h4 class="en" style="font-size:0.8rem;letter-spacing:0.15em;margin-bottom:0.75rem;color:var(--cream);">ACCESS</h4>
+            <p style="font-size:0.82rem;color:var(--gray-mid);line-height:2;">洲本IC → 10分<br>新神戸 → 60分<br>大阪梅田 → 90分<br>貸切バス手配 ご相談</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Amenities Photos ── -->
+    <section class="section-d" data-section="amenity-photos">
+      <div class="inner">
+        <span class="section-label section-label--light reveal">Details</span>
+        <span class="section-line section-line--light reveal reveal-delay-1"></span>
+        <h2 class="section-title en reveal reveal-delay-2">Every Detail</h2>
+        <span class="section-title-jp reveal reveal-delay-2" style="display:block;margin-bottom:2rem;">細部まで、THE BLESSの美学</span>
+        <div class="grid-3">
+          <div class="grid-item reveal">
+            <img src="images/social-01.webp" alt="オリジナルアメニティギフト" loading="lazy">
+            <span class="grid-label">Amenity</span>
+          </div>
+          <div class="grid-item reveal reveal-delay-2">
+            <img src="images/misc-02.webp" alt="THE BLESS オリジナルタオル" loading="lazy">
+            <span class="grid-label">Original</span>
+          </div>
+          <div class="grid-item reveal reveal-delay-3">
+            <img src="images/misc-03.webp" alt="THE BLESS バスローブ" loading="lazy">
+            <span class="grid-label">Bathrobe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Flow ── -->
+    <section class="flow-section" data-section="flow">
+      <div class="inner" style="max-width:960px;text-align:center;">
+        <span class="section-label section-label--light reveal">How to Book</span>
+        <span class="section-line section-line--light reveal reveal-delay-1"></span>
+        <h2 class="section-title en reveal reveal-delay-2">Booking Flow</h2>
+        <span class="section-title-jp reveal reveal-delay-2" style="display:block;margin-bottom:0;color:var(--gray-light);">ご予約の流れ</span>
+        <div class="flow-steps reveal reveal-delay-3">
+          <div class="flow-step">
+            <span class="flow-num">STEP 01</span>
+            <span class="flow-title">お問い合わせ</span>
+            <span class="flow-desc">フォームまたはお電話でご希望の日程・人数をお知らせください</span>
+          </div>
+          <div class="flow-step">
+            <span class="flow-num">STEP 02</span>
+            <span class="flow-title">ご提案</span>
+            <span class="flow-desc">担当スタッフよりプランと概算お見積もりをご案内します</span>
+          </div>
+          <div class="flow-step">
+            <span class="flow-num">STEP 03</span>
+            <span class="flow-title">ご確認</span>
+            <span class="flow-desc">内容をご確認いただき、プランを確定いたします</span>
+          </div>
+          <div class="flow-step">
+            <span class="flow-num">STEP 04</span>
+            <span class="flow-title">当日</span>
+            <span class="flow-desc">心を込めたおもてなしで、特別な一夜をご用意します</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Floor Map ── -->
+    <section class="floormap-section" data-section="floormap">
+      <div class="inner">
+        <span class="section-label reveal">Floor Map</span>
+        <span class="section-line reveal reveal-delay-1"></span>
+        <h2 class="section-title en reveal reveal-delay-2">Venue Layout</h2>
+        <span class="section-title-jp reveal reveal-delay-2">館内マップ</span>
+        <div class="floormap-img reveal reveal-delay-3">
+          <img
+            src="images/screenshot-02.webp"
+            alt="THE BLESS AWAJI 館内フロアマップ"
+            loading="lazy"
+            style="width:100%;"
+          >
+        </div>
+        <p class="reveal reveal-delay-4" style="margin-top:1.5rem;font-size:0.8rem;color:var(--gray-mid);">
+          ※ 詳細なレイアウトは担当スタッフよりご説明いたします
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section class="group-contact" data-section="contact">
+      <div class="group-contact-inner">
+        <span class="section-label section-label--light reveal">Contact</span>
+        <span class="section-line section-line--light reveal reveal-delay-1"></span>
+        <h2 class="section-title en reveal reveal-delay-2" style="color:var(--cream);">Inquire Now</h2>
+        <span class="section-title-jp reveal reveal-delay-2" style="color:var(--gray-light);display:block;margin-bottom:0;">団体・貸切のご相談</span>
+
+        <div class="contact-methods reveal reveal-delay-3">
+          <a href="tel:0799227775" class="contact-method">
+            <span class="contact-method-type">Tel</span>
+            <span class="contact-method-value">0799-22-7775</span>
+            <span class="contact-method-note">受付時間 10:00〜20:00</span>
+          </a>
+          <a href="mailto:awajiauberge@gmail.com" class="contact-method">
+            <span class="contact-method-type">Email</span>
+            <span class="contact-method-value" style="font-size:0.9rem;">awajiauberge<br>@gmail.com</span>
+            <span class="contact-method-note">24時間受付</span>
+          </a>
+        </div>
+
+        <div class="reveal reveal-delay-4" style="margin-top:2rem;text-align:center;">
+          <a
+            href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily"
+            target="_blank"
+            rel="noopener"
+            class="btn btn--invert"
+            style="margin:0 auto;"
+          ><span>Online Reserve — 団体・貸切はお電話にてご相談ください</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Access Strip ── -->
+    <div class="access-strip">
+      <div class="access-item">
+        <span class="access-from en" data-i18n="access1_from">洲本IC</span>
+        <span class="access-time en" data-i18n="access1_time">10 min</span>
+      </div>
+      <div class="access-item">
+        <span class="access-from en" data-i18n="access2_from">新神戸</span>
+        <span class="access-time en" data-i18n="access2_time">60 min</span>
+      </div>
+      <div class="access-item">
+        <span class="access-from en" data-i18n="access3_from">大阪梅田</span>
+        <span class="access-time en" data-i18n="access3_time">90 min</span>
+      </div>
+      <div class="access-item">
+        <span class="access-from en" data-i18n="access4_from">京都</span>
+        <span class="access-time en" data-i18n="access4_time">120 min</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo en">THE BLESS AWAJI</span>
+          <p data-i18n="address">兵庫県洲本市炬口247</p>
+          <p><a href="tel:0799227775" data-i18n="tel">0799-22-7775</a></p>
+          <p><a href="mailto:awajiauberge@gmail.com" data-i18n="email">awajiauberge@gmail.com</a></p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+            <li><a href="dining.html" data-i18n="nav_dining">Dining</a></li>
+            <li><a href="stay.html" data-i18n="nav_stay">Stay</a></li>
+            <li><a href="spa.html" data-i18n="nav_spa">Spa</a></li>
+            <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Reserve</h4>
+          <ul>
+            <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener" data-i18n="footer_reserve">Reserve</a></li>
+            <li><a href="group.html">Group &amp; Private</a></li>
+            <li><a href="private.html" data-i18n="nav_reserve">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
+            <li><a href="private.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="en" data-i18n="footer_copyright">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
+        <span class="en">Awaji Island, Hyogo, Japan</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1C1C1A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>About — 私たちについて | THE BLESS AWAJI</title>
+  <meta name="description" content="淡路島の恵みを活かした地産地消、薪火料理、発酵の魔法。THE BLESS AWAJIの3つのコンセプトとシェフの想いをご紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/webp" href="images/logo-icon.webp">
+  <link rel="apple-touch-icon" href="images/logo-icon.webp">
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    /* ── About Hero ── */
+    .about-hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .about-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      transform: scale(1.05);
+      transition: transform 1.2s ease;
+    }
+
+    .about-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(17, 17, 16, 0.82) 0%,
+        rgba(17, 17, 16, 0.35) 50%,
+        rgba(17, 17, 16, 0.15) 100%
+      );
+      z-index: 1;
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 5rem 6rem;
+      max-width: 700px;
+    }
+
+    .about-hero-label {
+      font-family: var(--font-en);
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(184, 176, 168, 0.7);
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-hero-title {
+      font-family: var(--font-en);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+      margin-bottom: 1.8rem;
+    }
+
+    .about-hero-subtitle {
+      font-family: var(--font-jp);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(242, 237, 230, 0.72);
+      line-height: 2.4;
+      letter-spacing: 0.04em;
+      max-width: 480px;
+    }
+
+    /* ── Intro ── */
+    .about-intro {
+      background: var(--cream);
+      padding: 9rem 2rem 8rem;
+      text-align: center;
+    }
+
+    .about-intro-inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .about-intro-text {
+      font-size: 0.88rem;
+      line-height: 3.2;
+      color: var(--gray-mid);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Concept Section ── */
+    .about-concept {
+      background: var(--cream);
+      padding: 5rem 0 8rem;
+    }
+
+    .about-concept-header {
+      text-align: center;
+      padding: 0 2rem;
+      margin-bottom: 5rem;
+    }
+
+    .about-concept-title {
+      font-family: var(--font-en);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-concept-title-jp {
+      font-family: var(--font-jp);
+      font-size: 0.85rem;
+      color: var(--gray-mid);
+      letter-spacing: 0.15em;
+      font-weight: 300;
+    }
+
+    .concept-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .concept-pillar {
+      padding: 4rem 3.5rem;
+      border-top: 1px solid rgba(28, 28, 26, 0.1);
+      border-right: 1px solid rgba(28, 28, 26, 0.06);
+    }
+
+    .concept-pillar:last-child {
+      border-right: none;
+    }
+
+    .pillar-num {
+      font-family: var(--font-en);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      color: var(--gray-mid);
+      display: block;
+      margin-bottom: 1.2rem;
+      opacity: 0.55;
+    }
+
+    .concept-pillar h3 {
+      font-family: var(--font-jp);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      letter-spacing: 0.06em;
+      line-height: 1.5;
+      margin-bottom: 2.5rem;
+    }
+
+    .pillar-block {
+      margin-bottom: 2rem;
+    }
+
+    .pillar-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .pillar-block-title {
+      font-family: var(--font-jp);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .concept-pillar p {
+      font-size: 0.8rem;
+      line-height: 2.6;
+      color: var(--gray-mid);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Concept Image Strip ── */
+    .concept-image-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .concept-strip-img {
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .concept-strip-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 2.4s cubic-bezier(.25,.46,.45,.94);
+    }
+
+    .concept-strip-img:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ── Chef Section (dark) ── */
+    .chef-section {
+      background: #111110;
+      padding: 9rem 0;
+    }
+
+    .chef-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7rem;
+      align-items: center;
+    }
+
+    .chef-text-col .about-section-label {
+      font-family: var(--font-en);
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(184, 176, 168, 0.5);
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+
+    .chef-title {
+      font-family: var(--font-en);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 2.5rem;
+    }
+
+    .chef-body {
+      font-size: 0.84rem;
+      line-height: 2.9;
+      color: rgba(184, 176, 168, 0.75);
+      letter-spacing: 0.03em;
+    }
+
+    .chef-img-col {
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+
+    .chef-img-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 2.4s cubic-bezier(.25,.46,.45,.94);
+    }
+
+    .chef-img-col:hover img {
+      transform: scale(1.04);
+    }
+
+    /* ── Location & Auberge (cream, split) ── */
+    .about-split {
+      background: var(--cream);
+      padding: 8rem 5rem;
+    }
+
+    .about-split-row {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .about-split-row + .about-split-row {
+      margin-top: 8rem;
+      padding-top: 8rem;
+      border-top: 1px solid var(--cream-dark);
+    }
+
+    .about-split-row.reverse .about-split-img-col {
+      order: -1;
+    }
+
+    .about-split-img-col {
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .about-split-img-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 2.4s cubic-bezier(.25,.46,.45,.94);
+    }
+
+    .about-split-img-col:hover img {
+      transform: scale(1.04);
+    }
+
+    .about-split-text-col .about-section-label {
+      font-family: var(--font-en);
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gray-mid);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .about-split-heading {
+      font-family: var(--font-en);
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--charcoal);
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.6rem;
+    }
+
+    .about-split-heading-jp {
+      font-family: var(--font-jp);
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--gray-mid);
+      letter-spacing: 0.12em;
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    .about-split-body {
+      font-size: 0.84rem;
+      line-height: 2.8;
+      color: var(--gray-mid);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Limited Section (dark) ── */
+    .about-limited {
+      background: var(--charcoal);
+      padding: 9rem 2rem;
+      text-align: center;
+    }
+
+    .about-limited-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .about-limited-title {
+      font-family: var(--font-en);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      margin-bottom: 3rem;
+    }
+
+    .about-limited-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-top: 4rem;
+      text-align: left;
+    }
+
+    .about-limited-card {
+      padding: 2.5rem 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .about-limited-card:last-child {
+      border-right: none;
+    }
+
+    .about-limited-card-label {
+      font-family: var(--font-en);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(184, 176, 168, 0.45);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .about-limited-card h4 {
+      font-family: var(--font-jp);
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.08em;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-limited-card p {
+      font-size: 0.8rem;
+      line-height: 2.6;
+      color: rgba(184, 176, 168, 0.65);
+    }
+
+    /* ── Final Message ── */
+    .about-final {
+      background: var(--cream);
+      padding: 10rem 2rem;
+      text-align: center;
+    }
+
+    .about-final-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .about-final-quote {
+      font-family: var(--font-en);
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+      margin-bottom: 3.5rem;
+    }
+
+    .about-final-body {
+      font-size: 0.86rem;
+      line-height: 3.0;
+      color: var(--gray-mid);
+      letter-spacing: 0.04em;
+      text-align: left;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .about-hero-content {
+        padding: 0 1.5rem 4rem;
+      }
+
+      .about-intro { padding: 6rem 1.5rem; }
+
+      .about-concept { padding: 4rem 0 6rem; }
+      .about-concept-header { margin-bottom: 3rem; }
+
+      .concept-pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .concept-pillar {
+        padding: 3rem 1.5rem;
+        border-right: none;
+      }
+
+      .concept-image-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .concept-strip-img {
+        aspect-ratio: 16/9;
+      }
+
+      .chef-section { padding: 6rem 0; }
+      .chef-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 0 1.5rem;
+      }
+
+      .chef-img-col {
+        order: -1;
+        aspect-ratio: 4/3;
+      }
+
+      .about-split { padding: 6rem 1.5rem; }
+      .about-split-row {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about-split-row.reverse .about-split-img-col {
+        order: 0;
+      }
+
+      .about-split-row + .about-split-row {
+        margin-top: 5rem;
+        padding-top: 5rem;
+      }
+
+      .about-limited { padding: 6rem 1.5rem; }
+      .about-limited-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .about-limited-card {
+        padding: 2rem 1.5rem;
+        border-right: none;
+      }
+
+      .about-final { padding: 7rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header id="site-header" class="header--dark">
+    <a href="index.html" class="header-logo header-logo--light en">THE BLESS AWAJI |</a>
+    <div class="header-right">
+      <div class="lang-toggle lang-toggle--light">
+        <span data-lang="jp" class="active">JP</span>
+        <span class="lang-sep">｜</span>
+        <span data-lang="en" class="inactive">EN</span>
+      </div>
+      <div class="hamburger hamburger--light" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Nav Overlay ── -->
+  <nav id="nav-overlay" aria-label="メインナビゲーション">
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dining.html">Dining</a></li>
+      <li><a href="stay.html">Stay</a></li>
+      <li><a href="spa.html">Spa</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
+      <li><a href="group.html">Group &amp; Private</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+    <div class="nav-sub">
+      <a href="tel:0799227775">0799-22-7775</a>
+      <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ① Hero -->
+    <section class="about-hero">
+      <img
+        class="about-hero-img"
+        src="images/about/about2.webp"
+        alt="THE BLESS AWAJI — 淡路島の隠れ家"
+        loading="eager"
+      >
+      <div class="about-hero-content">
+        <span class="about-hero-label">About Us</span>
+        <h1 class="about-hero-title">THE BLESS<br>Awaji</h1>
+        <p class="about-hero-subtitle">
+          淡路島の豊かな自然に囲まれた隠れ家で、他では決して味わえない特別な料理をお届けします。<br>
+          古来より「御食国（みけつくに）」と呼ばれ、朝廷に新鮮な食材を献上してきた淡路島。<br>
+          伝統と革新を融合させた、唯一無二の食体験をご提供します。
+        </p>
+      </div>
+    </section>
+
+    <!-- ② 私たちが目指すもの -->
+    <section class="about-intro">
+      <div class="about-intro-inner">
+        <span class="section-line reveal" style="margin: 0 auto 4rem;"></span>
+        <span class="section-label reveal">Our Philosophy</span>
+        <p class="about-intro-text reveal reveal-delay-1">
+          島の恵みを、炎と発酵の力で。<br>
+          生産者であり料理人として、淡路島の自然と真摯に向き合う。<br>
+          その姿勢から生まれる料理には、物語性と深い愛情が込められています。
+        </p>
+      </div>
+    </section>
+
+    <!-- ③ 3つの核となるコンセプト -->
+    <section class="about-concept">
+      <div class="about-concept-header">
+        <span class="section-label reveal">Core Concepts</span>
+        <h2 class="about-concept-title reveal reveal-delay-1">3 Core Concepts</h2>
+        <span class="about-concept-title-jp reveal reveal-delay-2">3つの核となるコンセプト</span>
+      </div>
+
+      <div class="concept-pillars">
+
+        <div class="concept-pillar reveal">
+          <span class="pillar-num">01</span>
+          <h3>島の恵みを100%活用した<br>地産地消</h3>
+
+          <div class="pillar-block">
+            <span class="pillar-block-title">自家栽培へのこだわり</span>
+            <p>店に隣接する自家農園で無農薬野菜を栽培しています。お客様には収穫体験もお楽しみいただけます。目の前の畑で採れた玉ねぎや季節野菜を、採れたての鮮度そのままでお皿に乗せます。</p>
+          </div>
+
+          <div class="pillar-block">
+            <span class="pillar-block-title">淡路牛と島のジビエ</span>
+            <p>但馬牛の血統を引く淡路牛を贅沢に使用。きめ細やかな肉質と深い旨味をお楽しみください。島で捕獲されるイノシシやシカなどの認証ジビエ「AWAJISHIMA Shishika」も活用し、野性味あふれる旨味を洗練された料理に昇華させます。</p>
+          </div>
+
+          <div class="pillar-block">
+            <span class="pillar-block-title">真のサステナビリティ</span>
+            <p>食材のほとんどを淡路島産。島内の農家、漁師、猟師と連携し、獲れた命を余すことなく大切にいただきます。自然への感謝の気持ちを込めて、一皿一皿をお作りしています。</p>
+          </div>
+        </div>
+
+        <div class="concept-pillar reveal reveal-delay-1">
+          <span class="pillar-num">02</span>
+          <h3>薪火が引き出す<br>素材本来の力</h3>
+
+          <div class="pillar-block">
+            <span class="pillar-block-title">シンプルだからこそ際立つ旨味</span>
+            <p>当店のキッチンの主役は薪火です。ガス火ではなく薪そのものを熱源とすることで、素材に力強い火のエネルギーを宿します。薪が燃える際に生まれる穏やかな炎と香ばしい煙が、食材に独特の香りを纏わせます。外側は香ばしく、中はみずみずしく仕上がる薪火料理は、素材の旨味を最大限に引き出します。</p>
+          </div>
+
+          <div class="pillar-block">
+            <span class="pillar-block-title">五感で楽しむ調理体験</span>
+            <p>ゆらめく炎と薪のはぜる音、立ち上る香ばしい煙。お客様の目の前で食材が焼き上がっていく様子は、まるでキャンプファイヤーを囲んでいるような特別な時間をお過ごしいただけます。</p>
+          </div>
+        </div>
+
+        <div class="concept-pillar reveal reveal-delay-2">
+          <span class="pillar-num">03</span>
+          <h3>麹が生み出す<br>発酵の魔法</h3>
+
+          <div class="pillar-block">
+            <span class="pillar-block-title">日本の発酵文化を現代に</span>
+            <p>味噌、醤油、酢から自家製の塩麹、醤油麹、発酵バターまで。麹菌の力を借りた発酵食品を随所に活用しています。麹による発酵は素材の旨味成分を増幅させ、まろやかで複雑な風味を生み出します。猪肉は味噌床で熟成させて臭みを消しコクを増し、野菜は麹漬けにして旨味を凝縮させます。</p>
+          </div>
+
+          <div class="pillar-block">
+            <span class="pillar-block-title">健康と美味しさの両立</span>
+            <p>発酵食品は腸内環境を整え、素材の栄養価を高めます。保存料に頼らず、自然の力でおいしさを引き出す先人の知恵を現代に活かしています。</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Concept Images -->
+      <div class="concept-image-strip">
+        <div class="concept-strip-img reveal">
+          <img src="images/dining/1.webp" alt="淡路島の新鮮食材" loading="lazy">
+        </div>
+        <div class="concept-strip-img reveal reveal-delay-1">
+          <img src="images/dining/josper-fire-01.webp" alt="薪火料理" loading="lazy">
+        </div>
+        <div class="concept-strip-img reveal reveal-delay-2">
+          <img src="images/dining/3.webp" alt="発酵と麹の料理" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ④ シェフの想い (dark) -->
+    <section class="chef-section">
+      <div class="chef-inner">
+        <div class="chef-text-col">
+          <span class="about-section-label reveal">Chef's Story</span>
+          <h2 class="chef-title reveal reveal-delay-1">A Farmer<br>& A Chef</h2>
+          <p class="chef-body reveal reveal-delay-2">
+            料理長は「生産者であり料理人である」ことをモットーに、淡路島の自然と真摯に向き合っています。野菜づくりから発酵の仕込みまで手間を惜しまず、自らの手で素材と対話することで新たな料理のインスピレーションを得ています。<br><br>
+            山菜やキノコを求めて島の山野を歩き回り、猟師や農家から食材の話を聞く。そうした姿勢から生まれる料理には、物語性と深い愛情が込められています。
+          </p>
+        </div>
+        <div class="chef-img-col reveal reveal-delay-1">
+          <img src="images/about/about6.webp" alt="シェフの想い — 素材と対話" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑤ ロケーション & オーベルジュ -->
+    <section class="about-split">
+
+      <div class="about-split-row">
+        <div class="about-split-img-col reveal">
+          <img src="images/about/about4.webp" alt="瀬戸内海を望む隠れ家" loading="lazy">
+        </div>
+        <div class="about-split-text-col">
+          <span class="about-section-label reveal">Location</span>
+          <h2 class="about-split-heading reveal reveal-delay-1">A Hidden Retreat<br>on the Island</h2>
+          <span class="about-split-heading-jp reveal reveal-delay-1">特別なロケーションで過ごす至福の時間</span>
+          <p class="about-split-body reveal reveal-delay-2">
+            瀬戸内海を望む丘陵地や里山の麓に店を構えています。都会の喧騒を離れた隠れ家で、ゆったりと流れる島時間をお楽しみください。<br><br>
+            夜になれば満天の星空が広がり、昼は穏やかな海風と木々のざわめきが心を癒します。
+          </p>
+        </div>
+      </div>
+
+      <div class="about-split-row reverse">
+        <div class="about-split-text-col">
+          <span class="about-section-label reveal">Auberge</span>
+          <h2 class="about-split-heading reveal reveal-delay-1">A Culinary Journey<br>to Stay</h2>
+          <span class="about-split-heading-jp reveal reveal-delay-1">オーベルジュとしての食の旅</span>
+          <p class="about-split-body reveal reveal-delay-2">
+            ご希望のお客様には島内の提携宿泊施設をご案内します。夕食で薪火と発酵のフルコースを堪能し、翌朝には農園での収穫体験や発酵食品を使った朝食をご用意。<br><br>
+            里山に暮らすようなスローな時間を体験できるのも、島のオーベルジュならではの魅力です。
+          </p>
+        </div>
+        <div class="about-split-img-col reveal reveal-delay-1">
+          <img src="images/about/about5.webp" alt="オーベルジュ — 宿泊" loading="lazy">
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ⑥ 限定された特別な体験 (dark) -->
+    <section class="about-limited">
+      <div class="about-limited-inner">
+        <span class="section-line section-line--light reveal" style="margin: 0 auto 3rem;"></span>
+        <span class="section-label section-label--light reveal">Exclusive Experience</span>
+        <h2 class="about-limited-title reveal reveal-delay-1">Limited &amp;<br>Exclusive</h2>
+
+        <div class="about-limited-cards">
+          <div class="about-limited-card reveal">
+            <span class="about-limited-card-label">Private</span>
+            <h4>少数限定のプライベートなおもてなし</h4>
+            <p>一日にご案内するお客様は数組（10〜12名程度）に限定しています。一皿一皿に細やかな心配りをし、その日のベストな状態で料理をお届けするためです。</p>
+          </div>
+          <div class="about-limited-card reveal reveal-delay-1">
+            <span class="about-limited-card-label">Seasonal</span>
+            <h4>季節・数量限定のメニュー</h4>
+            <p>提供する食材は季節によって変わります。冬季限定の猪の薪火ロースト、仕込みに数ヶ月かかる熟成発酵食品を使ったソースなど、その時期その場所でしか味わえない希少なメニューをご用意しています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑦ 最後に -->
+    <section class="about-final">
+      <div class="about-final-inner">
+        <span class="section-line reveal" style="margin: 0 auto 4rem;"></span>
+        <span class="section-label reveal">A Message</span>
+        <p class="about-final-quote reveal reveal-delay-1">
+          "A meal that moves your soul"
+        </p>
+        <p class="about-final-body reveal reveal-delay-2">
+          淡路島という土地が持つ豊かな恵みと、<br>
+          私たちの情熱が掛け合わさって生まれる唯一無二の時間と料理。<br>
+          それはきっと、お客様の五感に強く訴えかけ、心に残る思い出となるでしょう。<br><br>
+          単なる食事では得られない深い満足感と特別な体験を、<br>
+          ぜひ一度味わいにいらしてください。
+        </p>
+        <a
+          href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily"
+          target="_blank"
+          rel="noopener"
+          class="btn reveal reveal-delay-3"
+          style="margin-top: 3.5rem;"
+        ><span>Reserve a Table</span></a>
+      </div>
+    </section>
+
+    <!-- ⑧ CTA -->
+    <section class="cta-section">
+      <h2 class="en reveal">Connect with Us</h2>
+      <p class="reveal reveal-delay-1">島の情報やメニューの最新情報はInstagramでご確認ください</p>
+      <a
+        href="https://www.instagram.com/the_bless_awaji_official/"
+        target="_blank"
+        rel="noopener"
+        class="btn btn--light reveal reveal-delay-2"
+      ><span>Instagram</span></a>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo en">THE BLESS AWAJI</span>
+          <p>兵庫県洲本市炬口247</p>
+          <p><a href="tel:0799227775">0799-22-7775</a></p>
+          <p><a href="mailto:awajiauberge@gmail.com">awajiauberge@gmail.com</a></p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="stay.html">Stay</a></li>
+            <li><a href="spa.html">Spa</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Reserve</h4>
+          <ul>
+            <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
+            <li><a href="group.html">Group &amp; Private</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="en">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
+        <div class="footer-legal">
+          <a href="terms.html">宿泊約款</a>
+          <a href="privacy.html">プライバシーポリシー</a>
+          <a href="legal.html">特商法に基づく表記</a>
+        </div>
+        <span class="en">Awaji Island, Hyogo, Japan</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

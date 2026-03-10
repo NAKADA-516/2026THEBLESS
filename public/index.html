@@ -13,6 +13,7 @@
   <meta property="og:image" content="images/dining/dining-04.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/webp" href="images/logo-icon.webp"><link rel="apple-touch-icon" href="images/logo-icon.webp">
   <link rel="stylesheet" href="style.css">
   <style>
     /* ─── Hero Slideshow ─── */
@@ -143,201 +144,246 @@
       to   { width: 100%; }
     }
 
-    /* ─── TOP exclusive ─── */
+    /* ─── Panoramic strip ─── */
+    .panoramic-strip {
+      width: 100%;
+      aspect-ratio: 21/6;
+      overflow: hidden;
+    }
+    .panoramic-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
 
-    /* Concept block */
-    .concept {
+    /* ─── Simple Intro ─── */
+    .simple-intro {
       background: var(--cream);
       padding: 9rem 2rem;
       text-align: center;
     }
-    .concept-catch {
-      display: block;
-      font-family: var(--font-en);
-      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-      font-weight: 300;
-      color: var(--charcoal);
-      line-height: 1.35;
-      letter-spacing: 0.02em;
-      margin-bottom: 2rem;
-    }
-    .concept-body {
-      max-width: 480px;
-      margin: 0 auto 2.5rem;
+    .simple-intro-body {
+      max-width: 500px;
+      margin: 0 auto 5rem;
       font-size: 0.88rem;
-      line-height: 2.4;
+      line-height: 3.0;
       color: var(--gray-mid);
+      letter-spacing: 0.03em;
     }
-
-    /* Silent full-bleed image */
-    .silent-image {
-      width: 100%;
-      aspect-ratio: 16/9;
+    .simple-intro-image {
+      max-width: 240px;
+      margin: 0 auto;
       overflow: hidden;
-      display: block;
+      cursor: pointer;
     }
-    .silent-image img {
+    .simple-intro-image img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    /* JOSPER split */
-    .josper-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 80vh;
-    }
-    .josper-split-text {
-      background: var(--charcoal);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 5rem;
-      color: var(--cream);
-    }
-    .josper-split-title {
-      font-family: var(--font-en);
-      font-size: clamp(2.4rem, 4vw, 3.6rem);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--cream);
-      margin: 1.2rem 0 1.8rem;
-      letter-spacing: -0.01em;
-    }
-    .josper-split-body {
-      font-size: 0.85rem;
-      line-height: 2.5;
-      color: var(--gray-light);
-      max-width: 360px;
-      margin-bottom: 2.5rem;
-    }
-    .josper-split-image {
-      overflow: hidden;
-    }
-    .josper-split-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
       display: block;
+      transition: transform 2.4s cubic-bezier(.25,.46,.45,.94);
     }
-
-    /* Photo strip — 3 images, equal width */
-    .photo-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .photo-strip-cell {
-      aspect-ratio: 2/3;
-      overflow: hidden;
-    }
-    .photo-strip-cell img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      transition: transform 1s cubic-bezier(0.25,0.46,0.45,0.94);
-    }
-    .photo-strip-cell:hover img {
+    .simple-intro-image:hover img {
       transform: scale(1.04);
     }
 
-    /* Stay — dark split (image L, text R) */
-    .stay-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 65vh;
-    }
-    .stay-split-image {
+    /* ─── Dark Bleed with text ─── */
+    .dark-bleed {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 21/7;
       overflow: hidden;
     }
-    .stay-split-image img {
+    .dark-bleed::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(17,17,16,0.38);
+      pointer-events: none;
+    }
+    .dark-bleed img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+    }
+    .dark-bleed-text {
+      position: absolute;
+      bottom: 3.5rem;
+      left: 5rem;
+      z-index: 2;
+      max-width: 440px;
+    }
+    .dark-bleed-text p {
+      font-size: 0.84rem;
+      line-height: 2.5;
+      color: rgba(242,237,230,0.82);
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── Split Feature (Dining) ─── */
+    .split-feature {
+      background: var(--cream);
+      padding: 8rem 8rem;
+    }
+    .split-feature-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid var(--cream-dark);
+      padding-bottom: 4rem;
+    }
+    .split-feature-title {
+      font-family: var(--font-en);
+      font-size: clamp(2rem, 3.8vw, 3.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin: 1rem 0 2rem;
+    }
+    .split-feature-right {
+      padding-top: 3.5rem;
+    }
+    .split-feature-right p {
+      font-size: 0.86rem;
+      line-height: 2.8;
+      color: var(--gray-mid);
+      letter-spacing: 0.02em;
+      margin-bottom: 2rem;
+    }
+    .split-feature-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .split-feature-img {
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .split-feature-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 2.4s cubic-bezier(.25,.46,.45,.94);
     }
-    .stay-split-text {
-      background: var(--charcoal);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 5rem 4.5rem;
-      color: var(--cream);
-    }
-    .stay-split-text h2 {
-      font-family: var(--font-en);
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      font-weight: 300;
-      color: var(--cream);
-      line-height: 1.15;
-      margin: 1rem 0 1.5rem;
-    }
-    .stay-split-text p {
-      font-size: 0.85rem;
-      line-height: 2.5;
-      color: var(--gray-light);
-      max-width: 320px;
-      margin-bottom: 2rem;
+    .split-feature-img:hover img {
+      transform: scale(1.06);
     }
 
-    /* Story */
-    .story {
+    /* ─── Food Story ─── */
+    .food-story {
       background: var(--cream);
-      padding: 11rem 2rem;
+      padding: 9rem 2rem;
       text-align: center;
     }
-    .story-quote {
+    .food-story-text {
       display: block;
-      font-family: var(--font-en);
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--charcoal);
-      line-height: 1.4;
-      margin-bottom: 3rem;
-      letter-spacing: 0.01em;
-    }
-    .story-body {
       max-width: 440px;
-      margin: 0 auto 3rem;
-      font-size: 0.85rem;
-      line-height: 2.6;
+      margin: 0 auto 6rem;
+      font-size: 0.88rem;
+      line-height: 3.0;
       color: var(--gray-mid);
+      letter-spacing: 0.03em;
+    }
+    .food-story-images {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 0.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .food-story-col {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .food-story-img {
+      overflow: hidden;
+      aspect-ratio: 1/1;
+    }
+    .food-story-img img,
+    .food-story-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 2.4s cubic-bezier(.25,.46,.45,.94);
+    }
+    .food-story-img:hover img,
+    .food-story-main:hover img {
+      transform: scale(1.04);
+    }
+    .food-story-main {
+      overflow: hidden;
     }
 
-    /* Mobile */
+    /* ─── Stay Simple (dark) ─── */
+    .stay-simple {
+      background: #111110;
+      padding: 10rem 2rem;
+      text-align: center;
+    }
+    .stay-simple-desc {
+      display: block;
+      font-size: 0.82rem;
+      line-height: 2.5;
+      color: rgba(184,176,168,0.7);
+      max-width: 260px;
+      margin: 2rem auto 5rem;
+      letter-spacing: 0.02em;
+    }
+    .stay-simple-photos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      max-width: 960px;
+      margin: 0 auto 4rem;
+    }
+    .stay-simple-photo {
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+    .stay-simple-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 1.2s cubic-bezier(.25,.46,.45,.94);
+    }
+    .stay-simple-photo:hover img {
+      transform: scale(1.04);
+    }
+
+    /* ─── Mobile ─── */
     @media (max-width: 768px) {
-      .concept { padding: 6rem 1.5rem; }
+      .simple-intro { padding: 5rem 1.5rem; }
+      .simple-intro-image { max-width: 180px; }
 
-      .silent-image { aspect-ratio: 4/5; }
+      .dark-bleed { aspect-ratio: 4/3; }
+      .dark-bleed-text { left: 1.5rem; bottom: 1.5rem; }
 
-      .josper-split {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-      .josper-split-image { aspect-ratio: 1/1; order: -1; }
-      .josper-split-text {
-        padding: 4rem 1.5rem;
-        order: 1;
-      }
-      .josper-split-body { max-width: 100%; }
+      .panoramic-strip { aspect-ratio: 4/3; }
 
-      .photo-strip { grid-template-columns: 1fr; }
-      .photo-strip-cell { aspect-ratio: 3/2; }
+      .split-feature { padding: 5rem 1.5rem; }
+      .split-feature-header { grid-template-columns: 1fr; gap: 0; padding-bottom: 2.5rem; margin-bottom: 2.5rem; }
+      .split-feature-right { padding-top: 0; }
+      .split-feature-images { grid-template-columns: 1fr 1fr; }
 
-      .stay-split {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-      .stay-split-image { aspect-ratio: 1/1; }
-      .stay-split-text { padding: 4rem 1.5rem; }
-      .stay-split-text p { max-width: 100%; }
+      .food-story { padding: 5rem 1.5rem; }
+      .food-story-images { grid-template-columns: 1fr; }
+      .food-story-col { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .food-story-img { aspect-ratio: 1/1; }
+      .food-story-main { aspect-ratio: 3/2; }
 
-      .story { padding: 7rem 1.5rem; }
+      .stay-simple { padding: 6rem 1.5rem; }
+      .stay-simple-photos { grid-template-columns: 1fr; }
+      .stay-simple-photo { aspect-ratio: 4/3; }
     }
   </style>
 </head>
@@ -361,17 +407,18 @@
   <!-- Nav Overlay -->
   <nav id="nav-overlay" aria-label="メインナビゲーション">
     <ul class="nav-menu">
-      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-      <li><a href="dining.html" data-i18n="nav_dining">Dining</a></li>
-      <li><a href="stay.html" data-i18n="nav_stay">Stay</a></li>
-      <li><a href="spa.html" data-i18n="nav_spa">Spa</a></li>
-      <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
-      <li><a href="group.html">Group</a></li>
-      <li><a href="private.html" data-i18n="nav_reserve">Reservation</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dining.html">Dining</a></li>
+      <li><a href="stay.html">Stay</a></li>
+      <li><a href="spa.html">Spa</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
+      <li><a href="group.html">Group &amp; Private</a></li>
+      <li><a href="faq.html">FAQ</a></li>
     </ul>
     <div class="nav-sub">
       <a href="tel:0799227775">0799-22-7775</a>
-      <a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Online Reserve</a>
       <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
     </div>
   </nav>
@@ -380,7 +427,8 @@
   <aside id="dot-nav" aria-label="セクションナビゲーション">
     <div class="dot-nav-item active" data-label="Top"></div>
     <div class="dot-nav-item" data-label="Dining"></div>
-    <div class="dot-nav-item" data-label="JOSPER"></div>
+    <div class="dot-nav-item" data-label="Fire"></div>
+    <div class="dot-nav-item" data-label="Food"></div>
     <div class="dot-nav-item" data-label="Stay"></div>
     <div class="dot-nav-item" data-label="Story"></div>
   </aside>
@@ -452,91 +500,97 @@
       <div class="hero-scroll"><span data-i18n="scroll_down">Scroll</span></div>
     </section>
 
-    <!-- ② Concept -->
-    <section class="concept" data-section="dining">
-      <span class="section-label reveal">Dining</span>
-      <span class="section-line reveal reveal-delay-1" style="margin:1.2rem auto 2rem;"></span>
-      <span class="concept-catch reveal reveal-delay-2">Farm to Table,<br>Awaji Island</span>
-      <p class="concept-body reveal reveal-delay-3">
-        淡路島が育てた食材を、JOSPER®の炎で。<br>
-        日本初導入の薪炭グリルが奏でる、一夜限りの9品コース。
+    <!-- ② Simple Intro -->
+    <section class="simple-intro" data-section="dining">
+      <span class="section-line reveal" style="margin: 0 auto 4rem;"></span>
+      <p class="simple-intro-body reveal reveal-delay-1">
+        淡路島が育てた食材を、薪火の炎で。<br>
+        密閉型薪炭グリルが奏でる、一夜限りの9品コース。<br>
+        素材の力を最大限に引き出す、炎の哲学。
       </p>
-      <a href="dining.html" class="btn reveal reveal-delay-4"><span>Explore Dining</span></a>
-    </section>
-
-    <!-- ③ Silent full-bleed image -->
-    <div class="silent-image" data-section="img1">
-      <img
-        src="images/cuisine/dining-scene-01.webp"
-        alt="THE BLESS AWAJI — ダイニング、薪火料理、個室"
-        loading="lazy"
-      >
-    </div>
-
-    <!-- ④ JOSPER Split -->
-    <section class="josper-split" data-section="josper">
-      <div class="josper-split-text">
-        <span class="section-label section-label--light reveal">JOSPER® Grill</span>
-        <span class="section-line section-line--light reveal reveal-delay-1" style="margin-left:0;"></span>
-        <h2 class="josper-split-title reveal reveal-delay-2">The Art<br>of Fire</h2>
-        <p class="josper-split-body reveal reveal-delay-3">
-          スペイン発、世界のシェフが認める密閉型薪炭グリル。炭火と薪の相乗効果が、素材の奥底に眠る旨みを引き出す。日本初導入のオーベルジュとして、THE BLESS AWAJIは炎の哲学を食卓へ届ける。
-        </p>
-        <a href="dining.html" class="btn btn--light reveal reveal-delay-4"><span>Dining →</span></a>
-      </div>
-      <div class="josper-split-image">
-        <img
-          src="images/cuisine/chef-josper-01.webp"
-          alt="JOSPER® — シェフと炎"
-          loading="lazy"
-        >
+      <div class="simple-intro-image reveal reveal-delay-2">
+        <img src="images/cuisine/cuisine-01.webp" alt="THE BLESS AWAJI — 料理" loading="lazy">
       </div>
     </section>
 
-    <!-- ⑤ Photo Strip -->
-    <div class="photo-strip" data-section="strip" aria-label="料理写真">
-      <div class="photo-strip-cell">
-        <img src="images/cuisine/cuisine-01.webp" alt="THE BLESS AWAJI — 料理の一場面" loading="lazy">
-      </div>
-      <div class="photo-strip-cell">
-        <img src="images/cuisine/steak-grill-01.webp" alt="薪火焼き — 肉の断面" loading="lazy">
-      </div>
-      <div class="photo-strip-cell">
-        <img src="images/cuisine/dining-05.webp" alt="前菜 — 淡路島の旬" loading="lazy">
+    <!-- ③ Dark bleed with text -->
+    <div class="dark-bleed" data-section="img1">
+      <img src="images/hero/dining-04.webp" alt="THE BLESS AWAJI — 薪火料理" loading="lazy">
+      <div class="dark-bleed-text">
+        <p>スペイン発、世界のシェフが認める密閉型薪炭グリル。<br>炭火と薪の相乗効果が、素材の奥底に眠る旨みを引き出す。<br>THE BLESS AWAJIは炎の哲学を食卓へ届ける。</p>
       </div>
     </div>
 
-    <!-- ⑥ Stay Split -->
-    <section class="stay-split" data-section="stay">
-      <div class="stay-split-image">
-        <img
-          src="images/rooms/room-02.webp"
-          alt="オーシャンスイート — 淡路島の海を望む客室"
-          loading="lazy"
-        >
+    <!-- ④ Split Feature: Dining -->
+    <section class="split-feature" data-section="josper">
+      <div class="split-feature-header">
+        <div class="split-feature-left">
+          <span class="section-label reveal">Dining</span>
+          <h2 class="split-feature-title reveal reveal-delay-1">Farm to Table,<br>Awaji Island</h2>
+          <a href="dining.html" class="btn reveal reveal-delay-2"><span>Explore Dining</span></a>
+        </div>
+        <div class="split-feature-right">
+          <p class="reveal">
+            淡路島が育てた食材を、薪火の炎で。密閉型薪炭グリルが奏でる、一夜限りの9品コース。素材の力を最大限に引き出す、炎の哲学。
+          </p>
+        </div>
       </div>
-      <div class="stay-split-text">
-        <span class="section-label section-label--light reveal">Stay</span>
-        <span class="section-line section-line--light reveal reveal-delay-1" style="margin-left:0;"></span>
-        <h2 class="reveal reveal-delay-2">Rest in<br>Silence</h2>
-        <p class="reveal reveal-delay-3">全8室。海を望む朝は、言葉を失うほど美しい。マグマサウナ、宿泊者無料。</p>
-        <a href="stay.html" class="btn btn--light reveal reveal-delay-4"><span>View Rooms</span></a>
+      <div class="split-feature-images">
+        <div class="split-feature-img reveal">
+          <img src="images/cuisine/chef-josper-01.webp" alt="シェフと炎" loading="lazy">
+        </div>
+        <div class="split-feature-img reveal reveal-delay-1">
+          <img src="images/dining/dining-02.webp" alt="薪火料理 — 旬の一皿" loading="lazy">
+        </div>
       </div>
     </section>
 
-    <!-- ⑦ Story + CTA -->
-    <section class="story" data-section="story">
-      <span class="section-line reveal" style="margin:0 auto 3rem;"></span>
-      <span class="story-quote reveal reveal-delay-1">"The island breathes."</span>
-      <p class="story-body reveal reveal-delay-2">
+    <!-- ⑤ Panoramic -->
+    <div class="panoramic-strip" data-section="panoramic">
+      <img src="images/dining/dining-08.webp" alt="THE BLESS AWAJI — ダイニングホール全景" loading="lazy">
+    </div>
+
+    <!-- ⑥ Food Story -->
+    <section class="food-story" data-section="food">
+      <span class="section-line reveal" style="margin: 0 auto 4rem;"></span>
+      <span class="food-story-text reveal reveal-delay-1">
         食べる、眠る、整う。<br>
         ただそれだけの時間が、あなたを新しく生まれ変わらせる。
-      </p>
-      <a
-        href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily"
-        target="_blank" rel="noopener"
-        class="btn reveal reveal-delay-3"
-      ><span>Reserve Now</span></a>
+      </span>
+      <div class="food-story-images">
+        <div class="food-story-col">
+          <div class="food-story-img reveal">
+            <img src="images/cuisine/steak-grill-01.webp" alt="薪火焼き — 肉の断面" loading="lazy">
+          </div>
+          <div class="food-story-img reveal reveal-delay-1">
+            <img src="images/cuisine/dining-05.webp" alt="前菜 — 淡路島の旬" loading="lazy">
+          </div>
+        </div>
+        <div class="food-story-main reveal reveal-delay-2">
+          <img src="images/dining/dining-03.webp" alt="薪火料理 — メインコース" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑦ Stay Simple (dark) -->
+    <section class="stay-simple" data-section="stay">
+      <span class="section-line section-line--light reveal" style="margin: 0 auto 2rem;"></span>
+      <span class="section-label section-label--light reveal reveal-delay-1">Stay</span>
+      <span class="stay-simple-desc reveal reveal-delay-2">
+        全8室。海を望む朝は、言葉を失うほど美しい。<br>マグマサウナ、宿泊者無料。
+      </span>
+      <div class="stay-simple-photos">
+        <div class="stay-simple-photo reveal">
+          <img src="images/rooms/room-01.webp" alt="客室" loading="lazy">
+        </div>
+        <div class="stay-simple-photo reveal reveal-delay-1">
+          <img src="images/rooms/room-02.webp" alt="客室 — 海の眺め" loading="lazy">
+        </div>
+        <div class="stay-simple-photo reveal reveal-delay-2">
+          <img src="images/spa/spa-01.webp" alt="スパ — マグマサウナ" loading="lazy">
+        </div>
+      </div>
+      <a href="stay.html" class="btn btn--light reveal reveal-delay-3"><span>View Rooms</span></a>
     </section>
 
     <!-- Access -->
@@ -582,6 +636,7 @@
             <li><a href="stay.html">Stay</a></li>
             <li><a href="spa.html">Spa</a></li>
             <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -589,19 +644,22 @@
           <ul>
             <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
             <li><a href="group.html">Group &amp; Private</a></li>
-            <li><a href="private.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Info</h4>
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="private.html">FAQ</a></li>
+            <li><a href="faq.html">FAQ</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <span class="en">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
+        <div class="footer-legal">
+          <a href="terms.html">宿泊約款</a>
+          <a href="privacy.html">プライバシーポリシー</a>
+          <a href="legal.html">特商法に基づく表記</a>
+        </div>
         <span class="en">Awaji Island, Hyogo, Japan</span>
       </div>
     </div>
@@ -610,3 +668,4 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+

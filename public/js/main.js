@@ -10,6 +10,8 @@ const i18n = {
     nav_stay: 'Stay',
     nav_spa: 'Spa',
     nav_gallery: 'Gallery',
+    nav_about: 'About',
+    nav_faq: 'FAQ',
     nav_reserve: 'Reservation',
     hero_catch: 'A Meal That Moves Your Soul',
     hero_catch_jp: '魂が震える食事',
@@ -67,21 +69,21 @@ const i18n = {
     rooms_intro_label: 'Accommodation',
     rooms_intro_title: 'Eight Rooms',
     rooms_intro_sub: '8つの物語',
-    rooms_intro_body: '全室が異なるデザインと景観を持つ。海の声、潮の香り、朝の光——すべてが部屋の中に招き入れられる。',
+    rooms_intro_body: '全室が異なるデザインと景観を持つ。海の声、潮の香り、朝の光——<br>すべてが部屋の中に招き入れられる。',
     room_ocean_suite: 'Ocean Suite',
     room_junior_suite: 'Junior Suite',
     room_garden: 'Garden View Room',
     room_grand_garden: 'Grand Garden View',
     room_ocean_view: 'Ocean View Room',
     amenity_label: 'Amenities',
-    amenity_title: 'Included',
-    amenity_sub: '宿泊者特典',
+    amenity_title: 'Amenities',
+    amenity_sub: 'こだわりのアメニティ',
     spa_hero_title: 'Spa',
     spa_hero_sub: 'マグマサウナ — 深部から整う',
     spa_intro_label: 'Sauna Experience',
     spa_intro_title: 'Magma Earth',
     spa_intro_sub: '大地のエネルギー',
-    spa_intro_body: '富士山の溶岩石が床・壁全面を覆い、65℃・湿度60%・育成光線の三要素が深い和らぎを生み出す。遠赤外線放射率93%以上と独自開発の3Dヒーティングシステムが、体の深部から自然な発汗を促し、整える。',
+    spa_intro_body: '富士山の溶岩石が床・壁全面を覆い、65℃・湿度60%・育成光線の三要素が深い和らぎを生み出す。遠赤外線放射率93%以上が、体の深部から自然な発汗を促し、整える。',
     gallery_hero_title: 'Gallery',
     gallery_hero_sub: '写真で見る THE BLESS AWAJI',
     gallery_all: 'All',
@@ -130,6 +132,8 @@ const i18n = {
     nav_stay: 'Stay',
     nav_spa: 'Spa',
     nav_gallery: 'Gallery',
+    nav_about: 'About',
+    nav_faq: 'FAQ',
     nav_reserve: 'Reservation',
     hero_catch: 'A Meal That Moves Your Soul',
     hero_catch_jp: 'Farm to Table — Awaji Island',
@@ -187,21 +191,21 @@ const i18n = {
     rooms_intro_label: 'Accommodation',
     rooms_intro_title: 'Eight Rooms',
     rooms_intro_sub: 'Eight Stories',
-    rooms_intro_body: 'Each room has its own design and view. The voice of the sea, the scent of the breeze, the light of morning — all welcomed inside.',
+    rooms_intro_body: 'Each room has its own design and view. The voice of the sea, the scent of the breeze, the light of morning —<br>all welcomed inside.',
     room_ocean_suite: 'Ocean Suite',
     room_junior_suite: 'Junior Suite',
     room_garden: 'Garden View Room',
     room_grand_garden: 'Grand Garden View',
     room_ocean_view: 'Ocean View Room',
     amenity_label: 'Amenities',
-    amenity_title: 'Included',
-    amenity_sub: 'Guest Benefits',
+    amenity_title: 'Amenities',
+    amenity_sub: 'Carefully Curated',
     spa_hero_title: 'Spa',
     spa_hero_sub: 'Magma Sauna — Restore from Within',
     spa_intro_label: 'Sauna Experience',
     spa_intro_title: 'Magma Earth',
     spa_intro_sub: 'Energy of the Earth',
-    spa_intro_body: 'Mt. Fuji lava stones cover every surface, creating a sanctuary at 65°C, 60% humidity, and育成光線 (Ikusei-kosen). With a far-infrared emissivity of 93%+ and a proprietary 3D Heating System, the body is warmed from its deepest core, promoting natural perspiration and profound restoration.',
+    spa_intro_body: 'Mt. Fuji lava stones cover every surface, creating a sanctuary at 65°C, 60% humidity, and育成光線 (Ikusei-kosen). With a far-infrared emissivity of 93%+, the body is warmed from its deepest core, promoting natural perspiration and profound restoration.',
     gallery_hero_title: 'Gallery',
     gallery_hero_sub: 'Discover THE BLESS AWAJI',
     gallery_all: 'All',
@@ -264,6 +268,13 @@ function applyTranslations() {
     const key = el.getAttribute('data-i18n');
     if (i18n[currentLang][key] !== undefined) {
       el.textContent = i18n[currentLang][key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (i18n[currentLang][key] !== undefined) {
+      el.innerHTML = i18n[currentLang][key];
     }
   });
 
@@ -497,26 +508,20 @@ function initFloatingCTA() {
   if (window.innerWidth > 768) return;
 
   const RESERVE_URL = 'https://reserve.489ban.net/client/the-bless/0/plan/availability/daily';
-  const TEL = '0799-22-7775';
-
-  const path = window.location.pathname;
-  const isPrivate = path.includes('private');
-
-  if (isPrivate) return;
+  const CONTACT_MAIL = 'mailto:awajiauberge@gmail.com';
 
   const cta = document.createElement('div');
   cta.className = 'float-cta';
   cta.setAttribute('role', 'navigation');
-  cta.setAttribute('aria-label', '宿泊予約');
+  cta.setAttribute('aria-label', 'お問い合わせ・ご予約');
 
   cta.innerHTML = `
     <div class="float-cta-inner">
-      <a class="float-cta-primary en" href="${RESERVE_URL}" target="_blank" rel="noopener">
-        宿泊予約はこちら
+      <a class="float-cta-contact" href="${CONTACT_MAIL}" aria-label="メールでお問い合わせ">
+        <span class="float-cta-btn-label">お問い合わせ</span>
       </a>
-      <a class="float-cta-tel" href="tel:${TEL}" aria-label="電話で問い合わせ">
-        <span class="float-cta-tel-icon">📞</span>
-        <span class="float-cta-tel-label">TEL</span>
+      <a class="float-cta-reserve" href="${RESERVE_URL}" target="_blank" rel="noopener" aria-label="宿泊予約">
+        <span class="float-cta-btn-label">ご予約</span>
       </a>
     </div>
   `;

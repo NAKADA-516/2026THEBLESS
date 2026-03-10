@@ -1,0 +1,95 @@
+---
+description: ハンバーガーメニューとフッターの正式テンプレート。HTMLページ編集時は必ずこの内容を維持すること。
+alwaysApply: true
+---
+
+# ナビゲーション・フッター テンプレート
+
+## 重要
+ハンバーガーメニューとフッターの内容は確定済み。変更・追加・削除を行わないこと。
+
+---
+
+## ハンバーガーメニュー（nav-overlay）
+
+```html
+<nav id="nav-overlay" aria-label="メインナビゲーション">
+  <ul class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="dining.html">Dining</a></li>
+    <li><a href="stay.html">Stay</a></li>
+    <li><a href="spa.html">Spa</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
+    <li><a href="group.html">Group &amp; Private</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <div class="nav-sub">
+    <a href="tel:0799227775">0799-22-7775</a>
+    <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</nav>
+```
+
+---
+
+## フッター（site-footer）
+
+```html
+<footer id="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo en">THE BLESS AWAJI</span>
+        <p>兵庫県洲本市炬口247</p>
+        <p><a href="tel:0799227775">0799-22-7775</a></p>
+        <p><a href="mailto:awajiauberge@gmail.com">awajiauberge@gmail.com</a></p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dining.html">Dining</a></li>
+          <li><a href="stay.html">Stay</a></li>
+          <li><a href="spa.html">Spa</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reserve</h4>
+        <ul>
+          <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
+          <li><a href="group.html">Group &amp; Private</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="en">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
+      <div class="footer-legal">
+        <a href="terms.html">宿泊約款</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="legal.html">特商法に基づく表記</a>
+      </div>
+      <span class="en">Awaji Island, Hyogo, Japan</span>
+    </div>
+  </div>
+</footer>
+```
+
+---
+
+## 禁止事項
+- メニュー項目の追加・削除・順番変更をしない
+- リンク先URLを変更しない
+- フッターのブランド情報（住所・電話・メール）を変更しない

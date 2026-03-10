@@ -25,6 +25,14 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use((req, res, next) => {
+  if (req.path.endsWith('.html') || req.path === '/') {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+  }
+  next();
+});
+
 app.use(express.static(PUBLIC_DIR));
 
 app.get('/', (req, res) => {

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -13,6 +13,7 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/webp" href="images/logo-icon.webp"><link rel="apple-touch-icon" href="images/logo-icon.webp">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,17 +36,18 @@
   <!-- ── Nav Overlay ── -->
   <nav id="nav-overlay" aria-label="メインナビゲーション">
     <ul class="nav-menu">
-      <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-      <li><a href="dining.html" data-i18n="nav_dining">Dining</a></li>
-      <li><a href="stay.html" data-i18n="nav_stay">Stay</a></li>
-      <li><a href="spa.html" data-i18n="nav_spa">Spa</a></li>
-      <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
-      <li><a href="group.html">Group</a></li>
-      <li><a href="private.html" data-i18n="nav_reserve">Reservation</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dining.html">Dining</a></li>
+      <li><a href="stay.html">Stay</a></li>
+      <li><a href="spa.html">Spa</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
+      <li><a href="group.html">Group &amp; Private</a></li>
+      <li><a href="faq.html">FAQ</a></li>
     </ul>
     <div class="nav-sub">
       <a href="tel:0799227775">0799-22-7775</a>
-      <a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Online Reserve</a>
       <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
     </div>
   </nav>
@@ -56,7 +58,7 @@
     <section class="page-hero" data-section="hero">
       <div class="page-hero-bg">
         <img
-          src="images/rooms/room-01.webp"
+          src="images/rooms/room-06.webp"
           alt="THE BLESS AWAJI — 海を望む客室リビング"
           class="page-hero-img"
           loading="eager"
@@ -76,8 +78,8 @@
         <span class="section-line reveal reveal-delay-1"></span>
         <h2 class="section-title en reveal reveal-delay-2" data-i18n="rooms_intro_title">Eight Rooms</h2>
         <span class="section-title-jp reveal reveal-delay-2" data-i18n="rooms_intro_sub">8つの物語</span>
-        <p class="section-body reveal reveal-delay-3" data-i18n="rooms_intro_body">
-          全室が異なるデザインと景観を持つ。海の声、潮の香り、朝の光——すべてが部屋の中に招き入れられる。
+        <p class="section-body reveal reveal-delay-3" data-i18n-html="rooms_intro_body">
+          全室が異なるデザインと景観を持つ。海の声、潮の香り、朝の光——<br>すべてが部屋の中に招き入れられる。
         </p>
       </div>
     </section>
@@ -90,7 +92,7 @@
         <div class="room-card reveal">
           <div class="room-card-img">
             <img
-            src="images/rooms/room-01.webp"
+            src="images/rooms/room1.webp"
             alt="オーシャンスイート — 52㎡ 海を望む最上級客室"
             class="room-ocean-suite"
               loading="lazy"
@@ -118,7 +120,7 @@
         <div class="room-card reveal">
           <div class="room-card-img">
             <img
-            src="images/rooms/room-ocean-view.webp"
+            src="images/rooms/room2.webp"
             alt="ジュニアスイート — 52㎡ 最大3名"
             class="room-junior-suite"
               loading="lazy"
@@ -146,7 +148,7 @@
         <div class="room-card reveal">
           <div class="room-card-img">
             <img
-            src="images/rooms/room-02.webp"
+            src="images/rooms/room3.webp"
             alt="ガーデンビュールーム — 33㎡ 緑に包まれた静寂"
             class="room-garden"
               loading="lazy"
@@ -174,7 +176,7 @@
         <div class="room-card reveal">
           <div class="room-card-img">
             <img
-            src="images/rooms/room-02.webp"
+            src="images/rooms/room4.webp"
             alt="グランドガーデンビュールーム — 47㎡"
             class="room-grand-garden"
               loading="lazy"
@@ -202,7 +204,7 @@
         <div class="room-card reveal">
           <div class="room-card-img">
             <img
-            src="images/rooms/room-ocean-view.webp"
+            src="images/rooms/room5.webp"
             alt="オーシャンビュールーム — 45㎡"
             class="room-ocean-view"
               loading="lazy"
@@ -234,37 +236,30 @@
       <div class="inner">
         <span class="section-label section-label--light reveal" data-i18n="amenity_label">Amenities</span>
         <span class="section-line section-line--light reveal reveal-delay-1"></span>
-        <h2 class="section-title en reveal reveal-delay-2" data-i18n="amenity_title">Included</h2>
-        <span class="section-title-jp reveal reveal-delay-2" data-i18n="amenity_sub">宿泊者特典</span>
-        <div class="info-grid reveal reveal-delay-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;">
+        <h2 class="section-title en reveal reveal-delay-2" data-i18n="amenity_title">Amenities</h2>
+        <span class="section-title-jp reveal reveal-delay-2" data-i18n="amenity_sub">こだわりのアメニティ</span>
+        <p class="section-body reveal reveal-delay-3" style="text-align:center;max-width:600px;margin:1.5rem auto 0;">滞在をより豊かにするために、THE BLESS AWAJIではオリジナルアメニティをご用意しています。上質な素材と香りで、日常を離れた特別な時間をお過ごしください。</p>
+        <div class="info-grid reveal reveal-delay-3" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem;">
           <div class="info-block" style="text-align:center;">
-            <img src="images/exterior-01.webp" alt="THE BLESS オリジナルアメニティボックス" style="width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:1rem;" loading="lazy">
+            <img src="images/rooms/exterior-01.webp" alt="THE BLESS オリジナルアメニティボックス" style="width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:1rem;" loading="lazy">
             <h4 class="en">Amenity</h4>
             <p style="color:var(--gray-mid);font-size:0.82rem;margin-top:0.4rem;">オリジナルアメニティ</p>
           </div>
           <div class="info-block" style="text-align:center;">
-            <img src="images/exterior-02.webp" alt="Aesop バスアメニティ" style="width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:1rem;" loading="lazy">
+            <img src="images/rooms/exterior-02.webp" alt="Aesop バスアメニティ" style="width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:1rem;" loading="lazy">
             <h4 class="en">Aesop</h4>
             <p style="color:var(--gray-mid);font-size:0.82rem;margin-top:0.4rem;">Aesop バスアメニティ</p>
           </div>
           <div class="info-block" style="text-align:center;">
-            <img src="images/exterior-03.webp" alt="THE BLESS ロゴ入りタオル" style="width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:1rem;" loading="lazy">
+            <img src="images/rooms/exterior-03.webp" alt="THE BLESS ロゴ入りタオル" style="width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:1rem;" loading="lazy">
             <h4 class="en">Towel</h4>
             <p style="color:var(--gray-mid);font-size:0.82rem;margin-top:0.4rem;">オリジナルタオル</p>
           </div>
-        </div>
-        <div class="reveal reveal-delay-4" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;">
-          <div style="text-align:center;">
-            <img src="images/exterior-04.webp" alt="THE BLESS ロゴ入りバスローブ" style="width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:1rem;" loading="lazy">
+          <div class="info-block" style="text-align:center;">
+            <img src="images/rooms/exterior-04.webp" alt="THE BLESS ロゴ入りバスローブ" style="width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:1rem;" loading="lazy">
             <h4 class="en">Bathrobe</h4>
             <p style="color:var(--gray-mid);font-size:0.82rem;margin-top:0.4rem;">オリジナルバスローブ</p>
           </div>
-          <div style="text-align:center;padding:1.5rem;background:var(--cream-dark);display:flex;flex-direction:column;justify-content:center;">
-            <p style="font-size:0.8rem;color:var(--gray-mid);line-height:2.2;">♨ マグマサウナ 宿泊者無料<br>🚗 無料駐車場<br>📶 全室Wi-Fi完備<br>VISA / MASTER / AMEX<br>PayPay / d払い / iD</p>
-          </div>
-        </div>
-        <div class="reveal reveal-delay-4" style="margin-top:2rem;text-align:center;color:var(--gray-light);font-size:0.82rem;letter-spacing:0.05em;">
-          <p>お支払い：VISA / MASTER / AMEX / JCB / PayPay / d払い / Suica / iD / QUICPay</p>
         </div>
       </div>
     </section>
@@ -366,6 +361,7 @@
             <li><a href="stay.html" data-i18n="nav_stay">Stay</a></li>
             <li><a href="spa.html" data-i18n="nav_spa">Spa</a></li>
             <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
+            <li><a href="about.html" data-i18n="nav_about">About</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -373,19 +369,22 @@
           <ul>
             <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener" data-i18n="footer_reserve">Reserve</a></li>
             <li><a href="group.html">Group &amp; Private</a></li>
-            <li><a href="private.html" data-i18n="nav_reserve">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Info</h4>
           <ul>
-            <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
-            <li><a href="private.html">FAQ</a></li>
+            <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <span class="en" data-i18n="footer_copyright">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
+        <div class="footer-legal">
+          <a href="terms.html">宿泊約款</a>
+          <a href="privacy.html">プライバシーポリシー</a>
+          <a href="legal.html">特商法に基づく表記</a>
+        </div>
         <span class="en">Awaji Island, Hyogo, Japan</span>
       </div>
     </div>
@@ -394,3 +393,4 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+

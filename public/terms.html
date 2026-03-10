@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1C1C1A">
+  <title>宿泊約款 | THE BLESS AWAJI</title>
+  <meta name="description" content="THE BLESS Awaji 宿泊約款">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/webp" href="images/logo-icon.webp">
+  <link rel="apple-touch-icon" href="images/logo-icon.webp">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .terms-hero {
+      background: var(--charcoal);
+      padding: 10rem 2rem 5rem;
+      text-align: center;
+    }
+    .terms-hero h1 {
+      font-family: var(--font-en);
+      font-size: clamp(1.6rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--cream);
+      letter-spacing: 0.06em;
+      margin: 1rem 0 0.5rem;
+    }
+    .terms-hero p {
+      color: rgba(184,176,168,0.6);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+    .terms-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 6rem 2rem 8rem;
+      color: var(--charcoal);
+    }
+    .terms-section {
+      margin-bottom: 4rem;
+    }
+    .terms-section-title {
+      font-family: var(--font-en);
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--charcoal);
+      border-bottom: 1px solid rgba(28,28,26,0.15);
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+    .terms-article {
+      margin-bottom: 2.5rem;
+    }
+    .terms-article h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+    .terms-article p,
+    .terms-article li {
+      font-size: 0.85rem;
+      line-height: 2.4;
+      color: var(--gray-mid);
+      letter-spacing: 0.02em;
+    }
+    .terms-article ul,
+    .terms-article ol {
+      padding-left: 1.5rem;
+      margin: 0.8rem 0;
+    }
+    .terms-article li {
+      margin-bottom: 0.4rem;
+    }
+    .terms-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.83rem;
+      color: var(--gray-mid);
+      margin: 1rem 0;
+    }
+    .terms-table th {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 0.8rem 1rem;
+      text-align: center;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+    .terms-table td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid rgba(28,28,26,0.1);
+      text-align: center;
+    }
+    .terms-table tr:nth-child(even) td {
+      background: rgba(28,28,26,0.03);
+    }
+    .terms-note {
+      font-size: 0.78rem;
+      color: rgba(100,95,90,0.7);
+      line-height: 2.2;
+      margin-top: 0.8rem;
+      padding-left: 1rem;
+      border-left: 2px solid rgba(28,28,26,0.1);
+    }
+    .terms-revised {
+      text-align: right;
+      font-size: 0.78rem;
+      color: rgba(100,95,90,0.6);
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(28,28,26,0.1);
+    }
+    @media (max-width: 768px) {
+      .terms-body { padding: 4rem 1.5rem 6rem; }
+      .terms-table { font-size: 0.75rem; }
+      .terms-table th, .terms-table td { padding: 0.6rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="site-header">
+    <a href="index.html" class="header-logo en">THE BLESS AWAJI |</a>
+    <div class="header-right">
+      <div class="lang-toggle">
+        <span data-lang="jp" class="active">JP</span>
+        <span class="lang-sep">｜</span>
+        <span data-lang="en" class="inactive">EN</span>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Nav Overlay -->
+  <nav id="nav-overlay" aria-label="メインナビゲーション">
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dining.html">Dining</a></li>
+      <li><a href="stay.html">Stay</a></li>
+      <li><a href="spa.html">Spa</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
+      <li><a href="group.html">Group &amp; Private</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+    <div class="nav-sub">
+      <a href="tel:0799227775">0799-22-7775</a>
+      <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="terms-hero">
+      <span class="section-label section-label--light">Legal</span>
+      <h1>宿泊約款</h1>
+      <p>THE BLESS Awaji — Accommodation Terms</p>
+    </div>
+
+    <div class="terms-body">
+
+      <!-- 宿泊約款 -->
+      <div class="terms-section">
+        <h2 class="terms-section-title">宿泊約款</h2>
+
+        <div class="terms-article">
+          <h3>第1条（適用範囲）</h3>
+          <p>１．THE BLESS Awaji（以下、当ホテル）が宿泊客との間で締結する宿泊契約およびこれに関連する契約は、この約款の定めるところによるものとし、この約款に定めのない事項については、法令等（法令または法令に基づくものをいう。以下同じ。）または一般に確立された慣習によるものとします。</p>
+          <p>２．当ホテルが法令および慣習に反しない範囲で特約に応じたときは、前項の規定にかかわらず、その特約が優先するものとします。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第2条（宿泊契約の申込み）</h3>
+          <p>１．当ホテルに宿泊契約の申し込みをしようとする者は、次の事項を当ホテルに申し出ていただきます。</p>
+          <ul>
+            <li>（1）宿泊者名</li>
+            <li>（2）宿泊日および到着予定時刻</li>
+            <li>（3）宿泊料金</li>
+            <li>（4）その他当ホテルが必要と認める事項</li>
+          </ul>
+          <p>２．宿泊客が宿泊中に前項第2号の宿泊日を超えて宿泊の継続を申し入れた場合、当ホテルは、その申し出がなされた時点で新たな宿泊契約の申し込みがあったものとして処理します。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第3条（宿泊契約の成立等）</h3>
+          <p>１．宿泊契約は、当ホテルが前条の申し込みを承諾したときに成立するものとします。ただし、当ホテルが承諾をしなかったことを証明したときはこの限りではありません。</p>
+          <p>２．前項の規定により宿泊契約が成立したときは、宿泊期間（3日を超えるときは3日間）の基本宿泊料を限度として当ホテルが定める申込金を、当ホテルが指定する日時までに、お支払いいただきます。</p>
+          <p>３．申込金は、まず、宿泊客が最終的に支払うべき宿泊料金に充当し、第6条および第18条の規定を適用する事態が生じたときは、違約金に次いで賠償金の順序で充当し、残金があれば、第12条の規定による料金の支払いの際に返還します。</p>
+          <p>４．第2項の申込金を同項の規定により当ホテルが指定した日までにお支払いいただけない場合は、宿泊契約はその効力を失うものとします。ただし、申込金の支払期日を指定するに当たり、当ホテルがその旨を宿泊客に告知した場合に限ります。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第4条（申込金の支払いを要しないこととする特約）</h3>
+          <p>１．前条第2項の規定にかかわらず、当ホテルは、契約の成立後同項の申込金の支払いを要しないこととする特約に応じることがあります。宿泊契約の申し込みを承諾するに当たり、当ホテルが前条第2項の申込金の支払いを求めなかった場合および当該申込金の支払期日を指定しなかった場合は、前項の特約に応じたものとして取り扱います。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第4条の2（施設における感染防止対策への協力の求め）</h3>
+          <p>当ホテルは、宿泊しようとする者に対し、旅館業法（昭和23年法律第138号）第4条の2第1項の規定による協力を求めることができます。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第5条（宿泊契約締結の拒否）</h3>
+          <p>当ホテルは、次に掲げる場合において、宿泊契約の締結に応じないことがあります。ただし、本項は、当ホテルが旅館業法第5条に掲げる場合以外の場合に宿泊を拒むことがあることを意味するものではありません。</p>
+          <ul>
+            <li>（1）宿泊の申し込みが、この約款によらないとき。</li>
+            <li>（2）満室により客室の余裕がないとき。</li>
+            <li>（3）宿泊しようとする者が、宿泊に関し、法令の規定、公の秩序若しくは善良の風俗に反する行為をするおそれがあると認められるとき。</li>
+            <li>（4）宿泊しようとする者が、次のイからハに該当すると認められるとき。<br>
+              イ　暴力団員による不当な行為の防止等に関する法律（平成3年法律第77号）第2条第2号に規定する暴力団、同法第2条第6号に規定する暴力団員、暴力団準構成員又は暴力団関係者その他の反社会的勢力<br>
+              ロ　暴力団又は暴力団員が事業活動を支配する法人その他の団体であるとき<br>
+              ハ　法人でその役員のうちに暴力団員に該当する者があるもの</li>
+            <li>（5）宿泊しようとする者が、他の宿泊客に著しい迷惑を及ぼす言動をしたとき。</li>
+            <li>（6）宿泊しようとする者が、旅館業法第4条の2第1項第2号に規定する特定感染症の患者等であるとき。</li>
+            <li>（7）宿泊に関し暴力的要求行為が行われ、又は合理的な範囲を超える負担を求められたとき。</li>
+            <li>（8）宿泊しようとする者が、当ホテルに対し、その実施に伴う負担が過重であって他の宿泊者に対する宿泊に関するサービスの提供を著しく阻害するおそれのある要求を繰り返したとき。</li>
+            <li>（9）天災、施設の故障、その他やむを得ない事由により宿泊させることができないとき。</li>
+          </ul>
+        </div>
+
+        <div class="terms-article">
+          <h3>第5条の2（宿泊契約締結の拒否の説明）</h3>
+          <p>宿泊しようとする者は、当ホテルに対し、当ホテルが前条に基づいて宿泊契約の締結に応じない場合、その理由の説明を求めることができます。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第6条（宿泊客の契約解除権）</h3>
+          <p>宿泊客は、当ホテルに申し出て、宿泊契約を解除することができます。当ホテルは、宿泊客がその責めに帰すべき事由により宿泊契約の全部または一部を解除した場合は、別表に掲げるところにより、違約金を申し受けます。当ホテルは、宿泊客が連絡をしないで宿泊日当日の午後8時（あらかじめ到着予定時刻が明示されている場合は、その時刻を2時間経過した時刻）になっても到着しないときは、その宿泊契約は宿泊客により解除されたものとみなし処理することがあります。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第7条（当ホテルの契約解除権）</h3>
+          <p>当ホテルは、次に掲げる場合においては、宿泊契約を解除することがあります。</p>
+          <ul>
+            <li>（1）宿泊客が宿泊に関し、法令の規定、公の秩序若しくは善良の風俗に反する行為をするおそれがあると認められるとき、または同行為をしたと認められるとき。</li>
+            <li>（2）宿泊客が次のイからハに該当すると認められるとき。<br>
+              イ　暴力団、暴力団員、暴力団準構成員または暴力団関係者その他の反社会的勢力<br>
+              ロ　暴力団または暴力団員が事業活動を支配する法人その他の団体であるとき<br>
+              ハ　法人でその役員のうちに暴力団員に該当する者があるもの</li>
+            <li>（3）宿泊客が他の宿泊客に著しい迷惑を及ぼす言動をしたとき。</li>
+            <li>（4）宿泊客が特定感染症の患者等であるとき。</li>
+            <li>（5）宿泊に関し暴力的要求行為が行われ、または合理的な範囲を超える負担を求められたとき。</li>
+            <li>（6）宿泊客が、当ホテルに対し、その実施に伴う負担が過重であって他の宿泊者に対するサービスの提供を著しく阻害するおそれのある要求を繰り返したとき。</li>
+            <li>（7）天災等不可抗力に起因する事由により宿泊させることができないとき。</li>
+            <li>（8）寝室での寝たばこ、消防用設備等に対するいたずら、その他当ホテルが定める利用規則の禁止事項に従わないとき。</li>
+          </ul>
+          <p>当ホテルが前項の規定に基づいて宿泊契約を解除したときは、宿泊客がいまだ提供を受けていない宿泊サービス等の料金はいただきません。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第7条の2（宿泊契約解除の説明）</h3>
+          <p>宿泊客は、当ホテルに対し、当ホテルが前条に基づいて宿泊契約を解除した場合、その理由の説明を求めることができます。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第8条（宿泊の登録）</h3>
+          <p>宿泊客は、宿泊日当日、当ホテルのフロントにおいて、次の事項を登録していただきます。</p>
+          <ul>
+            <li>（1）宿泊客の氏名、住所及び連絡先</li>
+            <li>（2）日本国内に住所を有しない外国人にあっては、国籍および旅券番号</li>
+            <li>（3）その他当ホテルが必要と認める事項</li>
+          </ul>
+          <p>宿泊客が第12条の料金の支払いを、旅行小切手、宿泊券、クレジットカード等通貨に代わり得る方法により行おうとするときは、あらかじめ、前項の登録時にそれらを呈示していただきます。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第9条（客室の使用時間）</h3>
+          <p>宿泊客が当ホテルの客室を使用できる時間は、15:00から翌日の11:00までとします。ただし、連続して宿泊する場合においては、到着日及び出発日を除き、終日使用することができます。</p>
+          <p>当ホテルは、前項の規定にかかわらず、同項に定める時間外の客室の使用に応じることがあります。この場合には以下追加料金を申し受けます。</p>
+          <ul>
+            <li>（1）超過時間3時間まで：宿泊料金の25％</li>
+            <li>（2）超過時間6時間まで：宿泊料金の50％</li>
+            <li>（3）超過時間6時間を超過した場合：宿泊料金の全額</li>
+            <li>（4）15時より前の客室のご利用：宿泊料金の全額を申し受けた場合、朝8時からお部屋をご利用いただけます。</li>
+          </ul>
+        </div>
+
+        <div class="terms-article">
+          <h3>第10条（利用規則の遵守）</h3>
+          <p>宿泊客は、当ホテル内においては、当ホテルが定めた利用規則および当ホテル内でご案内する館内ルールに従っていただきます。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第11条（営業時間）</h3>
+          <p>当ホテルの主な施設等の営業時間は館内のフロントでご案内いたします。前項の時間は、必要やむを得ない場合には臨時に変更することがあります。その場合には、適当な方法をもってお知らせします。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第12条（料金の支払い）</h3>
+          <p>・宿泊客が支払うべき宿泊料金等の内訳およびその算定方法は、当社規定によります。</p>
+          <p>・宿泊料金等の支払いは、通貨または当ホテルが認めた旅行小切手、宿泊券、クレジットカード等これに代わり得る方法により、宿泊契約の成立時からチェックアウトの時まで、または当ホテルが請求した時に、当ホテルにお支払いただきます。</p>
+          <p>・当ホテルが宿泊客に客室を提供し、使用が可能になったのち、宿泊客が任意に宿泊しなかった場合においても、宿泊料金は申し受けます。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第13条（当ホテルの責任）</h3>
+          <p>・当ホテルは宿泊契約およびこれに関連する契約の履行に当たり、またはそれらの不履行により宿泊客に損害を与えたときは、その損害を賠償します。ただし、それが当ホテルの責めに帰すべき事由によるものでないときは、この限りではありません。</p>
+          <p>・当ホテルは、万一の火災等に対処するため、旅館賠償責任保険に加入しております。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第14条（契約した客室の提供ができないときの取扱い）</h3>
+          <p>・当ホテルは、宿泊客に契約した客室を提供できないときは、宿泊客の了解を得て、できる限り同一の条件による他の宿泊施設を斡旋するものとします。</p>
+          <p>・当ホテルは、前項の規定にかかわらず他の宿泊施設の斡旋ができないときは、違約金相当額の補償料を宿泊客に支払い、その補償料は損害賠償額に充当します。ただし、客室が提供できないことについて、当ホテルの責めに帰すべき事由がないときは、補償料を支払いません。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第15条（寄託物等の取扱い）</h3>
+          <p>・宿泊客がフロントにお預けになった物品又は現金並びに貴重品について、滅失、毀損等の損害が生じたときは、それが、不可抗力である場合を除き、当ホテルは、その損害を賠償します。</p>
+          <p>・宿泊客が、当ホテル内にお持込みになった物品又は現金並びに貴重品であってフロントにお預けにならなかったものについて、当ホテルの故意又は過失により滅失毀損等の損害が生じたときは、当ホテルは、その損害を賠償します。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第16条（宿泊客の手荷物または携帯品の保管）</h3>
+          <p>・宿泊客の手荷物が、宿泊に先立って当ホテルに到着した場合は、その到着前に当ホテルが了解したときに限り責任をもって保管し、宿泊客がフロントにおいてチェックインする際お渡しします。</p>
+          <p>・宿泊客がチェックアウトしたのち、宿泊客の手荷物または携帯品が当ホテルに置き忘れられていた場合において、その所有者が判明したときは、当ホテルは、当該所有者に連絡するとともにその指示を求めるものとします。ただし、所有者の指示がない場合または所有者が判明しないときは、発見を含め7日間保管し、その後最寄りの警察署に届けます。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第17条（駐車の責任）</h3>
+          <p>宿泊客が当ホテルの駐車場をご利用になる場合、車両のキーの寄託の如何にかかわらず、当ホテルは場所をお貸しするものであって、車両の管理責任まで負うものではありません。ただし、駐車場の管理にあたり、当ホテルの故意または過失によって損害を与えたときは、その賠償の責めに任じます。</p>
+        </div>
+
+        <div class="terms-article">
+          <h3>第18条（宿泊客の責任）</h3>
+          <p>宿泊客の故意または過失により当ホテルが損害を被ったときは当該宿泊客は当ホテルに対し、その損害を賠償していただきます。</p>
+        </div>
+      </div>
+
+      <!-- キャンセルポリシー -->
+      <div class="terms-section">
+        <h2 class="terms-section-title">キャンセルポリシー（違約金）</h2>
+
+        <table class="terms-table">
+          <thead>
+            <tr>
+              <th>不泊</th>
+              <th>当日・前日</th>
+              <th>2日前〜3日前</th>
+              <th>4日前以前</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>100%</td>
+              <td>100%</td>
+              <td>30%</td>
+              <td>0%</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="terms-note">
+          ※上記％は、宿泊料金の1泊あたりの総額（食事付で提示している場合は食事代含む）に対する％です。連泊の場合は、それぞれの日に対して計算いたします。<br>
+          ※当ホテルが別途企画する宿泊パッケージ、プラン、バンケットを使用するお申込み、その他個別の特約により、上記とは異なる違約金を定めることがあります。
+        </p>
+
+        <div class="terms-article" style="margin-top:2rem;">
+          <h3>減室・減泊</h3>
+          <table class="terms-table">
+            <thead>
+              <tr>
+                <th>対象期間</th>
+                <th>無料減室可能室数</th>
+                <th>超過分負担額</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ご契約日〜31日前</td>
+                <td>10％</td>
+                <td>宿泊料金×室人数×泊数</td>
+              </tr>
+              <tr>
+                <td>30日前〜14日前</td>
+                <td>5%</td>
+                <td>宿泊料金×室人数×泊数</td>
+              </tr>
+              <tr>
+                <td>13日前〜4日前</td>
+                <td>5%</td>
+                <td>宿泊料金×室人数×泊数</td>
+              </tr>
+              <tr>
+                <td>3日前〜当日</td>
+                <td>無料取消不可</td>
+                <td>宿泊料金×室人数×泊数</td>
+              </tr>
+              <tr>
+                <td>不泊（ノーショウ）</td>
+                <td>無料取消不可</td>
+                <td>宿泊料金×室人数×泊数</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="terms-note">別宴会手配のご夕食キャンセル料については10日前から100％いただきます。<br>
+          ※行程変更に伴い見積金額が変更になった場合、変更後の金額が取消料の対象となります。</p>
+        </div>
+      </div>
+
+      <!-- 利用規則 -->
+      <div class="terms-section">
+        <h2 class="terms-section-title">利用規則</h2>
+        <p style="font-size:0.85rem;line-height:2.4;color:var(--gray-mid);margin-bottom:2rem;">当ホテルでは、宿泊約款第10条に基づき、当ホテルの品位を保ち、またお客様が当ホテルに滞在中に快適かつ安全にお過ごしいただくことを目的とした利用規則を以下の通り定めております。万一この規則に対してご協力がいただけなかった場合は、宿泊約款第7条第1項により、客室および当ホテル内の他の諸設備のご利用をお断り申し上げることがあります。</p>
+
+        <div class="terms-article">
+          <h3>貴重品・お預かり品・お忘れ物について</h3>
+          <ul>
+            <li>現金および貴重品はご自身で管理をお願いします。万一紛失、盗難等が発生した場合、ホテルでは一切の責任を負いかねます。</li>
+            <li>お客様のお荷物は、チェックイン日の12時以降からチェックアウト日の18時まで1階フロントにてお預りすることが可能です。それ以前もしくは以降のお預かりに関してはお荷物1つにつき1日あたり1,000円の保管料を申し受けます。</li>
+            <li>ホテル内での遺失物は一定期間ホテルが保管し、その後は遺失物法に基づいてお取扱いさせていただきます。但し、飲食物およびホテルが廃棄物と認めた物については即日処分いたします。</li>
+          </ul>
+        </div>
+
+        <div class="terms-article">
+          <h3>お支払いについて</h3>
+          <ul>
+            <li>ご利用代金のお支払いは、事前決済、もしくはチェックイン時にお支払いください。食事の際のドリンクなどを部屋付けにされた場合は、チェックアウト時にお支払いください。</li>
+            <li>宿泊以外でのご利用の場合、ご到着時にお預かり金を申し受ける場合がございます。</li>
+            <li>お買物代、切符代、タクシー代、郵便切手代、荷物送料等の立替えはお断りさせていただきます。</li>
+          </ul>
+        </div>
+
+        <div class="terms-article">
+          <h3>客室のご利用に関して</h3>
+          <ul>
+            <li>客室は全室禁煙です。喫煙は所定の喫煙コーナーにてお願いいたします。</li>
+            <li>客室内では火災の原因となるような行為はなさらないでください。</li>
+            <li>客室内での調理は固くお断りいたします。</li>
+            <li>下記の物品はお持ち込みをお断りします：動物・鳥類等のペット類、火薬・揮発油等発火・引火性のもの、悪臭を発するもの、法により所持を許可されていない銃砲・刀剣・覚醒剤の類。</li>
+            <li>ご訪問客と客室内でのご面会はご遠慮願います。ご面会はロビーをご利用ください。</li>
+          </ul>
+        </div>
+
+        <div class="terms-article">
+          <h3>サウナ・大浴場のご利用について</h3>
+          <ul>
+            <li>サウナを含む大浴場エリアには携帯電話・カメラ等の持ち込みはできません。</li>
+            <li>入れ墨（ファッションタトゥーなど）は専用のシールでカバーした場合のみご利用いただけます。</li>
+            <li>18歳未満の方でサウナをご利用の場合は保護者の同伴が必要です。</li>
+            <li>医師から入浴を禁じられているお客様、飲酒をされたお客様、その他体調の万全でないお客様につきましては、ご入浴およびサウナのご利用をお控えください。</li>
+          </ul>
+        </div>
+
+        <div class="terms-article">
+          <h3>禁止事項</h3>
+          <ul>
+            <li>ホテルの敷地内において、ホテルの許可無く営利・営業目的で撮影または録音することはご遠慮ください。</li>
+            <li>施設内および敷地内における無許可のドローン飛行および撮影はご遠慮ください。</li>
+            <li>ホテルスタッフの業務を妨害し、義務なきことを強制すること。</li>
+            <li>ホテルスタッフへの誹謗、中傷、威嚇、並びに炎上を目的としたSNSへの投稿等の嫌がらせ等の行為。</li>
+          </ul>
+        </div>
+
+        <div class="terms-article">
+          <h3>防災・防犯・安全の確保について</h3>
+          <ul>
+            <li>避難経路図および各階の非常口を、ご入室の際にご確認ください。</li>
+            <li>お客様の安全確保のため、ご滞在中、必ずドアロックおよびドアガードをお掛けください。</li>
+            <li>指定された喫煙場所以外での喫煙が判明した場合は、客室の売り止め費用の他、寝具・カーテン・絨毯等のクリーニング費用その他補修等にかかる賠償を請求させていただきます。</li>
+            <li>未成年者のみのご宿泊は、保護者からの許可がない限り、お断りさせていただきます。</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="terms-revised">改訂日：2025年8月1日</p>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo en">THE BLESS AWAJI</span>
+          <p>兵庫県洲本市炬口247</p>
+          <p><a href="tel:0799227775">0799-22-7775</a></p>
+          <p><a href="mailto:awajiauberge@gmail.com">awajiauberge@gmail.com</a></p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="stay.html">Stay</a></li>
+            <li><a href="spa.html">Spa</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Reserve</h4>
+          <ul>
+            <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
+            <li><a href="group.html">Group &amp; Private</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="en">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
+        <div class="footer-legal">
+          <a href="terms.html">宿泊約款</a>
+          <a href="privacy.html">プライバシーポリシー</a>
+          <a href="legal.html">特商法に基づく表記</a>
+        </div>
+        <span class="en">Awaji Island, Hyogo, Japan</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

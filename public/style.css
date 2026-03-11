@@ -1721,18 +1721,16 @@ h1, h2, h3, h4 {
     color: var(--gray-mid);
   }
 
-  /* 法的リンク：縦並びでシンプルに */
   .footer-legal {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-    order: -1; /* copyright より上に */
-    margin-bottom: 0.3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem;
   }
 
   .footer-legal a {
     font-size: 0.62rem;
+    white-space: nowrap;
   }
 
   .access-strip {

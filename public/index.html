@@ -8,9 +8,14 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>THE BLESS AWAJI — Farm to Table Auberge, Awaji Island</title>
   <meta name="description" content="淡路島の食材と薪火料理、全8室の宿泊施設、マグマサウナ。THE BLESS AWAJIは魂に響く滞在を提供するオーベルジュです。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://the-bless-awaji-fd7f1064bf4f.herokuapp.com/">
+  <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="THE BLESS AWAJI">
-  <meta property="og:description" content="Farm to Table — 淡路島のオーベルジュ">
+  <meta property="og:description" content="淡路島のオーベルジュ。Farm to Table 薪火ダイニング・全8室の宿泊・マグマサウナ。">
   <meta property="og:image" content="https://the-bless-awaji-fd7f1064bf4f.herokuapp.com/images/dining/dining-04.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/webp" href="images/logo-icon.webp"><link rel="apple-touch-icon" href="images/logo-icon.webp">
@@ -57,28 +62,28 @@
 
     /* 5 slides × 7s = 35s cycle */
     @keyframes kb-zoom-in-right {
-      0%   { opacity: 0; transform: scale(1.12) translate(-1.5%, 0.5%); }
+      0%   { opacity: 0; transform: scale(1.07) translate(-0.8%, 0.3%); }
       6%   { opacity: 1; }
       80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
       92%  { opacity: 0; }
       100% { opacity: 0; transform: scale(1.0); }
     }
     @keyframes kb-zoom-in-left {
-      0%   { opacity: 0; transform: scale(1.12) translate(1.5%, -0.5%); }
+      0%   { opacity: 0; transform: scale(1.07) translate(0.8%, -0.3%); }
       6%   { opacity: 1; }
       80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
       92%  { opacity: 0; }
       100% { opacity: 0; transform: scale(1.0); }
     }
     @keyframes kb-zoom-in-up {
-      0%   { opacity: 0; transform: scale(1.1) translate(0%, 1%); }
+      0%   { opacity: 0; transform: scale(1.06) translate(0%, 0.5%); }
       6%   { opacity: 1; }
       80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
       92%  { opacity: 0; }
       100% { opacity: 0; transform: scale(1.0); }
     }
     @keyframes kb-zoom-in-down {
-      0%   { opacity: 0; transform: scale(1.1) translate(0%, -1%); }
+      0%   { opacity: 0; transform: scale(1.06) translate(0%, -0.5%); }
       6%   { opacity: 1; }
       80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
       92%  { opacity: 0; }
@@ -86,7 +91,7 @@
     }
 
     @keyframes kb-zoom-in-center {
-      0%   { opacity: 0; transform: scale(1.08); }
+      0%   { opacity: 0; transform: scale(1.05); }
       6%   { opacity: 1; }
       80%  { opacity: 1; transform: scale(1.0); }
       92%  { opacity: 0; }
@@ -181,10 +186,10 @@
     .simple-intro-image img {
       width: 100%;
       display: block;
-      transition: transform 2.4s cubic-bezier(.25,.46,.45,.94);
+      transition: transform 0.8s cubic-bezier(.25,.46,.45,.94);
     }
     .simple-intro-image:hover img {
-      transform: scale(1.04);
+      transform: scale(1.03);
     }
 
     /* ─── Dark Bleed with text ─── */
@@ -313,11 +318,11 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 2.4s cubic-bezier(.25,.46,.45,.94);
+      transition: transform 0.8s cubic-bezier(.25,.46,.45,.94);
     }
     .food-story-img:hover img,
     .food-story-main:hover img {
-      transform: scale(1.04);
+      transform: scale(1.03);
     }
     .food-story-main {
       overflow: hidden;
@@ -354,10 +359,10 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 1.2s cubic-bezier(.25,.46,.45,.94);
+      transition: transform 0.8s cubic-bezier(.25,.46,.45,.94);
     }
     .stay-simple-photo:hover img {
-      transform: scale(1.04);
+      transform: scale(1.03);
     }
 
     /* ─── Mobile ─── */
@@ -444,7 +449,7 @@
       position: absolute; top: 0; left: 0;
       height: 1px; width: 0%;
       background: linear-gradient(to right, rgba(212,43,43,0.7), rgba(255,255,255,0.5));
-      animation: op-bar-fill 2.4s cubic-bezier(0.25,0.46,0.45,0.94) 1.6s forwards;
+      animation: op-bar-fill 3.8s cubic-bezier(0.25,0.46,0.45,0.94) 1.6s forwards;
     }
     @keyframes op-bar-fill {
       0%   { width: 0%; }
@@ -593,10 +598,7 @@
           <h2 class="en reveal reveal-delay-2">The Philosophy</h2>
           <span class="section-title-jp reveal reveal-delay-2">食 × 整</span>
           <p class="reveal reveal-delay-3" data-i18n-html="idx_concept_body">
-            私たちは、ただ美しい景色や贅沢な食事を提供するだけの宿泊施設ではありません。<br>
-            薪火料理とマグマ式スパで、心と体をリセットする特別な体験を。<br>
-            「魂が震える食事」と「心と体が満たされるオーベルジュ」——<br>
-            忘れられないひとときをお届けします。
+            私たちは、ただ美しい景色や贅沢な食事を提供するだけの宿泊施設ではありません。薪火料理とマグマ式スパで、心と体をリセットする特別な体験を。「魂が震える食事」と「心と体が満たされるオーベルジュ」——忘れられないひとときをお届けします。
           </p>
           <a href="about.html" class="btn reveal reveal-delay-4"><span>About Us</span></a>
         </div>
@@ -751,16 +753,16 @@
       let n = 0;
 
       const timer = setInterval(() => {
-        n = Math.min(n + Math.floor(Math.random() * 7) + 2, 100);
+        n = Math.min(n + Math.floor(Math.random() * 4) + 1, 100);
         count.textContent = n;
         if (n >= 100) {
           clearInterval(timer);
           setTimeout(() => {
             op.classList.add('leave');
             setTimeout(() => { op.style.display = 'none'; }, 950);
-          }, 400);
+          }, 800);
         }
-      }, 30);
+      }, 55);
     })();
   </script>
   <!-- Floating Reserve Button -->

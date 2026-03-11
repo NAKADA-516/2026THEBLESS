@@ -8,13 +8,38 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Stay — 全8室の客室 | THE BLESS AWAJI</title>
   <meta name="description" content="淡路島の自然に抱かれた全8室。オーシャンスイート、ジュニアスイート、ガーデンビュールームなど。マグマサウナ宿泊者無料。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://the-bless-awaji-fd7f1064bf4f.herokuapp.com/stay.html">
+  <meta property="og:locale" content="ja_JP">
   <meta property="og:title" content="Stay | THE BLESS AWAJI">
-  <meta property="og:description" content="全8室 — 海と自然に抱かれた滞在">
+  <meta property="og:description" content="海と自然に抱かれた全8室。淡路島のオーベルジュ THE BLESS AWAJIの宿泊プラン。">
   <meta property="og:image" content="https://the-bless-awaji-fd7f1064bf4f.herokuapp.com/images/rooms/room1.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/webp" href="images/logo-icon.webp"><link rel="apple-touch-icon" href="images/logo-icon.webp">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .amenity-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .amenity-item img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .amenity-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -66,7 +91,6 @@
       </div>
       <div class="page-hero-content">
         <h1 class="en" data-i18n="stay_hero_title">Stay</h1>
-        <p data-i18n="stay_hero_sub">全8室 — 海と自然に抱かれた滞在</p>
       </div>
     </section>
 
@@ -238,22 +262,18 @@
         <h2 class="section-title en reveal reveal-delay-2" data-i18n="amenity_title">Amenities</h2>
         <span class="section-title-jp reveal reveal-delay-2" data-i18n="amenity_sub">こだわりのアメニティ</span>
         <p class="section-body reveal reveal-delay-3" style="text-align:center;max-width:600px;margin:1.5rem auto 0;" data-i18n="amenity_body">滞在をより豊かにするために、THE BLESS AWAJIではオリジナルアメニティをご用意しています。上質な素材と香りで、日常を離れた特別な時間をお過ごしください。</p>
-        <div class="info-grid reveal reveal-delay-3" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem;">
-          <div class="info-block" style="text-align:center;">
-            <img src="images/rooms/exterior-01.webp" alt="THE BLESS オリジナルアメニティボックス" style="width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:1rem;" loading="lazy">
-            <h4 class="en">Amenity</h4>
+        <div class="amenity-grid reveal reveal-delay-3">
+          <div class="amenity-item">
+            <img src="images/rooms/exterior-01.webp" alt="THE BLESS オリジナルアメニティボックス" loading="lazy">
           </div>
-          <div class="info-block" style="text-align:center;">
-            <img src="images/rooms/exterior-02.webp" alt="Aesop バスアメニティ" style="width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:1rem;" loading="lazy">
-            <h4 class="en">Aesop</h4>
+          <div class="amenity-item">
+            <img src="images/rooms/exterior-02.webp" alt="Aesop バスアメニティ" loading="lazy">
           </div>
-          <div class="info-block" style="text-align:center;">
-            <img src="images/rooms/exterior-03.webp" alt="THE BLESS ロゴ入りタオル" style="width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:1rem;" loading="lazy">
-            <h4 class="en">Towel</h4>
+          <div class="amenity-item">
+            <img src="images/rooms/exterior-03.webp" alt="THE BLESS ロゴ入りタオル" loading="lazy">
           </div>
-          <div class="info-block" style="text-align:center;">
-            <img src="images/rooms/exterior-04.webp" alt="THE BLESS ロゴ入りバスローブ" style="width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:1rem;" loading="lazy">
-            <h4 class="en">Bathrobe</h4>
+          <div class="amenity-item">
+            <img src="images/rooms/exterior-04.webp" alt="THE BLESS ロゴ入りバスローブ" loading="lazy">
           </div>
         </div>
       </div>

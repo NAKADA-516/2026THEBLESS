@@ -41,9 +41,17 @@ app.use(express.static(PUBLIC_DIR, {
   }
 }));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
-});
+app.get('/',        (req, res) => res.sendFile(path.join(__dirname, 'public/index.html')));
+app.get('/dining',  (req, res) => res.sendFile(path.join(__dirname, 'public/dining.html')));
+app.get('/stay',    (req, res) => res.sendFile(path.join(__dirname, 'public/stay.html')));
+app.get('/spa',     (req, res) => res.sendFile(path.join(__dirname, 'public/spa.html')));
+app.get('/gallery', (req, res) => res.sendFile(path.join(__dirname, 'public/gallery.html')));
+app.get('/about',   (req, res) => res.sendFile(path.join(__dirname, 'public/about.html')));
+app.get('/group',   (req, res) => res.sendFile(path.join(__dirname, 'public/group.html')));
+app.get('/faq',     (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')));
+app.get('/terms',   (req, res) => res.sendFile(path.join(__dirname, 'public/terms.html')));
+app.get('/privacy', (req, res) => res.sendFile(path.join(__dirname, 'public/privacy.html')));
+app.get('/legal',   (req, res) => res.sendFile(path.join(__dirname, 'public/legal.html')));
 
 app.listen(PORT, () => {
   console.log(`THE BLESS AWAJI server running on port ${PORT}`);

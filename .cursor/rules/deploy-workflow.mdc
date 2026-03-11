@@ -1,0 +1,31 @@
+---
+description: GitHub→Heroku自動デプロイのワークフロー手順
+alwaysApply: true
+---
+
+# デプロイワークフロー
+
+## 仕組み
+`git push` → GitHub更新 → Heroku自動デプロイ（master ブランチ連携済み）
+
+## コマンド（PowerShellは`;`区切り）
+
+```powershell
+cd "c:\Users\rikak\Desktop\CURSOR作成\2026 THE BLESS"
+git add .
+git commit -m "コミットメッセージ"
+git push
+```
+
+`git push` だけでGitHub＆Herokuへ自動反映される。
+
+## Herokuアプリ情報
+- **アプリ名**: the-bless-awaji
+- **URL**: https://the-bless-awaji-XXXX.herokuapp.com
+- **ブランチ**: master
+- **自動デプロイ**: 有効（Enable Automatic Deploys設定済み）
+
+## 注意
+- `&&` は使わず `;` を使うこと（PowerShell）
+- デプロイ後の反映まで1〜2分かかる場合あり
+- ビルドログはHerokuダッシュボード → Activity タブで確認可能

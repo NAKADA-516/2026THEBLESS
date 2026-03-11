@@ -8,6 +8,10 @@ alwaysApply: true
 ## 仕組み
 `git push` → GitHub更新 → Heroku自動デプロイ（master ブランチ連携済み）
 
+## 重要ルール
+- **ユーザーが「プッシュして」と言うまでコミット・プッシュしない**
+- 修正完了後は「確認できたらプッシュします」と伝えて待つ
+
 ## コマンド（PowerShellは`;`区切り）
 
 ```powershell

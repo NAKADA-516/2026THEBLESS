@@ -285,13 +285,13 @@ h1, h2, h3, h4 {
 
 .nav-menu li {
   overflow: hidden;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.15rem;
 }
 
 .nav-menu a {
   display: inline-block;
   font-family: var(--font-en);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.3rem, 3vw, 2rem);
   font-weight: 300;
   letter-spacing: 0.1em;
   color: var(--cream);
@@ -571,6 +571,14 @@ h1, h2, h3, h4 {
   height: 100%;
   object-fit: cover;
   transition: transform 0.8s ease;
+}
+
+#spa {
+  height: 65vh;
+}
+
+#spa .section-b-img {
+  object-position: center 15%;
 }
 
 .section-b:hover .section-b-img {
@@ -1343,7 +1351,7 @@ h1, h2, h3, h4 {
 /* ── Reservation CTA ── */
 .cta-section {
   background: var(--charcoal);
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
   text-align: center;
 }
 
@@ -1353,13 +1361,14 @@ h1, h2, h3, h4 {
   font-weight: 300;
   color: var(--cream);
   letter-spacing: 0.08em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .cta-section p {
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   color: var(--gray-light);
-  margin-bottom: 2.5rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 3rem;
 }
 
 /* ── Footer ── */
@@ -1952,8 +1961,8 @@ h1, h2, h3, h4 {
   }
 
   .nav-menu a {
-    font-size: clamp(2.2rem, 10vw, 3rem);
-    padding: 0.2rem 0;
+    font-size: clamp(1.4rem, 7vw, 2rem);
+    padding: 0.1rem 0;
   }
 
   .nav-sub {
@@ -2374,5 +2383,150 @@ h1, h2, h3, h4 {
   .room-specs {
     flex-direction: column;
     gap: 0.5rem;
+  }
+}
+
+/* ── Index: Concept photo (portrait, right column) ── */
+.concept-photo {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 8px;
+  align-items: start;
+}
+.concept-photo-item {
+  overflow: hidden;
+}
+.concept-photo-item:first-child {
+  aspect-ratio: 3/4;
+}
+.concept-photo-item:last-child {
+  aspect-ratio: 4/5;
+  margin-top: 60px;
+}
+.concept-photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.concept-photo-item:hover img { transform: scale(1.04); }
+
+/* ── Index: Stay photos grid (right column) ── */
+.stay-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  min-height: 520px;
+}
+.stay-photos .photo-item {
+  overflow: hidden;
+  background: #2a2520;
+}
+.stay-photos .photo-item.tall { grid-row: span 2; }
+.stay-photos .photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.stay-photos .photo-item:hover img { transform: scale(1.04); }
+
+/* ── Index: Reserve — 2ボタン縦並び ── */
+.reserve-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.reserve-btns .btn {
+  min-width: 220px;
+  text-align: center;
+  padding: 1.1rem 2.8rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+}
+
+@media (max-width: 600px) {
+  .reserve-btns {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .reserve-btns .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stay-photos { min-height: 300px; }
+}
+
+/* ── Floating Reserve Button ── */
+.float-reserve {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.float-reserve.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.float-reserve__circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--charcoal);
+  border: 1px solid rgba(255,255,255,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition), transform var(--transition);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.28);
+}
+
+.float-reserve__circle svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--cream);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.float-reserve__label {
+  font-family: var(--font-en);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  color: var(--charcoal);
+  text-transform: uppercase;
+}
+
+.float-reserve:hover .float-reserve__circle {
+  background-color: var(--charcoal-mid);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 600px) {
+  .float-reserve {
+    display: none;
   }
 }

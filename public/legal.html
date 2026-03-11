@@ -100,15 +100,15 @@
 <body>
 
   <!-- Header -->
-  <header id="site-header">
-    <a href="index.html" class="header-logo en">THE BLESS AWAJI |</a>
+  <header id="site-header" class="header--dark">
+    <a href="index.html" class="header-logo header-logo--light en">THE BLESS AWAJI |</a>
     <div class="header-right">
-      <div class="lang-toggle">
+      <div class="lang-toggle lang-toggle--light">
         <span data-lang="jp" class="active">JP</span>
         <span class="lang-sep">｜</span>
         <span data-lang="en" class="inactive">EN</span>
       </div>
-      <div class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <div class="hamburger hamburger--light" id="hamburger" aria-label="メニューを開く">
         <span></span><span></span><span></span>
       </div>
     </div>
@@ -137,12 +137,15 @@
 
     <div class="terms-hero">
       <span class="section-label section-label--light">Legal</span>
-      <h1>特定商取引法に基づく表記</h1>
-      <p>THE BLESS Awaji — Specified Commercial Transaction Act</p>
+      <h1 data-i18n="legal_hero_title">特定商取引法に基づく表記</h1>
+      <p data-i18n="legal_hero_sub">THE BLESS Awaji — Specified Commercial Transaction Act</p>
     </div>
+    <div id="legal-en-notice" style="display:none;background:#f5f0e8;border-left:3px solid var(--charcoal);padding:1rem 1.5rem;max-width:800px;margin:2rem auto 0;font-size:0.84rem;line-height:1.8;color:var(--gray-mid);" data-i18n="legal_jp_only_notice"></div>
 
     <div class="terms-body">
 
+      <!-- ── JAPANESE CONTENT ── -->
+      <div data-lang-show="jp">
       <table class="legal-table">
         <tr>
           <th>屋号</th>
@@ -204,11 +207,83 @@
             <ul>
               <li>当公式サイトからのご予約は、予約完了画面が表示された時点で成立し、折り返しご登録メールアドレス宛に予約内容確認メールをお送りいたします。</li>
               <li>ご予約内容の変更やお問い合わせは、上記の電話番号またはメールアドレスまでご連絡ください。</li>
-              <li>各プラン固有の条件や詳細なご利用規則については、当館の<a href="terms.html">宿泊約款</a>および利用規則をご確認ください。なお、本表記と各規定に矛盾が生じる場合は、各規定が優先されます。</li>
+              <li>各プラン固有の条件や詳細なご利用規則については、当館の<a href="terms.html" data-i18n="footer_terms">宿泊約款</a>および利用規則をご確認ください。なお、本表記と各規定に矛盾が生じる場合は、各規定が優先されます。</li>
             </ul>
           </td>
         </tr>
       </table>
+
+      </div><!-- /data-lang-show="jp" -->
+
+      <!-- ── ENGLISH CONTENT ── -->
+      <div data-lang-show="en" style="display:none;">
+        <table class="legal-table">
+          <tr>
+            <th>Trade Name</th>
+            <td>THE BLESS Awaji</td>
+          </tr>
+          <tr>
+            <th>Operating Company</th>
+            <td>Awaji Kanko LLC (合同会社淡路観光)</td>
+          </tr>
+          <tr>
+            <th>Representative</th>
+            <td>General Manager / Representative: Masaya Ito</td>
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td>247 Taikuchi, Sumoto, Hyogo 656-0011, Japan</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><a href="mailto:awajiauberge@gmail.com">awajiauberge@gmail.com</a></td>
+          </tr>
+          <tr>
+            <th>Accommodation Rates</th>
+            <td>Rates vary by plan. Please refer to the respective plan page for details. All displayed prices are inclusive of consumption tax.</td>
+          </tr>
+          <tr>
+            <th>Additional Charges</th>
+            <td>No additional charges beyond the room rate in principle. Additional beverages or other in-house purchases are payable at the front desk or restaurant at time of purchase.</td>
+          </tr>
+          <tr>
+            <th>Payment Method & Deadline</th>
+            <td>Accommodation charges are generally prepaid. Payment is processed at the time of booking via our official website or partner booking sites. Any charges beyond the reservation amount are settled on-site.</td>
+          </tr>
+          <tr>
+            <th>Service Delivery</th>
+            <td>Accommodation and dining are provided on the dates and according to the plan details reserved. Guests should arrive after the check-in time; dinner and breakfast are served during the times specified in each plan.</td>
+          </tr>
+          <tr>
+            <th>Cancellation Policy</th>
+            <td>
+              The following cancellation fees apply:
+              <ul>
+                <li>14–7 days before arrival: 50% of room rate</li>
+                <li>7–4 days before arrival: 80% of room rate</li>
+                <li>3 days before arrival to day-of: 100% of room rate</li>
+                <li>No-show: 100% of room rate</li>
+              </ul>
+              <p class="terms-note">Cancellation fees may also apply to dining included with the accommodation. Where cancellation fees apply, the amount will be deducted from any prepaid amount (along with applicable transaction fees) and the remainder refunded.<br><br>
+              For accommodation tickets purchased through crowdfunding platforms, the cancellation policy set by the relevant platform operator shall apply.</p>
+            </td>
+          </tr>
+          <tr>
+            <th>Refunds</th>
+            <td>Due to the nature of the service, refunds for accommodation and dining already provided may not be possible. Where a refund applies following cancellation, it will be processed in accordance with the cancellation policy above.</td>
+          </tr>
+          <tr>
+            <th>Other Important Matters</th>
+            <td>
+              <ul>
+                <li>Reservations made via this official website are confirmed when the reservation completion screen is displayed. A confirmation email will be sent to the registered email address.</li>
+                <li>For changes to reservations or enquiries, please contact us by phone or email above.</li>
+                <li>For plan-specific conditions and detailed terms of use, please refer to our <a href="terms.html" data-i18n="footer_terms">Accommodation Terms</a> and House Rules. In the event of any conflict between this notice and those terms, the terms shall prevail.</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div><!-- /data-lang-show="en" -->
 
     </div>
   </main>
@@ -219,7 +294,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <span class="footer-logo en">THE BLESS AWAJI</span>
-          <p>兵庫県洲本市炬口247</p>
+          <p data-i18n="footer_address">兵庫県洲本市炬口247</p>
           <p><a href="tel:0799227775">0799-22-7775</a></p>
           <p><a href="mailto:awajiauberge@gmail.com">awajiauberge@gmail.com</a></p>
           <div class="footer-social">
@@ -254,14 +329,24 @@
       <div class="footer-bottom">
         <span class="en">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
         <div class="footer-legal">
-          <a href="terms.html">宿泊約款</a>
-          <a href="privacy.html">プライバシーポリシー</a>
-          <a href="legal.html">特商法に基づく表記</a>
+          <a href="terms.html" data-i18n="footer_terms">宿泊約款</a>
+          <a href="privacy.html" data-i18n="footer_privacy_link">プライバシーポリシー</a>
+          <a href="legal.html" data-i18n="footer_legal_link">特商法に基づく表記</a>
         </div>
         <span class="en">Awaji Island, Hyogo, Japan</span>
       </div>
     </div>
   </footer>
+  <!-- Floating Reserve Button -->
+  <a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener" class="float-reserve" aria-label="Reserve">
+    <div class="float-reserve__circle">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+      </svg>
+    </div>
+    <span class="float-reserve__label">Reserve</span>
+  </a>
+
 
   <script src="js/main.js"></script>
 </body>

@@ -123,15 +123,15 @@
 <body>
 
   <!-- Header -->
-  <header id="site-header">
-    <a href="index.html" class="header-logo en">THE BLESS AWAJI |</a>
+  <header id="site-header" class="header--dark">
+    <a href="index.html" class="header-logo header-logo--light en">THE BLESS AWAJI |</a>
     <div class="header-right">
-      <div class="lang-toggle">
+      <div class="lang-toggle lang-toggle--light">
         <span data-lang="jp" class="active">JP</span>
         <span class="lang-sep">｜</span>
         <span data-lang="en" class="inactive">EN</span>
       </div>
-      <div class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <div class="hamburger hamburger--light" id="hamburger" aria-label="メニューを開く">
         <span></span><span></span><span></span>
       </div>
     </div>
@@ -160,11 +160,15 @@
 
     <div class="terms-hero">
       <span class="section-label section-label--light">Legal</span>
-      <h1>宿泊約款</h1>
-      <p>THE BLESS Awaji — Accommodation Terms</p>
+      <h1 data-i18n="terms_hero_title">宿泊約款</h1>
+      <p data-i18n="terms_hero_sub">THE BLESS Awaji — Accommodation Terms</p>
     </div>
+    <div id="legal-en-notice" style="display:none;background:#f5f0e8;border-left:3px solid var(--charcoal);padding:1rem 1.5rem;max-width:800px;margin:2rem auto 0;font-size:0.84rem;line-height:1.8;color:var(--gray-mid);" data-i18n="legal_jp_only_notice"></div>
 
     <div class="terms-body">
+
+      <!-- ── JAPANESE CONTENT ── -->
+      <div data-lang-show="jp">
 
       <!-- 宿泊約款 -->
       <div class="terms-section">
@@ -471,6 +475,312 @@
 
       <p class="terms-revised">改訂日：2025年8月1日</p>
 
+      </div><!-- /data-lang-show="jp" -->
+
+      <!-- ── ENGLISH CONTENT ── -->
+      <div data-lang-show="en" style="display:none;">
+
+        <div class="terms-section">
+          <h2 class="terms-section-title">Accommodation Terms & Conditions</h2>
+
+          <div class="terms-article">
+            <h3>Article 1 — Scope of Application</h3>
+            <p>1. Accommodation contracts and related agreements concluded between THE BLESS Awaji (hereinafter "the Hotel") and guests shall be governed by these Terms. Matters not covered herein shall be governed by applicable laws and regulations or generally established customs.</p>
+            <p>2. Where the Hotel agrees to special provisions within the limits not contrary to law and custom, such provisions shall prevail notwithstanding the preceding paragraph.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 2 — Application for Accommodation Contract</h3>
+            <p>1. Persons wishing to apply for an accommodation contract must provide the Hotel with the following information:</p>
+            <ul>
+              <li>(1) Name of the guest(s)</li>
+              <li>(2) Date of stay and estimated arrival time</li>
+              <li>(3) Accommodation charges</li>
+              <li>(4) Any other information the Hotel deems necessary</li>
+            </ul>
+            <p>2. If a guest requests to extend their stay beyond the dates indicated in item (2) above while in residence, the Hotel will process such request as a new application for an accommodation contract from the time the request is made.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 3 — Formation of Accommodation Contract</h3>
+            <p>1. An accommodation contract is formed when the Hotel accepts the application under the preceding Article, unless the Hotel proves that acceptance was not given.</p>
+            <p>2. Upon formation of the contract, a deposit determined by the Hotel — up to the basic accommodation charge for the stay period (or 3 days if the stay exceeds 3 days) — must be paid by the date and time specified by the Hotel.</p>
+            <p>3. The deposit shall first be applied to the accommodation charges ultimately payable by the guest; if the provisions of Article 6 or Article 18 apply, it shall be applied in order to cancellation fees and then compensation; any remainder shall be refunded at the time of payment under Article 12.</p>
+            <p>4. If the deposit is not paid by the date specified under paragraph 2, the accommodation contract shall become void, provided that the Hotel notified the guest of this condition when specifying the payment deadline.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 4 — Special Provision Waiving Deposit</h3>
+            <p>1. Notwithstanding Article 3(2), the Hotel may agree to a special provision waiving the deposit. If the Hotel does not request a deposit when accepting the application, or does not specify a payment deadline, it shall be treated as having agreed to such a waiver.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 4-2 — Cooperation with Infection Control Measures</h3>
+            <p>The Hotel may request cooperation from prospective guests pursuant to Article 4-2(1) of the Inn Business Act (Act No. 138 of 1948).</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 5 — Refusal to Conclude Accommodation Contract</h3>
+            <p>The Hotel may decline to conclude an accommodation contract in the following circumstances. This provision does not imply that the Hotel may refuse accommodation in cases beyond those listed in Article 5 of the Inn Business Act.</p>
+            <ul>
+              <li>(1) The application does not comply with these Terms.</li>
+              <li>(2) No rooms are available due to full occupancy.</li>
+              <li>(3) The prospective guest is deemed likely to engage in conduct that violates law, public order, or good morals in connection with accommodation.</li>
+              <li>(4) The prospective guest is deemed to fall into any of the following categories:<br>
+                a. Organised crime groups, members thereof, quasi-members, or related parties and other antisocial forces as defined under the Act on Prevention of Unjust Acts by Organized Crime Group Members (Act No. 77 of 1991).<br>
+                b. Corporations or organisations whose business activities are controlled by an organised crime group or its members.<br>
+                c. Corporations whose officers include members of an organised crime group.</li>
+              <li>(5) The prospective guest engages in conduct that causes significant nuisance to other guests.</li>
+              <li>(6) The prospective guest is a patient with a specified infectious disease as defined in Article 4-2(1)(ii) of the Inn Business Act.</li>
+              <li>(7) Violent demands are made, or demands that exceed a reasonable scope are placed.</li>
+              <li>(8) The prospective guest repeatedly makes demands that impose an excessive burden on the Hotel and are likely to significantly impede the provision of services to other guests.</li>
+              <li>(9) Accommodation cannot be provided due to natural disasters, facility malfunction, or other unavoidable circumstances.</li>
+            </ul>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 5-2 — Explanation for Refusal</h3>
+            <p>A prospective guest may request the Hotel to explain the reason for any refusal to conclude an accommodation contract under the preceding Article.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 6 — Guest's Right to Cancel</h3>
+            <p>Guests may cancel an accommodation contract by notifying the Hotel. If a guest cancels all or part of an accommodation contract due to a cause attributable to the guest, a cancellation fee as set out in the attached table will be charged. If a guest fails to arrive by 8:00 PM on the day of arrival without prior notice (or two hours after a stated arrival time), the Hotel may treat the contract as cancelled by the guest.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 7 — Hotel's Right to Cancel</h3>
+            <p>The Hotel may cancel an accommodation contract in the following circumstances:</p>
+            <ul>
+              <li>(1) The guest engages in or is likely to engage in conduct violating law, public order, or good morals in connection with accommodation.</li>
+              <li>(2) The guest is deemed to fall into any of the categories in Article 5(4)a–c.</li>
+              <li>(3) The guest causes significant nuisance to other guests.</li>
+              <li>(4) The guest is a patient with a specified infectious disease.</li>
+              <li>(5) Violent demands are made, or demands exceeding a reasonable scope are placed.</li>
+              <li>(6) The guest repeatedly makes demands that impose an excessive burden and are likely to significantly impede services to other guests.</li>
+              <li>(7) Accommodation cannot be provided due to force majeure such as natural disasters.</li>
+              <li>(8) The guest smokes in a guestroom, tampers with fire-fighting equipment, or otherwise fails to comply with the Hotel's prohibited acts under its House Rules.</li>
+            </ul>
+            <p>If the Hotel cancels under this Article, no charges will be levied for accommodation services not yet received by the guest.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 7-2 — Explanation for Cancellation</h3>
+            <p>A guest may request the Hotel to explain the reason for any cancellation under the preceding Article.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 8 — Registration</h3>
+            <p>On the day of arrival, guests must register the following information at the Hotel's front desk:</p>
+            <ul>
+              <li>(1) Name, address, and contact information</li>
+              <li>(2) For foreign nationals not residing in Japan: nationality and passport number</li>
+              <li>(3) Any other information the Hotel deems necessary</li>
+            </ul>
+            <p>Guests wishing to pay by traveller's cheque, accommodation voucher, credit card, or other means in lieu of currency must present such instruments at the time of registration.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 9 — Room Use Hours</h3>
+            <p>Guestrooms may be used from 15:00 on the day of arrival until 11:00 the following day. For consecutive stays, rooms may be used throughout the day except on arrival and departure days.</p>
+            <p>Notwithstanding the above, the Hotel may permit use outside these hours with the following additional charges:</p>
+            <ul>
+              <li>(1) Up to 3 hours overtime: 25% of room rate</li>
+              <li>(2) Up to 6 hours overtime: 50% of room rate</li>
+              <li>(3) Over 6 hours overtime: 100% of room rate</li>
+              <li>(4) Early check-in before 15:00: 100% of room rate (room available from 08:00)</li>
+            </ul>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 10 — Compliance with House Rules</h3>
+            <p>Guests must observe the Hotel's House Rules and any in-house guidelines provided during their stay.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 11 — Operating Hours</h3>
+            <p>Operating hours for the Hotel's main facilities are available at the front desk and may be temporarily changed if unavoidable. Any changes will be communicated by appropriate means.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 12 — Payment of Charges</h3>
+            <p>· The breakdown of accommodation charges and their calculation method shall follow Hotel regulations.</p>
+            <p>· Charges shall be paid in cash or by an acceptable substitute (traveller's cheque, accommodation voucher, credit card, etc.) from the time the accommodation contract is formed until check-out, or when invoiced by the Hotel.</p>
+            <p>· Accommodation charges are payable even if a guest voluntarily does not stay after the room has been made available.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 13 — Hotel Liability</h3>
+            <p>· The Hotel shall compensate guests for damages arising from the Hotel's failure to perform or improper performance of accommodation contracts, except where such failure is not attributable to the Hotel.</p>
+            <p>· The Hotel carries innkeeper's liability insurance against fire and other incidents.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 14 — Inability to Provide Contracted Room</h3>
+            <p>· Where the Hotel is unable to provide the contracted room, it will, with the guest's consent, arrange alternative accommodation of equivalent conditions at another property.</p>
+            <p>· If no alternative can be arranged, the Hotel will pay the guest compensation equivalent to the applicable cancellation fee, which shall serve as liquidated damages, unless the inability to provide the room is not attributable to the Hotel.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 15 — Handling of Deposited Items</h3>
+            <p>· The Hotel shall compensate for loss or damage to items, cash, or valuables deposited at the front desk, except in cases of force majeure.</p>
+            <p>· For items, cash, or valuables brought onto the premises but not deposited at the front desk, the Hotel shall compensate for loss or damage caused by the Hotel's intent or negligence.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 16 — Storage of Luggage and Personal Effects</h3>
+            <p>· Luggage arriving before the guest's check-in will be held responsibly only if the Hotel has consented in advance, and will be delivered to the guest at check-in.</p>
+            <p>· Items left behind after check-out will be kept for a set period if the owner is identified and contact is made; otherwise items will be held for 7 days from discovery and then reported to the nearest police station.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 17 — Parking Liability</h3>
+            <p>The Hotel's parking facility is provided as a space rental only, regardless of whether vehicle keys are deposited. The Hotel does not assume responsibility for vehicle management, except for damages caused by the Hotel's intent or negligence in managing the facility.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Article 18 — Guest Liability</h3>
+            <p>Guests shall compensate the Hotel for any damages caused to the Hotel by the guest's intent or negligence.</p>
+          </div>
+        </div>
+
+        <div class="terms-section">
+          <h2 class="terms-section-title">Cancellation Policy</h2>
+
+          <table class="terms-table">
+            <thead>
+              <tr>
+                <th>No-show</th>
+                <th>Same day / Day before</th>
+                <th>2–3 days prior</th>
+                <th>4+ days prior</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100%</td>
+                <td>100%</td>
+                <td>30%</td>
+                <td>0%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="terms-note">
+            * Percentages apply to the total room rate per night (including meals where a meal-inclusive rate is displayed). For multi-night stays, fees are calculated per night.<br>
+            * Special cancellation terms may apply to specific packages, plans, banquets, or individual agreements arranged separately by the Hotel.
+          </p>
+
+          <div class="terms-article" style="margin-top:2rem;">
+            <h3>Room / Night Reductions</h3>
+            <table class="terms-table">
+              <thead>
+                <tr>
+                  <th>Period</th>
+                  <th>Free reduction allowance</th>
+                  <th>Charge for excess reductions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Contract date – 31 days prior</td>
+                  <td>10%</td>
+                  <td>Room rate × persons × nights</td>
+                </tr>
+                <tr>
+                  <td>30–14 days prior</td>
+                  <td>5%</td>
+                  <td>Room rate × persons × nights</td>
+                </tr>
+                <tr>
+                  <td>13–4 days prior</td>
+                  <td>5%</td>
+                  <td>Room rate × persons × nights</td>
+                </tr>
+                <tr>
+                  <td>3 days prior – day of arrival</td>
+                  <td>No free cancellation</td>
+                  <td>Room rate × persons × nights</td>
+                </tr>
+                <tr>
+                  <td>No-show</td>
+                  <td>No free cancellation</td>
+                  <td>Room rate × persons × nights</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="terms-note">Cancellation fees for separately arranged banquet dinners apply at 100% from 10 days prior.<br>
+            * If estimated amounts change due to itinerary modifications, the revised amount becomes the basis for cancellation fees.</p>
+          </div>
+        </div>
+
+        <div class="terms-section">
+          <h2 class="terms-section-title">House Rules</h2>
+          <p style="font-size:0.85rem;line-height:2.4;color:var(--gray-mid);margin-bottom:2rem;">In accordance with Article 10 of the Accommodation Terms, the Hotel has established the following House Rules to maintain the dignity of the Hotel and ensure a comfortable and safe stay for all guests. Failure to comply may result in refusal of access to guestrooms and other facilities under Article 7(1).</p>
+
+          <div class="terms-article">
+            <h3>Valuables, Deposited Items & Lost Property</h3>
+            <ul>
+              <li>Please keep cash and valuables under your personal care. The Hotel accepts no liability for loss or theft.</li>
+              <li>Luggage may be stored at the front desk from 12:00 on check-in day until 18:00 on check-out day. Storage outside these hours is charged at ¥1,000 per item per day.</li>
+              <li>Lost property found in the Hotel will be held for a set period and then handled pursuant to the Lost Property Act. Food, beverages, and items deemed waste will be disposed of immediately.</li>
+            </ul>
+          </div>
+
+          <div class="terms-article">
+            <h3>Payment</h3>
+            <ul>
+              <li>Payment is due in advance or at check-in. Drinks and similar charges added to your room account during meals are payable at check-out.</li>
+              <li>A deposit may be required at arrival for non-accommodation use.</li>
+              <li>The Hotel does not advance payment for shopping, tickets, taxis, postage, or luggage forwarding.</li>
+            </ul>
+          </div>
+
+          <div class="terms-article">
+            <h3>Guestroom Use</h3>
+            <ul>
+              <li>All guestrooms are non-smoking. Please use the designated smoking area.</li>
+              <li>Do not engage in any activity that may cause a fire in the guestroom.</li>
+              <li>Cooking in guestrooms is strictly prohibited.</li>
+              <li>The following items may not be brought onto the premises: pets, explosives/flammable materials, items emitting offensive odours, firearms, swords, and controlled substances not legally permitted.</li>
+              <li>Receiving visitors in guestrooms is not permitted. Please use the lobby for meetings.</li>
+            </ul>
+          </div>
+
+          <div class="terms-article">
+            <h3>Sauna & Bath Facilities</h3>
+            <ul>
+              <li>Mobile phones and cameras are prohibited in the sauna and bath area.</li>
+              <li>Tattoos may only be covered with dedicated covering stickers.</li>
+              <li>Guests under 18 using the sauna must be accompanied by a guardian.</li>
+              <li>Guests advised by a doctor to avoid bathing, guests who have consumed alcohol, or guests not in full health should refrain from using the bath and sauna.</li>
+            </ul>
+          </div>
+
+          <div class="terms-article">
+            <h3>Prohibited Acts</h3>
+            <ul>
+              <li>Commercial photography or recording on Hotel premises without prior permission is prohibited.</li>
+              <li>Unauthorised drone flights or filming on or near the premises is prohibited.</li>
+              <li>Obstructing Hotel staff in their duties or coercing them to perform acts not required of them is prohibited.</li>
+              <li>Defaming, threatening, or harassing Hotel staff, including through social media posts intended to cause harm, is prohibited.</li>
+            </ul>
+          </div>
+
+          <div class="terms-article">
+            <h3>Fire Safety & Security</h3>
+            <ul>
+              <li>Please check evacuation route maps and emergency exits upon entering your room.</li>
+              <li>For your safety, please keep your door locked and the door guard engaged throughout your stay.</li>
+              <li>If smoking in a non-designated area is discovered, the guest will be charged for room downtime plus cleaning costs for bedding, curtains, carpeting, and any necessary repairs.</li>
+              <li>Minors may not stay without parental permission.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="terms-revised">Revised: 1 August 2025</p>
+
+      </div><!-- /data-lang-show="en" -->
+
     </div>
   </main>
 
@@ -480,7 +790,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <span class="footer-logo en">THE BLESS AWAJI</span>
-          <p>兵庫県洲本市炬口247</p>
+          <p data-i18n="footer_address">兵庫県洲本市炬口247</p>
           <p><a href="tel:0799227775">0799-22-7775</a></p>
           <p><a href="mailto:awajiauberge@gmail.com">awajiauberge@gmail.com</a></p>
           <div class="footer-social">
@@ -515,14 +825,24 @@
       <div class="footer-bottom">
         <span class="en">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
         <div class="footer-legal">
-          <a href="terms.html">宿泊約款</a>
-          <a href="privacy.html">プライバシーポリシー</a>
-          <a href="legal.html">特商法に基づく表記</a>
+          <a href="terms.html" data-i18n="footer_terms">宿泊約款</a>
+          <a href="privacy.html" data-i18n="footer_privacy_link">プライバシーポリシー</a>
+          <a href="legal.html" data-i18n="footer_legal_link">特商法に基づく表記</a>
         </div>
         <span class="en">Awaji Island, Hyogo, Japan</span>
       </div>
     </div>
   </footer>
+  <!-- Floating Reserve Button -->
+  <a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener" class="float-reserve" aria-label="Reserve">
+    <div class="float-reserve__circle">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+      </svg>
+    </div>
+    <span class="float-reserve__label">Reserve</span>
+  </a>
+
 
   <script src="js/main.js"></script>
 </body>

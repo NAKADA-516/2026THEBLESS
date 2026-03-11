@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  if (req.path.endsWith('.html') || req.path === '/') {
+  if (req.path.endsWith('.html') || req.path === '/' || req.path.endsWith('.js') || req.path.endsWith('.css')) {
     res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
     res.setHeader('Pragma', 'no-cache');
   }

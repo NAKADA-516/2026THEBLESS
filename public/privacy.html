@@ -103,15 +103,15 @@
 <body>
 
   <!-- Header -->
-  <header id="site-header">
-    <a href="index.html" class="header-logo en">THE BLESS AWAJI |</a>
+  <header id="site-header" class="header--dark">
+    <a href="index.html" class="header-logo header-logo--light en">THE BLESS AWAJI |</a>
     <div class="header-right">
-      <div class="lang-toggle">
+      <div class="lang-toggle lang-toggle--light">
         <span data-lang="jp" class="active">JP</span>
         <span class="lang-sep">｜</span>
         <span data-lang="en" class="inactive">EN</span>
       </div>
-      <div class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <div class="hamburger hamburger--light" id="hamburger" aria-label="メニューを開く">
         <span></span><span></span><span></span>
       </div>
     </div>
@@ -140,12 +140,15 @@
 
     <div class="terms-hero">
       <span class="section-label section-label--light">Legal</span>
-      <h1>プライバシーポリシー</h1>
-      <p>THE BLESS Awaji — Privacy Policy</p>
+      <h1 data-i18n="privacy_hero_title">プライバシーポリシー</h1>
+      <p data-i18n="privacy_hero_sub">THE BLESS Awaji — Privacy Policy</p>
     </div>
+    <div id="legal-en-notice" style="display:none;background:#f5f0e8;border-left:3px solid var(--charcoal);padding:1rem 1.5rem;max-width:800px;margin:2rem auto 0;font-size:0.84rem;line-height:1.8;color:var(--gray-mid);" data-i18n="legal_jp_only_notice"></div>
 
     <div class="terms-body">
 
+      <!-- ── JAPANESE CONTENT ── -->
+      <div data-lang-show="jp">
       <div class="terms-section">
 
         <p style="font-size:0.85rem;line-height:2.4;color:var(--gray-mid);margin-bottom:3rem;">
@@ -230,6 +233,96 @@
 
       <p class="terms-revised">最終更新日：2025年3月17日</p>
 
+      </div><!-- /data-lang-show="jp" -->
+
+      <!-- ── ENGLISH CONTENT ── -->
+      <div data-lang-show="en" style="display:none;">
+        <div class="terms-section">
+
+          <p style="font-size:0.85rem;line-height:2.4;color:var(--gray-mid);margin-bottom:3rem;">
+            THE BLESS Awaji (hereinafter "the Hotel") places the highest priority on the appropriate protection of personal information and earning the trust of our guests. This Privacy Policy explains how the Hotel collects, uses, and manages personal information. The Hotel complies with the Act on the Protection of Personal Information (APPI) and related laws and regulations.
+          </p>
+
+          <div class="terms-article">
+            <h3>Collection of Personal Information</h3>
+            <p>The Hotel collects the minimum personal information necessary for the following purposes. Guests may choose not to provide information.</p>
+            <p><strong style="font-size:0.83rem;color:var(--charcoal);">Information collected:</strong></p>
+            <p>Name, address, phone number, email address, date of birth, accommodation details, payment information, access logs when using our website (cookies, etc.)</p>
+            <p style="margin-top:1rem;"><strong style="font-size:0.83rem;color:var(--charcoal);">Collection methods:</strong></p>
+            <ul>
+              <li>Directly from guests (at time of reservation or enquiry)</li>
+              <li>Automatic collection (when using the website)</li>
+              <li>Via travel agencies or affiliated services</li>
+            </ul>
+          </div>
+
+          <div class="terms-article">
+            <h3>Purpose of Use</h3>
+            <p>Collected personal information is used solely for the following purposes:</p>
+            <ul>
+              <li>Managing accommodation reservations and providing services</li>
+              <li>Contacting or confirming details with guests</li>
+              <li>Billing and payment processing</li>
+              <li>Analysis for service improvement</li>
+              <li>Providing promotional and campaign information (only with consent)</li>
+              <li>Compliance with legal obligations</li>
+            </ul>
+          </div>
+
+          <div class="terms-article">
+            <h3>Disclosure to Third Parties</h3>
+            <p>The Hotel will not disclose personal information to third parties except in the following cases:</p>
+            <ul>
+              <li>With the guest's consent</li>
+              <li>As required by law</li>
+              <li>Minimum necessary disclosure to service contractors (e.g. reservation system operators, payment processors) under appropriate supervision</li>
+            </ul>
+          </div>
+
+          <div class="terms-article">
+            <h3>International Transfers</h3>
+            <p>Some services used by the Hotel (e.g. cloud services) may be operated from overseas. In such cases, transfers are carried out with appropriate personal information protection measures in place. Destination countries may include the United States, Canada, and others.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Security & Data Management</h3>
+            <p>The Hotel implements appropriate security measures to prevent loss, leakage, and unauthorised access to personal information. Personal information that is no longer necessary will be promptly deleted or anonymised.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Use of Cookies</h3>
+            <p>The Hotel's website uses cookies to improve usability and analyse usage. Guests may disable cookies in their browser settings, though some features may be restricted as a result.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Your Rights</h3>
+            <p>Guests have the right to request disclosure, correction, deletion, or suspension of use of their personal information. Please contact us at the address below. We will respond appropriately in accordance with applicable law.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Legal Compliance & Policy Updates</h3>
+            <p>The Hotel complies with laws and regulations relating to the protection of personal information. This Policy may be revised in response to changes in law or operations; updates will be posted on our website.</p>
+          </div>
+
+          <div class="terms-article">
+            <h3>Contact Us</h3>
+            <p>For enquiries or requests regarding the handling of personal information, please contact us at:</p>
+            <div class="terms-contact">
+              <p>
+                Facility: THE BLESS Awaji<br>
+                Address: 247 Taikuchi, Sumoto, Hyogo 656-0011<br>
+                Email: <a href="mailto:awajiauberge@gmail.com">awajiauberge@gmail.com</a><br>
+                Hours: 10:00–18:00
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="terms-revised">Last updated: 17 March 2025</p>
+
+      </div><!-- /data-lang-show="en" -->
+
     </div>
   </main>
 
@@ -239,7 +332,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <span class="footer-logo en">THE BLESS AWAJI</span>
-          <p>兵庫県洲本市炬口247</p>
+          <p data-i18n="footer_address">兵庫県洲本市炬口247</p>
           <p><a href="tel:0799227775">0799-22-7775</a></p>
           <p><a href="mailto:awajiauberge@gmail.com">awajiauberge@gmail.com</a></p>
           <div class="footer-social">
@@ -274,14 +367,24 @@
       <div class="footer-bottom">
         <span class="en">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
         <div class="footer-legal">
-          <a href="terms.html">宿泊約款</a>
-          <a href="privacy.html">プライバシーポリシー</a>
-          <a href="legal.html">特商法に基づく表記</a>
+          <a href="terms.html" data-i18n="footer_terms">宿泊約款</a>
+          <a href="privacy.html" data-i18n="footer_privacy_link">プライバシーポリシー</a>
+          <a href="legal.html" data-i18n="footer_legal_link">特商法に基づく表記</a>
         </div>
         <span class="en">Awaji Island, Hyogo, Japan</span>
       </div>
     </div>
   </footer>
+  <!-- Floating Reserve Button -->
+  <a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener" class="float-reserve" aria-label="Reserve">
+    <div class="float-reserve__circle">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+      </svg>
+    </div>
+    <span class="float-reserve__label">Reserve</span>
+  </a>
+
 
   <script src="js/main.js"></script>
 </body>

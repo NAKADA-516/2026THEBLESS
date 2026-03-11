@@ -1,0 +1,27 @@
+---
+description: GitHubリポジトリ情報とpush手順
+alwaysApply: true
+---
+
+# GitHub リポジトリ情報
+
+## リポジトリ
+- **URL**: https://github.com/NAKADA-516/2026THEBLESS.git
+- **ユーザー**: NAKADA-516
+- **ブランチ**: master
+
+## Git操作手順（PowerShell）
+
+PowerShellでは `&&` が使えないため、`;` で区切る。
+
+```powershell
+# ステージ → コミット → プッシュ
+cd "c:\Users\rikak\Desktop\CURSOR作成\2026 THE BLESS"
+git add .
+git commit -m "コミットメッセージ"
+git push
+```
+
+## 注意
+- `git push` だけでOK（初回設定済み）
+- `&&` は使わず `;` を使うこと

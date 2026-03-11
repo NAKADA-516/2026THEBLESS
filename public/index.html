@@ -105,6 +105,53 @@
     .hero-slide:nth-child(4) img { animation: kb-zoom-in-down   35s ease-in-out infinite 21s both; }
     .hero-slide:nth-child(5) img { animation: kb-zoom-in-center 35s ease-in-out infinite 28s both; }
 
+    /* ── Mobile: ズーム軽減 ── */
+    @media (max-width: 768px) {
+      @keyframes kb-m-right {
+        0%   { opacity: 0; transform: scale(1.03) translate(-0.3%, 0.2%); }
+        6%   { opacity: 1; }
+        80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
+        92%  { opacity: 0; }
+        100% { opacity: 0; transform: scale(1.0); }
+      }
+      @keyframes kb-m-left {
+        0%   { opacity: 0; transform: scale(1.03) translate(0.3%, -0.2%); }
+        6%   { opacity: 1; }
+        80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
+        92%  { opacity: 0; }
+        100% { opacity: 0; transform: scale(1.0); }
+      }
+      @keyframes kb-m-up {
+        0%   { opacity: 0; transform: scale(1.02) translate(0%, 0.2%); }
+        6%   { opacity: 1; }
+        80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
+        92%  { opacity: 0; }
+        100% { opacity: 0; transform: scale(1.0); }
+      }
+      @keyframes kb-m-down {
+        0%   { opacity: 0; transform: scale(1.02) translate(0%, -0.2%); }
+        6%   { opacity: 1; }
+        80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
+        92%  { opacity: 0; }
+        100% { opacity: 0; transform: scale(1.0); }
+      }
+      @keyframes kb-m-center {
+        0%   { opacity: 0; transform: scale(1.02); }
+        6%   { opacity: 1; }
+        80%  { opacity: 1; transform: scale(1.0); }
+        92%  { opacity: 0; }
+        100% { opacity: 0; transform: scale(1.0); }
+      }
+      .hero-slide img {
+        object-position: center 30%;
+      }
+      .hero-slide:nth-child(1) img { animation: kb-m-right  35s ease-in-out infinite 0s  both; }
+      .hero-slide:nth-child(2) img { animation: kb-m-left   35s ease-in-out infinite 7s  both; }
+      .hero-slide:nth-child(3) img { animation: kb-m-up     35s ease-in-out infinite 14s both; }
+      .hero-slide:nth-child(4) img { animation: kb-m-down   35s ease-in-out infinite 21s both; }
+      .hero-slide:nth-child(5) img { animation: kb-m-center 35s ease-in-out infinite 28s both; }
+    }
+
     /* Slide indicators */
     .hero-indicators {
       position: absolute;
@@ -449,7 +496,7 @@
       position: absolute; top: 0; left: 0;
       height: 1px; width: 0%;
       background: linear-gradient(to right, rgba(212,43,43,0.7), rgba(255,255,255,0.5));
-      animation: op-bar-fill 3.8s cubic-bezier(0.25,0.46,0.45,0.94) 1.6s forwards;
+      animation: op-bar-fill 5.5s cubic-bezier(0.25,0.46,0.45,0.94) 1.6s forwards;
     }
     @keyframes op-bar-fill {
       0%   { width: 0%; }
@@ -753,16 +800,16 @@
       let n = 0;
 
       const timer = setInterval(() => {
-        n = Math.min(n + Math.floor(Math.random() * 4) + 1, 100);
+        n = Math.min(n + Math.floor(Math.random() * 3) + 1, 100);
         count.textContent = n;
         if (n >= 100) {
           clearInterval(timer);
           setTimeout(() => {
             op.classList.add('leave');
             setTimeout(() => { op.style.display = 'none'; }, 950);
-          }, 800);
+          }, 1400);
         }
-      }, 55);
+      }, 80);
     })();
   </script>
   <!-- Floating Reserve Button -->

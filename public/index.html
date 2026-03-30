@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -98,12 +98,13 @@
       100% { opacity: 0; transform: scale(1.0); }
     }
 
-    /* opacity + Ken Burns — 5 slides × 35s */
-    .hero-slide:nth-child(1) img { animation: kb-zoom-in-right  35s ease-in-out infinite 0s  both; }
-    .hero-slide:nth-child(2) img { animation: kb-zoom-in-left   35s ease-in-out infinite 7s  both; }
-    .hero-slide:nth-child(3) img { animation: kb-zoom-in-up     35s ease-in-out infinite 14s both; }
-    .hero-slide:nth-child(4) img { animation: kb-zoom-in-down   35s ease-in-out infinite 21s both; }
-    .hero-slide:nth-child(5) img { animation: kb-zoom-in-center 35s ease-in-out infinite 28s both; }
+    /* opacity + Ken Burns — 6 slides × 42s */
+    .hero-slide:nth-child(1) img { animation: kb-zoom-in-right  42s ease-in-out infinite 0s  both; }
+    .hero-slide:nth-child(2) img { animation: kb-zoom-in-left   42s ease-in-out infinite 7s  both; }
+    .hero-slide:nth-child(3) img { animation: kb-zoom-in-up     42s ease-in-out infinite 14s both; }
+    .hero-slide:nth-child(4) img { animation: kb-zoom-in-down   42s ease-in-out infinite 21s both; }
+    .hero-slide:nth-child(5) img { animation: kb-zoom-in-center 42s ease-in-out infinite 28s both; }
+    .hero-slide:nth-child(6) img { animation: kb-zoom-in-right  42s ease-in-out infinite 35s both; }
 
     /* ── Mobile: ズーム軽減 ── */
     @media (max-width: 768px) {
@@ -145,11 +146,12 @@
       .hero-slide img {
         object-position: center 30%;
       }
-      .hero-slide:nth-child(1) img { animation: kb-m-right  35s ease-in-out infinite 0s  both; }
-      .hero-slide:nth-child(2) img { animation: kb-m-left   35s ease-in-out infinite 7s  both; }
-      .hero-slide:nth-child(3) img { animation: kb-m-up     35s ease-in-out infinite 14s both; }
-      .hero-slide:nth-child(4) img { animation: kb-m-down   35s ease-in-out infinite 21s both; }
-      .hero-slide:nth-child(5) img { animation: kb-m-center 35s ease-in-out infinite 28s both; }
+      .hero-slide:nth-child(1) img { animation: kb-m-right  42s ease-in-out infinite 0s  both; }
+      .hero-slide:nth-child(2) img { animation: kb-m-left   42s ease-in-out infinite 7s  both; }
+      .hero-slide:nth-child(3) img { animation: kb-m-up     42s ease-in-out infinite 14s both; }
+      .hero-slide:nth-child(4) img { animation: kb-m-down   42s ease-in-out infinite 21s both; }
+      .hero-slide:nth-child(5) img { animation: kb-m-center 42s ease-in-out infinite 28s both; }
+      .hero-slide:nth-child(6) img { animation: kb-m-right  42s ease-in-out infinite 35s both; }
     }
 
     /* Slide indicators */
@@ -611,12 +613,17 @@
             loading="lazy"
           >
         </div>
+        <div class="hero-slide">
+          <img
+            src="images/hero/_DSC9590.webp"
+            alt="THE BLESS AWAJI"
+            loading="lazy"
+          >
+        </div>
       </div>
 
       <!-- Content -->
       <div class="hero-content">
-        <h1 class="hero-catch en" data-i18n="hero_catch">A Meal That Moves Your Soul</h1>
-        <span class="hero-catch-jp" data-i18n="hero_catch_jp">魂が震える食事</span>
         <a
           href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily"
           target="_blank" rel="noopener"
@@ -631,6 +638,7 @@
         <div class="hero-indicator" data-slide="2"></div>
         <div class="hero-indicator" data-slide="3"></div>
         <div class="hero-indicator" data-slide="4"></div>
+        <div class="hero-indicator" data-slide="5"></div>
       </div>
 
       <div class="hero-scroll"><span data-i18n="scroll_down">Scroll</span></div>

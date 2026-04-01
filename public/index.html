@@ -58,100 +58,83 @@
       transform-origin: center center;
       opacity: 0;
       will-change: opacity, transform;
+      transition: opacity 0.9s ease-in-out;
     }
 
-    /* 5 slides × 7s = 35s cycle */
+    /* アクティブ時にフェードイン */
+    .hero-slide.is-active img        { opacity: 1; }
+    .hero-slide--video.is-active video { opacity: 1; }
+
+    /* Ken Burns keyframes (transform のみ、opacity は transition で制御) */
     @keyframes kb-zoom-in-right {
-      0%   { opacity: 0; transform: scale(1.07) translate(-0.8%, 0.3%); }
-      6%   { opacity: 1; }
-      80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
-      92%  { opacity: 0; }
-      100% { opacity: 0; transform: scale(1.0); }
+      from { transform: scale(1.07) translate(-0.8%, 0.3%); }
+      to   { transform: scale(1.0)  translate(0%, 0%); }
     }
     @keyframes kb-zoom-in-left {
-      0%   { opacity: 0; transform: scale(1.07) translate(0.8%, -0.3%); }
-      6%   { opacity: 1; }
-      80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
-      92%  { opacity: 0; }
-      100% { opacity: 0; transform: scale(1.0); }
+      from { transform: scale(1.07) translate(0.8%, -0.3%); }
+      to   { transform: scale(1.0)  translate(0%, 0%); }
     }
     @keyframes kb-zoom-in-up {
-      0%   { opacity: 0; transform: scale(1.06) translate(0%, 0.5%); }
-      6%   { opacity: 1; }
-      80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
-      92%  { opacity: 0; }
-      100% { opacity: 0; transform: scale(1.0); }
+      from { transform: scale(1.06) translate(0%, 0.5%); }
+      to   { transform: scale(1.0)  translate(0%, 0%); }
     }
     @keyframes kb-zoom-in-down {
-      0%   { opacity: 0; transform: scale(1.06) translate(0%, -0.5%); }
-      6%   { opacity: 1; }
-      80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
-      92%  { opacity: 0; }
-      100% { opacity: 0; transform: scale(1.0); }
+      from { transform: scale(1.06) translate(0%, -0.5%); }
+      to   { transform: scale(1.0)  translate(0%, 0%); }
     }
-
     @keyframes kb-zoom-in-center {
-      0%   { opacity: 0; transform: scale(1.05); }
-      6%   { opacity: 1; }
-      80%  { opacity: 1; transform: scale(1.0); }
-      92%  { opacity: 0; }
-      100% { opacity: 0; transform: scale(1.0); }
+      from { transform: scale(1.05); }
+      to   { transform: scale(1.0); }
     }
 
-    /* opacity + Ken Burns — 6 slides × 42s */
-    .hero-slide:nth-child(1) img { animation: kb-zoom-in-right  42s ease-in-out infinite 0s  both; }
-    .hero-slide:nth-child(2) img { animation: kb-zoom-in-left   42s ease-in-out infinite 7s  both; }
-    .hero-slide:nth-child(3) img { animation: kb-zoom-in-up     42s ease-in-out infinite 14s both; }
-    .hero-slide:nth-child(4) img { animation: kb-zoom-in-down   42s ease-in-out infinite 21s both; }
-    .hero-slide:nth-child(5) img { animation: kb-zoom-in-center 42s ease-in-out infinite 28s both; }
-    .hero-slide:nth-child(6) img { animation: kb-zoom-in-right  42s ease-in-out infinite 35s both; }
+    /* Video slide */
+    .hero-slide--video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0;
+      will-change: opacity;
+      transition: opacity 0.9s ease-in-out;
+    }
+
+    /* Ken Burns — 画像スライド 1〜6 (is-active クラスで起動) */
+    .hero-slide:nth-child(1).is-active img { animation: kb-zoom-in-right  7.5s ease-out forwards; }
+    .hero-slide:nth-child(2).is-active img { animation: kb-zoom-in-left   7.5s ease-out forwards; }
+    .hero-slide:nth-child(3).is-active img { animation: kb-zoom-in-up     7.5s ease-out forwards; }
+    .hero-slide:nth-child(4).is-active img { animation: kb-zoom-in-down   7.5s ease-out forwards; }
+    .hero-slide:nth-child(5).is-active img { animation: kb-zoom-in-center 7.5s ease-out forwards; }
+    .hero-slide:nth-child(6).is-active img { animation: kb-zoom-in-right  7.5s ease-out forwards; }
 
     /* ── Mobile: ズーム軽減 ── */
     @media (max-width: 768px) {
       @keyframes kb-m-right {
-        0%   { opacity: 0; transform: scale(1.03) translate(-0.3%, 0.2%); }
-        6%   { opacity: 1; }
-        80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
-        92%  { opacity: 0; }
-        100% { opacity: 0; transform: scale(1.0); }
+        from { transform: scale(1.03) translate(-0.3%, 0.2%); }
+        to   { transform: scale(1.0)  translate(0%, 0%); }
       }
       @keyframes kb-m-left {
-        0%   { opacity: 0; transform: scale(1.03) translate(0.3%, -0.2%); }
-        6%   { opacity: 1; }
-        80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
-        92%  { opacity: 0; }
-        100% { opacity: 0; transform: scale(1.0); }
+        from { transform: scale(1.03) translate(0.3%, -0.2%); }
+        to   { transform: scale(1.0)  translate(0%, 0%); }
       }
       @keyframes kb-m-up {
-        0%   { opacity: 0; transform: scale(1.02) translate(0%, 0.2%); }
-        6%   { opacity: 1; }
-        80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
-        92%  { opacity: 0; }
-        100% { opacity: 0; transform: scale(1.0); }
+        from { transform: scale(1.02) translate(0%, 0.2%); }
+        to   { transform: scale(1.0)  translate(0%, 0%); }
       }
       @keyframes kb-m-down {
-        0%   { opacity: 0; transform: scale(1.02) translate(0%, -0.2%); }
-        6%   { opacity: 1; }
-        80%  { opacity: 1; transform: scale(1.0) translate(0%, 0%); }
-        92%  { opacity: 0; }
-        100% { opacity: 0; transform: scale(1.0); }
+        from { transform: scale(1.02) translate(0%, -0.2%); }
+        to   { transform: scale(1.0)  translate(0%, 0%); }
       }
       @keyframes kb-m-center {
-        0%   { opacity: 0; transform: scale(1.02); }
-        6%   { opacity: 1; }
-        80%  { opacity: 1; transform: scale(1.0); }
-        92%  { opacity: 0; }
-        100% { opacity: 0; transform: scale(1.0); }
+        from { transform: scale(1.02); }
+        to   { transform: scale(1.0); }
       }
-      .hero-slide img {
-        object-position: center 30%;
-      }
-      .hero-slide:nth-child(1) img { animation: kb-m-right  42s ease-in-out infinite 0s  both; }
-      .hero-slide:nth-child(2) img { animation: kb-m-left   42s ease-in-out infinite 7s  both; }
-      .hero-slide:nth-child(3) img { animation: kb-m-up     42s ease-in-out infinite 14s both; }
-      .hero-slide:nth-child(4) img { animation: kb-m-down   42s ease-in-out infinite 21s both; }
-      .hero-slide:nth-child(5) img { animation: kb-m-center 42s ease-in-out infinite 28s both; }
-      .hero-slide:nth-child(6) img { animation: kb-m-right  42s ease-in-out infinite 35s both; }
+      .hero-slide img { object-position: center 30%; }
+      .hero-slide:nth-child(1).is-active img { animation: kb-m-right  7.5s ease-out forwards; }
+      .hero-slide:nth-child(2).is-active img { animation: kb-m-left   7.5s ease-out forwards; }
+      .hero-slide:nth-child(3).is-active img { animation: kb-m-up     7.5s ease-out forwards; }
+      .hero-slide:nth-child(4).is-active img { animation: kb-m-down   7.5s ease-out forwards; }
+      .hero-slide:nth-child(5).is-active img { animation: kb-m-center 7.5s ease-out forwards; }
+      .hero-slide:nth-child(6).is-active img { animation: kb-m-right  7.5s ease-out forwards; }
     }
 
     /* Slide indicators */
@@ -191,6 +174,12 @@
 
     .hero-indicator.active::after {
       animation: indicatorProgress 7s linear forwards;
+    }
+
+    /* 動画スライドのインジケーター: JS で --video-progress を更新 */
+    .hero-indicator.active.is-video::after {
+      animation: none;
+      width: var(--video-progress, 0%);
     }
 
     @keyframes indicatorProgress {
@@ -620,6 +609,11 @@
             loading="lazy"
           >
         </div>
+        <div class="hero-slide hero-slide--video">
+          <video muted playsinline preload="auto">
+            <source src="images/hero/niku_web.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
 
       <!-- Content -->
@@ -639,6 +633,7 @@
         <div class="hero-indicator" data-slide="3"></div>
         <div class="hero-indicator" data-slide="4"></div>
         <div class="hero-indicator" data-slide="5"></div>
+        <div class="hero-indicator" data-slide="6"></div>
       </div>
 
       <div class="hero-scroll"><span data-i18n="scroll_down">Scroll</span></div>

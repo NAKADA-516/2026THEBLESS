@@ -1205,43 +1205,75 @@ function initFloatingCTA() {
   }
 }
 
-/* ── Hero Slideshow Indicators ── */
+/* ── Hero Slideshow (JS制御: 動画は全長再生) ── */
 function initHeroSlideshow() {
+  const slides     = document.querySelectorAll('.hero-slide');
   const indicators = document.querySelectorAll('.hero-indicator');
-  if (!indicators.length) return;
+  if (!slides.length || !indicators.length) return;
 
-  const SLIDE_DURATION = 7000; // must match CSS animation (28s / 4 slides)
-  let current = 0;
+  const IMAGE_DURATION = 7000;
+  let currentIndex = 0;
+  let slideTimer   = null;
+  let videoRafId   = null;
 
-  function activate(index) {
-    indicators.forEach((ind, i) => {
-      ind.classList.toggle('active', i === index);
-      // Re-trigger CSS progress bar animation
-      if (i === index) {
-        ind.style.animation = 'none';
-        void ind.offsetWidth; // reflow
-        ind.style.animation = '';
-      }
+  function activateSlide(index) {
+    // タイマー・RAF をクリア
+    if (slideTimer)  { clearTimeout(slideTimer);        slideTimer  = null; }
+    if (videoRafId)  { cancelAnimationFrame(videoRafId); videoRafId = null; }
+
+    // 前スライドを非アクティブ化
+    slides.forEach(s => s.classList.remove('is-active'));
+    indicators.forEach(ind => {
+      ind.classList.remove('active', 'is-video');
+      ind.style.removeProperty('--video-progress');
     });
-    current = index;
+
+    const slide     = slides[index];
+    const indicator = indicators[index];
+
+    // インジケーターのアニメーション再起動（reflow トリック）
+    void indicator.offsetWidth;
+    slide.classList.add('is-active');
+    indicator.classList.add('active');
+    currentIndex = index;
+
+    const videoEl = slide.querySelector('video');
+    if (videoEl) {
+      // 動画スライド: 全長再生し、終了したら次へ
+      indicator.classList.add('is-video');
+      videoEl.currentTime = 0;
+      videoEl.play().catch(() => {});
+
+      // インジケーターを動画の進行に合わせてリアルタイム更新
+      function trackVideo() {
+        if (videoEl.duration) {
+          const pct = (videoEl.currentTime / videoEl.duration) * 100;
+          indicator.style.setProperty('--video-progress', pct + '%');
+        }
+        videoRafId = requestAnimationFrame(trackVideo);
+      }
+      videoRafId = requestAnimationFrame(trackVideo);
+
+      videoEl.onended = () => {
+        if (videoRafId) { cancelAnimationFrame(videoRafId); videoRafId = null; }
+        advance();
+      };
+    } else {
+      // 画像スライド: 7 秒後に次へ
+      slideTimer = setTimeout(advance, IMAGE_DURATION);
+    }
   }
 
-  // Click to jump
+  function advance() {
+    activateSlide((currentIndex + 1) % slides.length);
+  }
+
+  // インジケーターをクリックでジャンプ
   indicators.forEach((ind, i) => {
-    ind.addEventListener('click', () => {
-      activate(i);
-      clearInterval(timer);
-      timer = setInterval(next, SLIDE_DURATION);
-    });
+    ind.addEventListener('click', () => activateSlide(i));
   });
 
-  function next() {
-    activate((current + 1) % indicators.length);
-  }
-
-  let timer = setInterval(next, SLIDE_DURATION);
-  // Kick off initial progress bar
-  activate(0);
+  activateSlide(0);
 }
 
 /* ── Floating Reserve Button (bottom-right) ── */

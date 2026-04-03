@@ -357,6 +357,19 @@
     }
     .dish-story-body.light { color: rgba(184,176,168,0.8); }
 
+    /* Tableware: full photo in frame (avoid cropping the bowl) */
+    [data-section="tableware"] .dish-story-img {
+      aspect-ratio: 1/1;
+      background: var(--cream-dark);
+    }
+    [data-section="tableware"] .dish-story-img img {
+      object-fit: contain;
+      object-position: center;
+    }
+    [data-section="tableware"] .dish-story-img:hover img {
+      transform: scale(1.02);
+    }
+
     /* ── Breakfast ── */
     .breakfast-section {
       background: var(--cream); padding: 7rem 0 0;
@@ -389,6 +402,7 @@
       .craft-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .dish-story { grid-template-columns: 1fr; }
       .dish-story-img { aspect-ratio: 16/9; }
+      [data-section="tableware"] .dish-story-img { aspect-ratio: 1/1; }
       .dish-story-text, .dish-story-text.dark { padding: 3.5rem 1.5rem; }
       .dish-story-body { max-width: 100%; }
       .breakfast-grid { grid-template-columns: repeat(2,1fr); }
@@ -479,6 +493,26 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- ── Tableware（手作りの器） ── -->
+    <section data-section="tableware" aria-labelledby="dining-tableware-heading">
+      <article class="dish-story">
+        <div class="dish-story-img">
+          <img
+            src="images/dining/da5YasIw.webp"
+            alt="手作りのお茶碗やお皿 — THE BLESS AWAJI"
+            loading="lazy"
+          >
+        </div>
+        <div class="dish-story-text">
+          <span class="dish-story-label reveal" data-i18n="dining_tableware_label">Tableware</span>
+          <h3 class="dish-story-title reveal reveal-delay-1" id="dining-tableware-heading" data-i18n-html="dining_tableware_title">手作りの器</h3>
+          <p class="dish-story-body reveal reveal-delay-2" data-i18n-html="dining_tableware_body">
+            お茶碗やお皿など、当施設のスタッフが手掛けるうつわに、薪火で仕立てた料理を盛り付けてご提供しています。ひとつひとつ表情が違う手仕事の器が、目に触れる瞬間から味わいの余韻まで、食の体験に温かみを添えます。
+          </p>
+        </div>
+      </article>
     </section>
 
     <!-- ── JOSPER Stamp ── -->
@@ -759,7 +793,8 @@
           <p><a href="tel:0799227775" data-i18n="tel">0799-22-7775</a></p>
           <p><a href="mailto:awajiauberge@gmail.com" data-i18n="email">awajiauberge@gmail.com</a></p>
           <div class="footer-social">
-            <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener" data-i18n="footer_ig_official">Instagram official</a>
+            <a href="https://www.instagram.com/bless_awaji_staff/" target="_blank" rel="noopener" data-i18n="footer_ig_staff">Instagram staff</a>
           </div>
         </div>
         <div class="footer-col">

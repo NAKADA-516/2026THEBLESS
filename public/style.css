@@ -1391,11 +1391,31 @@ p {
 
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr;
   gap: 3rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   margin-bottom: 2rem;
+}
+
+.footer-image-col {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.footer-image-col img {
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.75;
+  transition: opacity 0.4s ease;
+}
+
+.footer-image-col img:hover {
+  opacity: 1;
 }
 
 .footer-brand .footer-logo {
@@ -1438,7 +1458,9 @@ p {
 
 .footer-social {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
   margin-top: 1.5rem;
 }
 
@@ -1590,6 +1612,10 @@ p {
     gap: 2rem;
   }
 
+  .footer-image-col {
+    display: none;
+  }
+
   .section-c-inner {
     grid-template-columns: 1fr;
   }
@@ -1690,8 +1716,9 @@ p {
   .footer-social {
     margin-top: 0.75rem;
     display: flex;
-    gap: 1.5rem;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
   }
 
   .footer-social a {
@@ -2454,9 +2481,37 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.stay-photos .photo-item:hover img { transform: scale(1.03); }
+
+/* ── Tagline Strip ── */
+.tagline-strip {
+  background: var(--cream);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.tagline-strip__en {
+  font-family: var(--font-en);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(212, 43, 43, 0.8);
+  margin-bottom: 1rem;
+}
+
+.tagline-strip__jp {
+  font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: var(--charcoal);
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .tagline-strip {
+    padding: 3.5rem 1.5rem;
+  }
+}
 
 /* ── Index: Reserve — 2ボタン縦並び ── */
 .reserve-btns {

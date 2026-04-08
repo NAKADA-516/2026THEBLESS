@@ -1418,6 +1418,25 @@ p {
   opacity: 1;
 }
 
+/* TOP など: 横長ビジュアル（footer_1.webp）— 既定の 3/4 + cover だと全体が切れる */
+#site-footer.footer--wide-visual .footer-top {
+  grid-template-columns: 1.75fr 0.9fr 0.9fr 0.9fr minmax(260px, 2.75fr);
+}
+
+#site-footer.footer--wide-visual .footer-image-col {
+  align-items: center;
+  min-width: 0;
+}
+
+#site-footer.footer--wide-visual .footer-image-col img {
+  max-width: 100%;
+  width: 100%;
+  aspect-ratio: unset;
+  height: auto;
+  object-fit: contain;
+  object-position: center right;
+}
+
 .footer-brand .footer-logo {
   font-family: var(--font-en);
   font-size: 1.1rem;

@@ -482,6 +482,11 @@
 
     .contact-method:hover { background: rgba(242,237,230,0.05); }
 
+    .contact-method--nolink {
+      cursor: default;
+      text-decoration: none;
+    }
+
     .contact-method-type {
       font-family: var(--font-en);
       font-size: 0.68rem;
@@ -1125,11 +1130,11 @@
             <span class="contact-method-value">0799-22-7775</span>
             <span class="contact-method-note">受付時間 10:00〜20:00</span>
           </a>
-          <a href="mailto:awajiauberge@gmail.com" class="contact-method">
+          <div class="contact-method contact-method--nolink">
             <span class="contact-method-type">Email</span>
-            <span class="contact-method-value" style="font-size:0.95rem;">awajiauberge<br>@gmail.com</span>
-            <span class="contact-method-note">24時間受付</span>
-          </a>
+            <span class="contact-method-value" style="font-size:0.95rem;">awajiauberge★gmail.com</span>
+            <span class="contact-method-note" data-i18n="footer_email_note">★を@に変更してお送りください。</span>
+          </div>
         </div>
       </div>
     </section>
@@ -1164,7 +1169,8 @@
           <span class="footer-logo en">THE BLESS AWAJI</span>
           <p data-i18n="footer_address">兵庫県洲本市炬口247</p>
           <p><a href="tel:0799227775">0799-22-7775</a></p>
-          <p><a href="mailto:awajiauberge@gmail.com">awajiauberge@gmail.com</a></p>
+          <p class="footer-email-line" data-i18n="footer_email_line">メール：awajiauberge★gmail.com</p>
+          <p class="footer-email-note" data-i18n="footer_email_note">★を@に変更してお送りください。</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener" data-i18n="footer_ig_official">Instagram official</a>
             <a href="https://www.instagram.com/bless_awaji_staff/" target="_blank" rel="noopener" data-i18n="footer_ig_staff">Instagram staff</a>

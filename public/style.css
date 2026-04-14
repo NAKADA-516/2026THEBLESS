@@ -1452,6 +1452,41 @@ p {
   margin-bottom: 0.35rem;
 }
 
+.footer-email-line {
+  font-size: 0.82rem;
+  line-height: 1.9;
+  margin: 0 0 0.15rem;
+  color: var(--gray-light);
+}
+
+.footer-email-note {
+  font-size: 0.7rem;
+  line-height: 1.45;
+  color: var(--gray-mid);
+  margin: 0 0 0.5rem;
+  padding: 0.35rem 0.55rem;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  max-width: 22em;
+}
+
+.footer-email-note--compact {
+  display: inline-block;
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+  max-width: none;
+  font-size: 0.68rem;
+  padding: 0.28rem 0.5rem;
+}
+
+.terms-email-note {
+  font-size: 0.85em;
+  color: var(--gray-mid);
+  display: block;
+  margin-top: 0.2rem;
+  line-height: 1.5;
+}
+
 .footer-col h4 {
   font-family: var(--font-en);
   font-size: 0.7rem;

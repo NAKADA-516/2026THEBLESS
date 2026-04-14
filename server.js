@@ -38,6 +38,9 @@ app.use(express.static(PUBLIC_DIR, {
     if (filePath.endsWith('.html')) {
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
     }
+    if (/\.(webp|jpe?g|png|gif|svg|ico)$/i.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    }
   }
 }));
 

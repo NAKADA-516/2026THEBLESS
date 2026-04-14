@@ -1,0 +1,51 @@
+---
+description: master/mainへのGit Push前に、HTMLファイル内の画像URLにUUIDのキャッシュバスターを付与するルール
+alwaysApply: true
+---
+
+# 画像URLバージョニング（キャッシュバスター）
+
+## 目的
+
+`max-age=31536000`（1年）の長期キャッシュを画像に設定しているため、画像を更新してもブラウザが古いキャッシュを使い続ける可能性がある。
+デプロイのたびに `?v=<UUID>` を更新することで、ブラウザに新しいURLとして認識させる。
+
+## ルール
+
+**`git push`（master または main ブランチへ）を行う前に、必ず以下を実施すること。**
+
+### 対象ファイル
+
+`public/` 配下のすべての `.html` ファイル
+
+### 対象タグ
+
+- `<img src="...">` の `src` 属性
+- `<source srcset="...">` の `srcset` 属性
+- CSS `url(...)` は対象外（`public/style.css` にはローカル画像への参照がないため不要）
+
+### 更新ルール
+
+1. 画像URLに `?v=` パラメータが**ない**場合 → 追加する
+2. 画像URLに `?v=` パラメータが**ある**場合 → 新しいUUIDで上書きする
+3. UUIDはデプロイごとに**全ファイル共通の1つ**を生成し、全箇所に適用する（ファイルごと・タグごとに異なるUUIDにしない）
+4. UUID生成: `uuidgen`（Mac/Linux）または `python3 -c "import uuid; print(uuid.uuid4())"`
+5. 対象拡張子: `.webp`, `.jpg`, `.jpeg`, `.png`, `.gif`, `.svg`
+
+### 例
+
+```html
+<!-- 変更前 -->
+<img src="images/hero/hero_1.webp">
+<img src="images/hero/hero_2.webp?v=a1b2c3d4-e5f6-7890-abcd-ef1234567890">
+
+<!-- 変更後（新しいUUIDを生成） -->
+<img src="images/hero/hero_1.webp?v=f47ac10b-58cc-4372-a567-0e02b2c3d479">
+<img src="images/hero/hero_2.webp?v=f47ac10b-58cc-4372-a567-0e02b2c3d479">
+```
+
+## 注意
+
+- OGP用のフルURL（`https://...` から始まる `<meta property="og:image">`）は**対象外**
+- `?v=` パラメータはCloudflare CDNのキャッシュには影響しない（Purgeで対応済み）。ブラウザキャッシュのみを無効化する目的
+- デプロイ後にCloudflare Purgeが自動実行される（GitHub Actions設定済み）

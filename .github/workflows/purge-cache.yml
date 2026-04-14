@@ -1,0 +1,19 @@
+name: Purge Cloudflare Cache
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge Cloudflare Cache
+        run: |
+          curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CF_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything": true}' | tee /tmp/cf_purge_result.json
+          cat /tmp/cf_purge_result.json | grep -q '"success":true' && echo "Purge succeeded" || (echo "Purge failed" && exit 1)

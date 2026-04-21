@@ -1741,15 +1741,23 @@ p {
   }
 
   .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-template-columns: 1fr;
     gap: 0;
+    justify-items: center;
+    width: 100%;
   }
 
   .footer-brand {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
+    width: 100%;
+    margin: 0 auto;
     padding-bottom: 1.5rem;
     /* border削除 → footer-bottomの上線1本に統一 */
   }
@@ -1765,6 +1773,9 @@ p {
     color: var(--gray-light);
     line-height: 1.8;
     margin-bottom: 0.1rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .footer-social {
@@ -1772,7 +1783,9 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 0.35rem;
+    width: 100%;
   }
 
   .footer-social a {
@@ -1784,11 +1797,16 @@ p {
     min-height: 44px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
-  .footer-inner,
   #site-footer {
     padding: 2rem 1.5rem 1rem;
+  }
+
+  .footer-inner {
+    padding: 0;
   }
 
   .footer-bottom {
@@ -1816,6 +1834,23 @@ p {
   .footer-legal a {
     font-size: 0.65rem;
     white-space: nowrap;
+  }
+
+  .footer-brand p,
+  .footer-email-line,
+  .footer-email-note,
+  .footer-social a,
+  .footer-bottom span {
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+
+  .footer-email-line,
+  .footer-email-note {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .access-strip {

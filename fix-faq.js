@@ -1,133 +1,28 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#1C1C1A">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>FAQ — よくあるご質問 | THE BLESS AWAJI</title>
-  <meta name="description" content="THE BLESS AWAJIのよくあるご質問。ペット・アメニティ・決済方法・アクセスなど。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://the-bless-awaji-fd7f1064bf4f.herokuapp.com/faq.html">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:title" content="FAQ | THE BLESS AWAJI">
-  <meta property="og:description" content="THE BLESS AWAJIのよくあるご質問。ペット・アメニティ・決済方法・アクセスなど。">
-  <meta property="og:image" content="https://the-bless-awaji-fd7f1064bf4f.herokuapp.com/images/dining/dining-04.webp">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" type="image/webp" href="images/logo-icon.webp"><link rel="apple-touch-icon" href="images/logo-icon.webp">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+const fs = require('fs');
+const path = require('path');
 
-  <!-- ── Header ── -->
-  <header id="site-header">
-    <a href="/" class="header-logo en">THE BLESS AWAJI |</a>
-    <div class="header-right">
-      <div class="lang-toggle">
-        <span data-lang="jp" class="active">JP</span>
-        <span class="lang-sep">｜</span>
-        <span data-lang="en" class="inactive">EN</span>
-      </div>
-      <div class="hamburger" id="hamburger" aria-label="メニューを開く">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </header>
+const htmlDir = path.join(__dirname, 'public');
 
-  <!-- ── Nav Overlay ── -->
-  <nav id="nav-overlay" aria-label="メインナビゲーション">
-    <ul class="nav-menu">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/dining">Dining</a></li>
-      <li><a href="/stay">Stay</a></li>
-      <li><a href="/spa">Spa</a></li>
-      <li><a href="/gallery">Gallery</a></li>
-      <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
-      <li><a href="/group">Group &amp; Private</a></li>
-      <li><a href="/faq">FAQ</a></li>
-    </ul>
-    <div class="nav-sub">
-      <a href="tel:0799227775">0799-22-7775</a>
-      <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
-    </div>
-  </nav>
+// ── 1. faq.html: Facility InfoセクションをFAQアコーディオンに置き換え ──
+const faqPath = path.join(htmlDir, 'faq.html');
+let faq = fs.readFileSync(faqPath, 'utf8');
 
-  <main>
+// BOMを除去
+if (faq.charCodeAt(0) === 0xFEFF) { faq = faq.slice(1); }
 
-    <!-- ── Page Hero ── -->
-    <section class="page-hero" data-section="hero">
-      <div class="page-hero-bg">
-        <img
-          src="images/FAQ/FAQ1.webp?v=32cd4ace-36a5-4032-882e-58e34f572021"
-          alt="THE BLESS AWAJI — よくあるご質問"
-          class="page-hero-img"
-          loading="eager"
-        >
-      </div>
-      <div class="page-hero-content">
-        <h1 class="en">FAQ</h1>
-      </div>
-    </section>
+const facilityStart = faq.indexOf('<section class="section-a" data-section="facility"');
+const floorPlanStart = faq.indexOf('<section class="section-a" data-section="floorplan"');
 
-    <!-- ── Reserve Options ── -->
-    <section class="section-a" data-section="options">
-      <div class="inner">
-        <span class="section-label reveal">Reserve</span>
-        <span class="section-line reveal reveal-delay-1"></span>
-        <h2 class="section-title en reveal reveal-delay-2">How to Reserve</h2>
-        <div class="reserve-cards reveal reveal-delay-3" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;">
-          <a
-            href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily"
-            target="_blank"
-            rel="noopener"
-            class="btn"
-            style="display:flex;flex-direction:column;align-items:center;padding:2.5rem 2rem;text-align:center;gap:0.75rem;"
-          >
-            <span class="en" style="font-size:1.5rem;">Online</span>
-            <span style="font-size:0.8rem;letter-spacing:0.1em;" data-i18n="faq_online_reserve">オンライン予約（24時間受付）</span>
-          </a>
-          <a
-            href="tel:0799227775"
-            class="btn"
-            style="display:flex;flex-direction:column;align-items:center;padding:2.5rem 2rem;text-align:center;gap:0.75rem;"
-          >
-            <span class="en" style="font-size:1.5rem;">Tel</span>
-            <span style="font-size:0.8rem;letter-spacing:0.1em;">0799-22-7775</span>
-          </a>
-        </div>
-      </div>
-    </section>
+if (facilityStart === -1 || floorPlanStart === -1) {
+  console.log('セクションが見つかりません。facilityStart:', facilityStart, 'floorPlanStart:', floorPlanStart);
+  process.exit(1);
+}
 
-    <!-- ── Info ── -->
-    <section class="info-block section-a" data-section="info">
-      <div class="inner" style="max-width:800px;">
-        <span class="section-label reveal">Info</span>
-        <span class="section-line reveal reveal-delay-1"></span>
-        <div class="info-grid reveal reveal-delay-2" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;">
-          <div>
-            <h4 class="en" style="margin-bottom:1rem;font-size:0.8rem;letter-spacing:0.15em;">CHECK-IN / OUT</h4>
-            <p style="font-size:0.9rem;line-height:2;" data-i18n="checkin">チェックイン 15:00（最終18:00）</p>
-            <p style="font-size:0.9rem;" data-i18n="checkout">チェックアウト 11:00</p>
-          </div>
-          <div>
-            <h4 class="en" style="margin-bottom:1rem;font-size:0.8rem;letter-spacing:0.15em;">CONTACT</h4>
-            <p style="font-size:0.9rem;line-height:2;">
-              <a href="tel:0799227775">0799-22-7775</a><br>
-              <span data-i18n="footer_email_line">メール：awajiauberge★gmail.com</span><br>
-              <span class="footer-email-note footer-email-note--compact" data-i18n="footer_email_note">★を@に変更してお送りください。</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+// Facility Infoセクション（コメント行も含む）の開始位置を少し前に広げる
+const commentBefore = faq.lastIndexOf('\n', facilityStart);
+const sectionToReplace = faq.substring(commentBefore + 1, floorPlanStart);
 
-    <!-- ── Facility Info ── -->
-    <!-- ── FAQ Accordion ── -->
+const newAccordion = `    <!-- ── FAQ Accordion ── -->
     <section class="section-a" data-section="faq-accordion">
       <div class="inner" style="max-width:900px;">
         <span class="section-label reveal">Q &amp; A</span>
@@ -612,236 +507,16 @@
       </div>
     </section>
 
-<section class="section-a" data-section="floorplan" style="background:var(--cream);">
-      <div class="inner" style="max-width:1000px;">
-        <span class="section-label reveal">Floor Plan</span>
-        <span class="section-line reveal reveal-delay-1"></span>
-        <h2 class="section-title en reveal reveal-delay-2">Floor Plan</h2>
-        <span class="section-title-jp reveal reveal-delay-2" data-i18n="faq_floor_sub">館内マップ</span>
-        <div class="reveal reveal-delay-3" style="margin-top:3rem;overflow:hidden;">
-          <img
-            src="images/FAQ/screenshot-01.webp?v=32cd4ace-36a5-4032-882e-58e34f572021"
-            alt="館内マップ — THE BLESS AWAJI フロアプラン"
-            loading="lazy"
-            style="width:100%;height:auto;display:block;"
-          >
-        </div>
-      </div>
-    </section>
+`;
 
-    <!-- ── Access Detail ── -->
-    <section class="section-a" data-section="access-detail" style="background:#111110;">
-      <div class="inner" style="max-width:900px;">
-        <span class="section-label section-label--light reveal">Access</span>
-        <span class="section-line section-line--light reveal reveal-delay-1"></span>
-        <h2 class="section-title en reveal reveal-delay-2">How to Get Here</h2>
-        <span class="section-title-jp reveal reveal-delay-2" data-i18n="faq_access_sub">アクセス</span>
+faq = faq.substring(0, commentBefore + 1) + newAccordion + faq.substring(floorPlanStart);
 
-        <style>
-          .access-detail-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
-          }
-          .access-detail-block {
-            padding: 2rem 1.8rem;
-            background: rgba(242,237,230,0.04);
-            border-top: 1px solid rgba(242,237,230,0.12);
-          }
-          .access-detail-block h4 {
-            font-family: var(--font-en);
-            font-size: 0.72rem;
-            letter-spacing: 0.2em;
-            color: var(--cream);
-            margin-bottom: 1.2rem;
-          }
-          .access-detail-block p {
-            font-size: 0.82rem;
-            line-height: 2.4;
-            color: rgba(184,176,168,0.75);
-          }
-          .access-detail-block .access-note {
-            font-size: 0.76rem;
-            line-height: 2.2;
-            color: rgba(184,176,168,0.45);
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(242,237,230,0.08);
-          }
-          @media (max-width: 768px) {
-            .access-detail-grid { grid-template-columns: 1fr; gap: 1rem; }
-          }
-        </style>
-
-        <div class="access-detail-grid reveal reveal-delay-2">
-          <div class="access-detail-block">
-            <h4>PUBLIC TRANSPORT</h4>
-            <p data-i18n="faq_transport_text" style="white-space:pre-line;">最寄りバス停：「炬の口」
-バス停からホテルまで徒歩約4分
-
-神戸三宮 → 洲本BC
-高速バス 約90分
-
-大阪梅田 → 洲本BC
-約120分
-
-洲本BC → 炬の口
-島内路線バス利用</p>
-            <p class="access-note" data-i18n="faq_transport_note">※時刻表は淡路交通のウェブサイトでご確認ください。洲本バスセンターから徒歩約10分でのアクセスも可能です。</p>
-          </div>
-
-          <div class="access-detail-block">
-            <h4>BY CAR</h4>
-            <p data-i18n="faq_car_text" style="white-space:pre-line;">最寄りIC：洲本IC
-（神戸淡路鳴門自動車道）
-
-洲本IC → 国道28号を洲本市内方面へ約10分 → 炬口北交差点を直進約200m
-
-新神戸から 約60分
-大阪梅田から 約90分
-京都から 約120分</p>
-            <p class="access-note" data-i18n="faq_car_note">※明石海峡大橋は天候により通行制限がかかる場合があります。事前に道路情報をご確認ください。<br>※駐車場はホテルに完備。宿泊者は無料でご利用いただけます。</p>
-          </div>
-
-          <div class="access-detail-block">
-            <h4>TRANSFER</h4>
-            <p>
-              <span data-i18n="faq_transfer">送迎サービスの詳細は、当施設までお問い合わせください。</span>
-            </p>
-            <p class="access-note" style="color:rgba(184,176,168,0.6);">
-              <a href="tel:0799227775" style="color:inherit;">0799-22-7775</a><br>
-              <span data-i18n="footer_email_line">メール：awajiauberge★gmail.com</span><br>
-              <span class="footer-email-note footer-email-note--compact" data-i18n="footer_email_note" style="background:rgba(0,0,0,0.15);">★を@に変更してお送りください。</span>
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── Map ── -->
-    <section class="map-section" data-section="map" style="background:var(--charcoal);">
-      <div class="map-wrapper">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d134.893456!3d34.354669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDIxJzE2LjgiTiAxMzTCsDUzJzM2LjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="THE BLESS AWAJI 地図"
-        ></iframe>
-      </div>
-      <div class="map-info-bar">
-        <div class="map-info-item">
-          <span class="map-info-label en">Address</span>
-          <span class="map-info-value" data-i18n="stay_map_address">〒656-0011 兵庫県洲本市炬口247</span>
-        </div>
-        <div class="map-info-item">
-          <span class="map-info-label en">Tel</span>
-          <span class="map-info-value"><a href="tel:0799227775">0799-22-7775</a></span>
-        </div>
-        <div class="map-info-item">
-          <span class="map-info-label en">Google Maps</span>
-          <span class="map-info-value">
-            <a href="https://www.google.com/maps?ll=34.354669,134.893456&z=18&t=m&hl=ja&gl=US&mapclient=embed&q=%E3%80%92656-0011+%E5%85%B5%E5%BA%AB%E7%9C%8C%E6%B4%B2%E6%9C%AC%E5%B8%82%E7%82%AC%E5%8F%A3%EF%BC%92%EF%BC%94%EF%BC%97" target="_blank" rel="noopener">
-              地図を開く / Open Map
-            </a>
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Access Strip ── -->
-    <div class="access-strip">
-      <div class="access-item">
-        <span class="access-from en" data-i18n="access1_from">洲本IC</span>
-        <span class="access-time en" data-i18n="access1_time">10 min</span>
-      </div>
-      <div class="access-item">
-        <span class="access-from en" data-i18n="access2_from">新神戸</span>
-        <span class="access-time en" data-i18n="access2_time">60 min</span>
-      </div>
-      <div class="access-item">
-        <span class="access-from en" data-i18n="access3_from">大阪梅田</span>
-        <span class="access-time en" data-i18n="access3_time">90 min</span>
-      </div>
-      <div class="access-item">
-        <span class="access-from en" data-i18n="access4_from">京都</span>
-        <span class="access-time en" data-i18n="access4_time">120 min</span>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- ── Footer ── -->
-  <footer id="site-footer" class="footer--wide-visual">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <span class="footer-logo en">THE BLESS AWAJI</span>
-          <p data-i18n="address">兵庫県洲本市炬口247</p>
-          <p><a href="tel:0799227775">0799-22-7775</a></p>
-          <p class="footer-email-line" data-i18n="footer_email_line">メール：awajiauberge★gmail.com</p>
-          <p class="footer-email-note" data-i18n="footer_email_note">★を@に変更してお送りください。</p>
-          <div class="footer-social">
-            <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener" data-i18n="footer_ig_official">Instagram official</a>
-            <a href="https://www.instagram.com/bless_awaji_staff/" target="_blank" rel="noopener" data-i18n="footer_ig_staff">Instagram staff</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Navigate</h4>
-          <ul>
-            <li><a href="/" data-i18n="nav_home">Home</a></li>
-            <li><a href="/about" data-i18n="nav_about">About</a></li>
-            <li><a href="/dining" data-i18n="nav_dining">Dining</a></li>
-            <li><a href="/stay" data-i18n="nav_stay">Stay</a></li>
-            <li><a href="/spa" data-i18n="nav_spa">Spa</a></li>
-            <li><a href="/gallery" data-i18n="nav_gallery">Gallery</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Reserve</h4>
-          <ul>
-            <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener" data-i18n="footer_reserve">Reserve</a></li>
-            <li><a href="/group">Group &amp; Private</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Info</h4>
-          <ul>
-            <li><a href="/faq" data-i18n="nav_faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-image-col">
-          <img src="images/footer/footer_1.webp?v=32cd4ace-36a5-4032-882e-58e34f572021" alt="THE BLESS AWAJI" loading="lazy">
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span class="en" data-i18n="footer_copyright">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
-        <div class="footer-legal">
-          <a href="/terms" data-i18n="footer_terms">宿泊約款</a>
-          <a href="/privacy" data-i18n="footer_privacy_link">プライバシーポリシー</a>
-          <a href="/legal" data-i18n="footer_legal_link">特商法に基づく表記</a>
-        </div>
-        <span class="en">Awaji Island, Hyogo, Japan</span>
-      </div>
-    </div>
-  </footer>
-  <!-- Floating Reserve Button -->
-  <a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener" class="float-reserve" aria-label="Reserve">
-    <div class="float-reserve__circle">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
-      </svg>
-    </div>
-    <span class="float-reserve__label">Reserve</span>
-  </a>
-
-
-    <script>
+// アコーディオンJSを </body> の前に挿入
+const scriptTag = '<script src="js/main.js"></script>';
+if (!faq.includes('faq-question')) {
+  console.log('Warning: accordion JS not found but that is expected');
+}
+const accordionJS = `  <script>
     (function () {
       document.querySelectorAll('.faq-question').forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -853,6 +528,25 @@
       });
     })();
   </script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+  `;
+
+faq = faq.replace(scriptTag, accordionJS + scriptTag);
+
+fs.writeFileSync(faqPath, faq, 'utf8');
+console.log('faq.html updated successfully');
+
+// ── 2. 全HTMLファイルのUUID更新 ──
+const newUUID = '32cd4ace-36a5-4032-882e-58e34f572021';
+const htmlFiles = fs.readdirSync(htmlDir).filter(f => f.endsWith('.html'));
+
+htmlFiles.forEach(file => {
+  const filePath = path.join(htmlDir, file);
+  let content = fs.readFileSync(filePath, 'utf8');
+  // BOM除去
+  if (content.charCodeAt(0) === 0xFEFF) { content = content.slice(1); }
+  const updated = content.replace(/\?v=[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/g, `?v=${newUUID}`);
+  fs.writeFileSync(filePath, updated, 'utf8');
+  console.log('UUID updated:', file);
+});
+
+console.log('All done!');

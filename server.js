@@ -33,6 +33,11 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/favicon.ico', (req, res) => {
+  res.type('png');
+  res.sendFile(path.join(PUBLIC_DIR, 'images/logo-icon.png'));
+});
+
 app.use(express.static(PUBLIC_DIR, {
   setHeaders: (res, filePath) => {
     if (filePath.endsWith('.html')) {

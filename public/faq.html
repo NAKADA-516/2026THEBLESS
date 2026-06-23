@@ -63,7 +63,7 @@
     <section class="page-hero" data-section="hero">
       <div class="page-hero-bg">
         <img
-          src="images/FAQ/FAQ1.webp?v=f3e0360d-95a8-436a-a181-213aa8d22063"
+          src="images/FAQ/FAQ1.webp?v=831379b7-d53f-492c-96cd-2d98db268be8"
           alt="THE BLESS AWAJI — よくあるご質問"
           class="page-hero-img"
           loading="eager"
@@ -715,7 +715,7 @@
         <span class="section-title-jp reveal reveal-delay-2" data-i18n="faq_floor_sub">館内マップ</span>
         <div class="reveal reveal-delay-3" style="margin-top:3rem;overflow:hidden;">
           <img
-            src="images/FAQ/screenshot-01.webp?v=f3e0360d-95a8-436a-a181-213aa8d22063"
+            src="images/FAQ/screenshot-01.webp?v=831379b7-d53f-492c-96cd-2d98db268be8"
             alt="館内マップ — THE BLESS AWAJI フロアプラン"
             loading="lazy"
             style="width:100%;height:auto;display:block;"
@@ -739,9 +739,9 @@
           }
           .access-summary {
             display: grid;
-            grid-template-columns: 1.1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 0;
           }
           .access-summary-card,
           .access-route-card,
@@ -762,6 +762,21 @@
             font-size: 1rem;
             margin-bottom: 1rem;
           }
+          .access-address-card address {
+            color: var(--cream);
+            font-style: normal;
+            font-size: 1rem;
+            line-height: 2;
+            letter-spacing: 0.04em;
+            margin: 0.9rem 0 1rem;
+          }
+          .access-address-name {
+            color: rgba(242,237,230,0.55);
+            font-family: var(--font-en);
+            font-size: 0.78rem;
+            letter-spacing: 0.16em;
+            margin-bottom: 0.5rem;
+          }
           .access-summary-card p {
             color: rgba(242,237,230,0.72);
             font-size: 0.88rem;
@@ -776,10 +791,49 @@
             margin-top: 3rem;
           }
           .access-group-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
             font-size: 0.9rem;
             margin-bottom: 1rem;
             padding-bottom: 0.8rem;
             border-bottom: 1px solid rgba(242,237,230,0.14);
+            cursor: default;
+            list-style: none;
+          }
+          .access-group-title::-webkit-details-marker {
+            display: none;
+          }
+          .access-fold .access-group-title {
+            cursor: pointer;
+          }
+          .access-fold .access-group-title::after {
+            content: '+';
+            display: grid;
+            place-items: center;
+            width: 1.6rem;
+            height: 1.6rem;
+            flex: 0 0 auto;
+            border: 1px solid rgba(242,237,230,0.18);
+            color: rgba(242,237,230,0.74);
+            font-size: 1rem;
+            line-height: 1;
+          }
+          .access-fold[open] .access-group-title::after {
+            content: '-';
+          }
+          .access-fold--summary .access-group-title {
+            margin-bottom: 0;
+          }
+          .access-fold--summary[open] .access-group-title {
+            margin-bottom: 1rem;
+          }
+          .access-fold--summary .access-route-grid {
+            grid-template-columns: 1fr;
+          }
+          .access-fold--summary .access-route-card {
+            padding: 1.2rem;
           }
           .access-route-grid {
             display: grid;
@@ -900,18 +954,16 @@
 
         <div class="access-guide reveal reveal-delay-2">
           <div class="access-summary">
-            <div class="access-summary-card">
-              <h3>THE BLESS Awaji</h3>
-              <p><strong>〒656-0025 兵庫県洲本市炬口247</strong><br>洲本バスセンターから徒歩約5分。お車でお越しの場合は、館内駐車場をご利用いただけます。</p>
-            </div>
-            <div class="access-summary-card">
-              <h3>高速バスをご利用のお客様へ</h3>
-              <p>各方面からの高速バスは、洲本バスセンター下車が便利です。到着予定時刻を事前にお知らせいただければ、無料でお迎えにあがります。</p>
+            <div class="access-summary-card access-address-card">
+              <h3>所在地</h3>
+              <p class="access-address-name">THE BLESS Awaji</p>
+              <address>〒656-0025<br>兵庫県洲本市炬口247</address>
+              <p>洲本バスセンターから徒歩約5分。お車でお越しの場合は、館内駐車場をご利用いただけます。</p>
             </div>
           </div>
 
-          <div class="access-group">
-            <h3 class="access-group-title">高速バスでお越しの場合</h3>
+          <details class="access-group access-fold">
+            <summary class="access-group-title">高速バスでお越しの場合</summary>
             <div class="access-route-grid">
               <div class="access-route-card">
                 <h4>神戸三宮から</h4>
@@ -963,10 +1015,10 @@
                 </ul>
               </div>
             </div>
-          </div>
+          </details>
 
-          <div class="access-group">
-            <h3 class="access-group-title">船でお越しの場合</h3>
+          <details class="access-group access-fold">
+            <summary class="access-group-title">船でお越しの場合</summary>
             <div class="access-route-grid access-route-grid--single">
               <div class="access-route-card">
                 <h4>深日港から</h4>
@@ -978,10 +1030,10 @@
                 </ul>
               </div>
             </div>
-          </div>
+          </details>
 
-          <div class="access-group">
-            <h3 class="access-group-title">車・レンタカーでお越しの場合</h3>
+          <details class="access-group access-fold">
+            <summary class="access-group-title">車・レンタカーでお越しの場合</summary>
             <div class="access-route-grid">
               <div class="access-route-card">
                 <h4>おすすめの利用拠点</h4>
@@ -1029,10 +1081,10 @@
                 </div>
               </div>
             </div>
-          </div>
+          </details>
 
-          <div class="access-group">
-            <h3 class="access-group-title">徳島空港からお越しの場合</h3>
+          <details class="access-group access-fold">
+            <summary class="access-group-title">徳島空港からお越しの場合</summary>
             <div class="access-route-grid access-route-grid--single">
               <div class="access-route-card">
                 <h4>タクシー利用</h4>
@@ -1043,13 +1095,22 @@
                 </ul>
               </div>
             </div>
-          </div>
+          </details>
 
-          <div class="access-note-panel">
-            <h3>送迎について</h3>
-            <p>高速バスをご利用のお客様は、洲本バスセンターまで無料でお迎えにあがります。ご利用の際は、事前に到着予定時刻をお知らせください。</p>
-            <p style="margin-top:0.8rem;">お問い合わせ: <a href="tel:0799227775">0799-22-7775</a>　／　メール：awajiauberge★gmail.com（★を@に変更）</p>
-          </div>
+          <details class="access-group access-fold">
+            <summary class="access-group-title">送迎について</summary>
+            <div class="access-route-grid access-route-grid--single">
+              <div class="access-route-card">
+                <h4>洲本バスセンター送迎</h4>
+                <ul class="access-route-list">
+                  <li><span class="access-route-label">対象</span><span>高速バスをご利用のお客様。</span></li>
+                  <li><span class="access-route-label">送迎場所</span><span>洲本バスセンターまで無料でお迎えにあがります。</span></li>
+                  <li><span class="access-route-label">ご連絡</span><span>ご利用の際は、事前に到着予定時刻をお知らせください。</span></li>
+                  <li><span class="access-route-label">お問い合わせ</span><span><a href="tel:0799227775">0799-22-7775</a>　／　メール：awajiauberge★gmail.com（★を@に変更）</span></li>
+                </ul>
+              </div>
+            </div>
+          </details>
         </div>
 
       </div>
@@ -1151,7 +1212,7 @@
           </ul>
         </div>
         <div class="footer-image-col">
-          <img src="images/footer/footer_1.webp?v=f3e0360d-95a8-436a-a181-213aa8d22063" alt="THE BLESS AWAJI" loading="lazy">
+          <img src="images/footer/footer_1.webp?v=831379b7-d53f-492c-96cd-2d98db268be8" alt="THE BLESS AWAJI" loading="lazy">
         </div>
       </div>
       <div class="footer-bottom">

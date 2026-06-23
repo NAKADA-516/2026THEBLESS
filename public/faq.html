@@ -63,7 +63,7 @@
     <section class="page-hero" data-section="hero">
       <div class="page-hero-bg">
         <img
-          src="images/FAQ/FAQ1.webp?v=f3e80ca9-d128-41b3-988c-38329d380403"
+          src="images/FAQ/FAQ1.webp?v=f3e0360d-95a8-436a-a181-213aa8d22063"
           alt="THE BLESS AWAJI — よくあるご質問"
           class="page-hero-img"
           loading="eager"
@@ -715,7 +715,7 @@
         <span class="section-title-jp reveal reveal-delay-2" data-i18n="faq_floor_sub">館内マップ</span>
         <div class="reveal reveal-delay-3" style="margin-top:3rem;overflow:hidden;">
           <img
-            src="images/FAQ/screenshot-01.webp?v=f3e80ca9-d128-41b3-988c-38329d380403"
+            src="images/FAQ/screenshot-01.webp?v=f3e0360d-95a8-436a-a181-213aa8d22063"
             alt="館内マップ — THE BLESS AWAJI フロアプラン"
             loading="lazy"
             style="width:100%;height:auto;display:block;"
@@ -726,89 +726,329 @@
 
     <!-- ── Access Detail ── -->
     <section class="section-a" data-section="access-detail" style="background:#111110;">
-      <div class="inner" style="max-width:900px;">
+      <div class="inner" style="max-width:1040px;">
         <span class="section-label section-label--light reveal">Access</span>
         <span class="section-line section-line--light reveal reveal-delay-1"></span>
         <h2 class="section-title en reveal reveal-delay-2">How to Get Here</h2>
         <span class="section-title-jp reveal reveal-delay-2" data-i18n="faq_access_sub">アクセス</span>
 
         <style>
-          .access-detail-grid {
+          .access-guide {
+            margin-top: 3rem;
+            text-align: left;
+          }
+          .access-summary {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+          }
+          .access-summary-card,
+          .access-route-card,
+          .access-note-panel {
+            background: rgba(242,237,230,0.04);
+            border: 1px solid rgba(242,237,230,0.1);
+          }
+          .access-summary-card {
+            padding: 2rem;
+          }
+          .access-summary-card h3,
+          .access-note-panel h3,
+          .access-group-title {
+            color: var(--cream);
+            letter-spacing: 0.08em;
+          }
+          .access-summary-card h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+          }
+          .access-summary-card p {
+            color: rgba(242,237,230,0.72);
+            font-size: 0.88rem;
+            line-height: 2.1;
+            text-align: left;
+          }
+          .access-summary-card strong {
+            color: var(--cream);
+            font-weight: 500;
+          }
+          .access-group {
             margin-top: 3rem;
           }
-          .access-detail-block {
-            padding: 2rem 1.8rem;
-            background: rgba(242,237,230,0.04);
-            border-top: 1px solid rgba(242,237,230,0.12);
+          .access-group-title {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(242,237,230,0.14);
           }
-          .access-detail-block h4 {
-            font-family: var(--font-en);
-            font-size: 0.72rem;
-            letter-spacing: 0.2em;
+          .access-route-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+          }
+          .access-route-grid--single {
+            grid-template-columns: 1fr;
+          }
+          .access-route-card {
+            padding: 1.5rem;
+          }
+          .access-route-card h4 {
             color: var(--cream);
-            margin-bottom: 1.2rem;
+            font-size: 0.92rem;
+            letter-spacing: 0.06em;
+            margin-bottom: 1rem;
           }
-          .access-detail-block p {
+          .access-route-list {
+            list-style: none;
+            display: grid;
+            gap: 0.75rem;
+            margin: 0;
+            padding: 0;
+          }
+          .access-route-list li {
+            display: grid;
+            grid-template-columns: 6.5em 1fr;
+            gap: 0.8rem;
+            color: rgba(242,237,230,0.68);
             font-size: 0.82rem;
-            line-height: 2.4;
-            color: rgba(184,176,168,0.75);
+            line-height: 1.9;
           }
-          .access-detail-block .access-note {
-            font-size: 0.76rem;
-            line-height: 2.2;
-            color: rgba(184,176,168,0.45);
+          .access-route-label {
+            color: rgba(242,237,230,0.42);
+            letter-spacing: 0.08em;
+          }
+          .access-note-panel {
+            margin-top: 1.5rem;
+            padding: 1.6rem 2rem;
+          }
+          .access-note-panel h3 {
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+          }
+          .access-note-panel p,
+          .access-note-panel li {
+            color: rgba(242,237,230,0.7);
+            font-size: 0.84rem;
+            line-height: 2;
+            text-align: left;
+          }
+          .access-company-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.45rem 1rem;
+            margin-top: 0.8rem;
+            padding: 0;
+            list-style: none;
+          }
+          .access-company-list li {
+            color: rgba(242,237,230,0.65);
+            font-size: 0.8rem;
+            line-height: 1.8;
+          }
+          .access-rental-locations {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
             margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(242,237,230,0.08);
+          }
+          .access-rental-location {
+            padding: 1rem;
+            background: rgba(242,237,230,0.035);
+            border: 1px solid rgba(242,237,230,0.08);
+          }
+          .access-rental-location h5 {
+            color: var(--cream);
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.65rem;
+          }
+          .access-rental-location ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.35rem;
+          }
+          .access-rental-location li {
+            color: rgba(242,237,230,0.66);
+            font-size: 0.8rem;
+            line-height: 1.7;
+          }
+          .access-note-panel a {
+            color: var(--cream);
+            text-decoration: underline;
+            text-underline-offset: 3px;
           }
           @media (max-width: 768px) {
-            .access-detail-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .access-summary,
+            .access-route-grid,
+            .access-rental-locations,
+            .access-company-list {
+              grid-template-columns: 1fr;
+            }
+            .access-summary-card,
+            .access-route-card,
+            .access-note-panel {
+              padding: 1.4rem;
+            }
+            .access-route-list li {
+              grid-template-columns: 1fr;
+              gap: 0.2rem;
+            }
           }
         </style>
 
-        <div class="access-detail-grid reveal reveal-delay-2">
-          <div class="access-detail-block">
-            <h4>PUBLIC TRANSPORT</h4>
-            <p data-i18n="faq_transport_text" style="white-space:pre-line;">最寄りバス停：「炬の口」
-バス停からホテルまで徒歩約4分
-
-神戸三宮 → 洲本BC
-高速バス 約90分
-
-大阪梅田 → 洲本BC
-約120分
-
-洲本BC → 炬の口
-島内路線バス利用</p>
-            <p class="access-note" data-i18n="faq_transport_note">※時刻表は淡路交通のウェブサイトでご確認ください。洲本バスセンターから徒歩約10分でのアクセスも可能です。</p>
+        <div class="access-guide reveal reveal-delay-2">
+          <div class="access-summary">
+            <div class="access-summary-card">
+              <h3>THE BLESS Awaji</h3>
+              <p><strong>〒656-0025 兵庫県洲本市炬口247</strong><br>洲本バスセンターから徒歩約5分。お車でお越しの場合は、館内駐車場をご利用いただけます。</p>
+            </div>
+            <div class="access-summary-card">
+              <h3>高速バスをご利用のお客様へ</h3>
+              <p>各方面からの高速バスは、洲本バスセンター下車が便利です。到着予定時刻を事前にお知らせいただければ、無料でお迎えにあがります。</p>
+            </div>
           </div>
 
-          <div class="access-detail-block">
-            <h4>BY CAR</h4>
-            <p data-i18n="faq_car_text" style="white-space:pre-line;">最寄りIC：洲本IC
-（神戸淡路鳴門自動車道）
+          <div class="access-group">
+            <h3 class="access-group-title">高速バスでお越しの場合</h3>
+            <div class="access-route-grid">
+              <div class="access-route-card">
+                <h4>神戸三宮から</h4>
+                <ul class="access-route-list">
+                  <li><span class="access-route-label">乗車場所</span><span>ミント神戸1階。JR三ノ宮駅東口から徒歩約3分、阪神神戸三宮駅直結。</span></li>
+                  <li><span class="access-route-label">主な路線</span><span>洲本バスセンター行き、福良行き、西浦方面行き。</span></li>
+                  <li><span class="access-route-label">目安</span><span>約1時間24分、片道2,270円。</span></li>
+                  <li><span class="access-route-label">下車場所</span><span>洲本バスセンター下車。</span></li>
+                </ul>
+              </div>
 
-洲本IC → 国道28号を洲本市内方面へ約10分 → 炬口北交差点を直進約200m
+              <div class="access-route-card">
+                <h4>新神戸駅から</h4>
+                <ul class="access-route-list">
+                  <li><span class="access-route-label">乗車場所</span><span>新神戸駅前 高速バスのりば 1番のりば。</span></li>
+                  <li><span class="access-route-label">主な路線</span><span>神戸-洲本線、くにうみライナー、淡路交通・本四海峡バス・神姫バス共同運行便。</span></li>
+                  <li><span class="access-route-label">目安</span><span>約1時間30分、片道約2,270円。</span></li>
+                  <li><span class="access-route-label">下車場所</span><span>洲本バスセンター下車。</span></li>
+                </ul>
+              </div>
 
-新神戸から 約60分
-大阪梅田から 約90分
-京都から 約120分</p>
-            <p class="access-note" data-i18n="faq_car_note">※明石海峡大橋は天候により通行制限がかかる場合があります。事前に道路情報をご確認ください。<br>※駐車場はホテルに完備。宿泊者は無料でご利用いただけます。</p>
+              <div class="access-route-card">
+                <h4>舞子から</h4>
+                <ul class="access-route-list">
+                  <li><span class="access-route-label">乗車場所</span><span>高速舞子バス停。JR舞子駅・山陽電鉄舞子公園駅から徒歩約5分。</span></li>
+                  <li><span class="access-route-label">主な路線</span><span>洲本バスセンター行き、津名方面行き、福良方面行き。</span></li>
+                  <li><span class="access-route-label">目安</span><span>約45〜60分、片道約1,900〜2,300円。</span></li>
+                  <li><span class="access-route-label">下車場所</span><span>洲本バスセンター下車。</span></li>
+                </ul>
+              </div>
+
+              <div class="access-route-card">
+                <h4>大阪・梅田から</h4>
+                <ul class="access-route-list">
+                  <li><span class="access-route-label">乗車場所</span><span>ハービスPLAZA ENT 地下1階。JR大阪駅桜橋口から徒歩約7分、西梅田駅から徒歩約3分。</span></li>
+                  <li><span class="access-route-label">主な路線</span><span>洲本バスセンター行き、福良行き。</span></li>
+                  <li><span class="access-route-label">目安</span><span>約2時間、片道約3,000円。</span></li>
+                  <li><span class="access-route-label">下車場所</span><span>洲本バスセンター下車。</span></li>
+                </ul>
+              </div>
+
+              <div class="access-route-card">
+                <h4>神戸空港から</h4>
+                <ul class="access-route-list">
+                  <li><span class="access-route-label">乗車場所</span><span>神戸空港 第1ターミナル 7番バス乗り場。</span></li>
+                  <li><span class="access-route-label">主な路線</span><span>洲本バスセンター経由 洲本温泉行き、福良行き、西浦方面行き。</span></li>
+                  <li><span class="access-route-label">目安</span><span>約1時間40分、片道約2,500円。</span></li>
+                  <li><span class="access-route-label">下車場所</span><span>洲本バスセンター下車。</span></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
-          <div class="access-detail-block">
-            <h4>TRANSFER</h4>
-            <p>
-              <span data-i18n="faq_transfer">送迎サービスの詳細は、当施設までお問い合わせください。</span>
-            </p>
-            <p class="access-note" style="color:rgba(184,176,168,0.6);">
-              <a href="tel:0799227775" style="color:inherit;">0799-22-7775</a><br>
-              <span data-i18n="footer_email_line">メール：awajiauberge★gmail.com</span><br>
-              <span class="footer-email-note footer-email-note--compact" data-i18n="footer_email_note" style="background:rgba(0,0,0,0.15);">★を@に変更してお送りください。</span>
-            </p>
+          <div class="access-group">
+            <h3 class="access-group-title">船でお越しの場合</h3>
+            <div class="access-route-grid access-route-grid--single">
+              <div class="access-route-card">
+                <h4>深日港から</h4>
+                <ul class="access-route-list">
+                  <li><span class="access-route-label">運航区間</span><span>深日港から洲本港まで、深日洲本ライナーを利用。</span></li>
+                  <li><span class="access-route-label">目安</span><span>約40分。大人1,800円、小学生600円。</span></li>
+                  <li><span class="access-route-label">運航期間</span><span>2026年4月25日〜11月8日の土日祝限定運航。</span></li>
+                  <li><span class="access-route-label">到着後</span><span>洲本港からタクシーで約5分。</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="access-group">
+            <h3 class="access-group-title">車・レンタカーでお越しの場合</h3>
+            <div class="access-route-grid">
+              <div class="access-route-card">
+                <h4>おすすめの利用拠点</h4>
+                <ul class="access-route-list">
+                  <li><span class="access-route-label">拠点</span><span>神戸空港、三宮駅周辺、新神戸駅周辺。</span></li>
+                  <li><span class="access-route-label">ルート</span><span>神戸から明石海峡大橋、神戸淡路鳴門自動車道、洲本ICを経由して当館へ。</span></li>
+                  <li><span class="access-route-label">所要時間</span><span>神戸空港から約1時間。三宮・新神戸から約1時間10〜20分。</span></li>
+                </ul>
+              </div>
+
+              <div class="access-route-card">
+                <h4>料金とレンタカー会社の目安</h4>
+                <ul class="access-route-list">
+                  <li><span class="access-route-label">料金目安</span><span>レンタカー6,000円〜15,000円／日。高速道路料金はETC利用時で約2,000円前後、ガソリン代別途。</span></li>
+                  <li><span class="access-route-label">おすすめ</span><span>淡路島内の観光や周辺レストラン巡りを予定されている方は、レンタカーが便利です。</span></li>
+                </ul>
+                <div class="access-rental-locations">
+                  <div class="access-rental-location">
+                    <h5>新神戸駅周辺</h5>
+                    <ul>
+                      <li>TOYOTA Rent a Car</li>
+                      <li>タイムズカー 新神戸</li>
+                      <li>ORIX Rent-A-Car</li>
+                    </ul>
+                  </div>
+                  <div class="access-rental-location">
+                    <h5>三宮駅周辺</h5>
+                    <ul>
+                      <li>TOYOTA Rent a Car</li>
+                      <li>ニッポンレンタカー</li>
+                      <li>日産レンタカー</li>
+                      <li>ORIX Rent-A-Car</li>
+                      <li>タイムズカー</li>
+                    </ul>
+                  </div>
+                  <div class="access-rental-location">
+                    <h5>神戸空港</h5>
+                    <ul>
+                      <li>TOYOTA Rent a Car</li>
+                      <li>ニッポンレンタカー</li>
+                      <li>日産レンタカー</li>
+                      <li>ORIX Rent-A-Car</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="access-group">
+            <h3 class="access-group-title">徳島空港からお越しの場合</h3>
+            <div class="access-route-grid access-route-grid--single">
+              <div class="access-route-card">
+                <h4>タクシー利用</h4>
+                <ul class="access-route-list">
+                  <li><span class="access-route-label">ルート</span><span>徳島空港から大鳴門橋を経由し、淡路島内を北上して当館へ。</span></li>
+                  <li><span class="access-route-label">目安</span><span>約50〜60分、約15,000〜20,000円。</span></li>
+                  <li><span class="access-route-label">特徴</span><span>乗り換えなしで直接アクセスできます。</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="access-note-panel">
+            <h3>送迎について</h3>
+            <p>高速バスをご利用のお客様は、洲本バスセンターまで無料でお迎えにあがります。ご利用の際は、事前に到着予定時刻をお知らせください。</p>
+            <p style="margin-top:0.8rem;">お問い合わせ: <a href="tel:0799227775">0799-22-7775</a>　／　メール：awajiauberge★gmail.com（★を@に変更）</p>
           </div>
         </div>
 
@@ -832,7 +1072,7 @@
       <div class="map-info-bar">
         <div class="map-info-item">
           <span class="map-info-label en">Address</span>
-          <span class="map-info-value" data-i18n="stay_map_address">〒656-0011 兵庫県洲本市炬口247</span>
+          <span class="map-info-value">〒656-0025 兵庫県洲本市炬口247</span>
         </div>
         <div class="map-info-item">
           <span class="map-info-label en">Tel</span>
@@ -841,7 +1081,7 @@
         <div class="map-info-item">
           <span class="map-info-label en">Google Maps</span>
           <span class="map-info-value">
-            <a href="https://www.google.com/maps?ll=34.354669,134.893456&z=18&t=m&hl=ja&gl=US&mapclient=embed&q=%E3%80%92656-0011+%E5%85%B5%E5%BA%AB%E7%9C%8C%E6%B4%B2%E6%9C%AC%E5%B8%82%E7%82%AC%E5%8F%A3%EF%BC%92%EF%BC%94%EF%BC%97" target="_blank" rel="noopener">
+            <a href="https://www.google.com/maps?ll=34.354669,134.893456&z=18&t=m&hl=ja&gl=US&mapclient=embed&q=%E3%80%92656-0025+%E5%85%B5%E5%BA%AB%E7%9C%8C%E6%B4%B2%E6%9C%AC%E5%B8%82%E7%82%AC%E5%8F%A3%EF%BC%92%EF%BC%94%EF%BC%97" target="_blank" rel="noopener">
               地図を開く / Open Map
             </a>
           </span>
@@ -911,7 +1151,7 @@
           </ul>
         </div>
         <div class="footer-image-col">
-          <img src="images/footer/footer_1.webp?v=f3e80ca9-d128-41b3-988c-38329d380403" alt="THE BLESS AWAJI" loading="lazy">
+          <img src="images/footer/footer_1.webp?v=f3e0360d-95a8-436a-a181-213aa8d22063" alt="THE BLESS AWAJI" loading="lazy">
         </div>
       </div>
       <div class="footer-bottom">

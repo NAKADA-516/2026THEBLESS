@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const uuid = '5c940710-2bfb-451b-a689-648c8ecab2ad';
+const uuid = '835874bf-70ba-46c9-b33c-9b046688a6fa';
 const dir = path.join(__dirname, '..', 'public');
 
 const files = fs.readdirSync(dir).filter(f => f.endsWith('.html'));

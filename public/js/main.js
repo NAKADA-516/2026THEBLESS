@@ -274,12 +274,105 @@ const i18n = {
     faq_a_group: 'はい、全8室を利用した「全館貸切」でのご宿泊も承っております。ご友人ご家族の集まりや社員旅行など、大人数（16〜18名様程度）でも独立した客室でプライベートを確保しつつ、皆様で特別な一体感をお楽しみいただけます。ご予算やご要望に合わせて柔軟にカスタマイズいたしますので、幹事様はお気軽にご相談ください。',
     faq_q_storm_cancel: '悪天候で橋が渡れない場合のキャンセル料はどうなりますか？',
     faq_a_storm_cancel: '台風などの天災により、明石海峡大橋や大鳴門橋が通行止めになるなど、物理的にご来館が困難な場合や道中の安全が確保できない場合は、キャンセル料は一切頂戴しておりません。安全を第一に、また別の最高の日にご来館いただけるよう日程変更のご相談も承っております。',
-    faq_contact_note: '上記以外のご不明な点は、お電話またはメールにてお気軽にお問い合わせください。\nTel: 0799-22-7775　／　Email: awajiauberge★gmail.com（★を@に変更）',
+    faq_contact_note: '上記以外のご不明な点は、お電話またはメールにてお気軽にお問い合わせください。<br>Tel: <a href="tel:0799227775">0799-22-7775</a>　／　Email: awajiauberge★gmail.com（★を@に変更）',
     faq_transport_text: '最寄りバス停：「炬の口」\nバス停からホテルまで徒歩約4分\n\n神戸三宮 → 洲本BC\n高速バス 約90分\n\n大阪梅田 → 洲本BC\n約120分\n\n洲本BC → 炬の口\n島内路線バス利用',
     faq_transport_note: '※時刻表は淡路交通のウェブサイトでご確認ください。洲本バスセンターから徒歩約10分でのアクセスも可能です。',
     faq_car_text: '最寄りIC：洲本IC\n（神戸淡路鳴門自動車道）\n\n洲本IC → 国道28号を洲本市内方面へ約10分 → 炬口北交差点を直進約200m\n\n新神戸から 約60分\n大阪梅田から 約90分\n京都から 約120分',
     faq_car_note: '※明石海峡大橋は天候により通行制限がかかる場合があります。事前に道路情報をご確認ください。\n※駐車場はホテルに完備。宿泊者は無料でご利用いただけます。',
     faq_transfer: '送迎サービスの詳細は、当施設までお問い合わせください。',
+    faq_acc_location: '所在地',
+    faq_acc_address: '〒656-0025<br>兵庫県洲本市炬口247',
+    faq_acc_summary: '洲本バスセンターから徒歩約5分。お車でお越しの場合は、館内駐車場をご利用いただけます。',
+    faq_acc_group_bus: '高速バスでお越しの場合',
+    faq_acc_group_ferry: '船でお越しの場合',
+    faq_acc_group_car: '車・レンタカーでお越しの場合',
+    faq_acc_group_tokushima: '徳島空港からお越しの場合',
+    faq_acc_group_pickup: '送迎について',
+    faq_acc_sannomiya: '神戸三宮から',
+    faq_acc_shinkobe: '新神戸駅から',
+    faq_acc_maiko: '舞子から',
+    faq_acc_umeda: '大阪・梅田から',
+    faq_acc_kobe_airport: '神戸空港から',
+    faq_acc_fuke: '深日港から',
+    faq_acc_rental_hubs: 'おすすめの利用拠点',
+    faq_acc_rental_fees: '料金とレンタカー会社の目安',
+    faq_acc_taxi: 'タクシー利用',
+    faq_acc_pickup_title: '洲本バスセンター送迎',
+    faq_acc_label_board: '乗車場所',
+    faq_acc_label_routes: '主な路線',
+    faq_acc_label_time: '目安',
+    faq_acc_label_alight: '下車場所',
+    faq_acc_label_route: 'ルート',
+    faq_acc_label_feature: '特徴',
+    faq_acc_label_section: '運航区間',
+    faq_acc_label_season: '運航期間',
+    faq_acc_label_after: '到着後',
+    faq_acc_label_hubs: '拠点',
+    faq_acc_label_duration: '所要時間',
+    faq_acc_label_price: '料金目安',
+    faq_acc_label_recommend: 'おすすめ',
+    faq_acc_label_who: '対象',
+    faq_acc_label_place: '送迎場所',
+    faq_acc_label_notice: 'ご連絡',
+    faq_acc_label_contact: 'お問い合わせ',
+    faq_acc_sannomiya_board: 'ミント神戸1階。JR三ノ宮駅東口から徒歩約3分、阪神神戸三宮駅直結。',
+    faq_acc_sannomiya_routes: '洲本バスセンター行き、福良行き、西浦方面行き。',
+    faq_acc_sannomiya_time: '約1時間24分、片道2,270円。',
+    faq_acc_alight_sumoto: '洲本バスセンター下車。',
+    faq_acc_shinkobe_board: '新神戸駅前 高速バスのりば 1番のりば。',
+    faq_acc_shinkobe_routes: '神戸-洲本線、くにうみライナー、淡路交通・本四海峡バス・神姫バス共同運行便。',
+    faq_acc_shinkobe_time: '約1時間30分、片道約2,270円。',
+    faq_acc_maiko_board: '高速舞子バス停。JR舞子駅・山陽電鉄舞子公園駅から徒歩約5分。',
+    faq_acc_maiko_routes: '洲本バスセンター行き、津名方面行き、福良方面行き。',
+    faq_acc_maiko_time: '約45〜60分、片道約1,900〜2,300円。',
+    faq_acc_umeda_board: 'ハービスPLAZA ENT 地下1階。JR大阪駅桜橋口から徒歩約7分、西梅田駅から徒歩約3分。',
+    faq_acc_umeda_routes: '洲本バスセンター行き、福良行き。',
+    faq_acc_umeda_time: '約2時間、片道約3,000円。',
+    faq_acc_kobeap_board: '神戸空港 第1ターミナル 7番バス乗り場。',
+    faq_acc_kobeap_routes: '洲本バスセンター経由 洲本温泉行き、福良行き、西浦方面行き。',
+    faq_acc_kobeap_time: '約1時間40分、片道約2,500円。',
+    faq_acc_fuke_section: '深日港から洲本港まで、深日洲本ライナーを利用。',
+    faq_acc_fuke_time: '約40分。大人1,800円、小学生600円。',
+    faq_acc_fuke_season: '2026年4月25日〜11月8日の土日祝限定運航。',
+    faq_acc_fuke_after: '洲本港からタクシーで約5分。',
+    faq_acc_car_hubs: '神戸空港、三宮駅周辺、新神戸駅周辺。',
+    faq_acc_car_route: '神戸から明石海峡大橋、神戸淡路鳴門自動車道、洲本ICを経由して当館へ。',
+    faq_acc_car_duration: '神戸空港から約1時間。三宮・新神戸から約1時間10〜20分。',
+    faq_acc_car_price: 'レンタカー6,000円〜15,000円／日。高速道路料金はETC利用時で約2,000円前後、ガソリン代別途。',
+    faq_acc_car_recommend: '淡路島内の観光や周辺のレストラン巡りを予定されている方には、レンタカーでのご来島がおすすめです。駐車場もご利用いただけます。',
+    faq_acc_area_shinkobe: '新神戸駅周辺',
+    faq_acc_area_sannomiya: '三宮駅周辺',
+    faq_acc_area_kobe_ap: '神戸空港',
+    faq_acc_times_shinkobe: 'タイムズカー 新神戸',
+    faq_acc_nippon: 'ニッポンレンタカー',
+    faq_acc_nissan: '日産レンタカー',
+    faq_acc_times: 'タイムズカー',
+    faq_acc_tokushima_route: '徳島空港から大鳴門橋を経由し、淡路島内を北上して当館へ。',
+    faq_acc_tokushima_time: '約50〜60分、約15,000〜20,000円。',
+    faq_acc_tokushima_feature: '乗り換えなしで直接アクセスできます。',
+    faq_acc_pickup_who: '高速バスをご利用のお客様。',
+    faq_acc_pickup_place: '洲本バスセンターまで無料でお迎えにあがります。',
+    faq_acc_pickup_notice: 'ご利用の際は、事前に到着予定時刻をお知らせください。',
+    faq_acc_pickup_contact: '<a href="tel:0799227775">0799-22-7775</a>　／　メール：awajiauberge★gmail.com（★を@に変更）',
+    open_map: '地図を開く',
+    faq_map_address: '〒656-0025 兵庫県洲本市炬口247',
+    idx_philosophy_jp: '食 × 整',
+    idx_tagline_jp: '世界一の食の島',
+    spa_intro_p1: '溶岩石から放たれるやわらかな輻射熱が、体の奥深くまでじんわりと浸透します。カリウム・マグネシウム・カルシウムなど豊富な天然ミネラルが肌にやさしく作用し、内側から美しさと活力を引き出してくれます。',
+    spa_intro_p2: 'ここは、ただ温まるだけの場所ではありません。心と体が芯からほぐれ、本来のあなたの輝きが目を覚ます――"自分と出会う"ための特別な空間です。',
+    grp_opt1_title: 'プロジェクター＆スクリーン',
+    grp_opt2_title: 'スピーカー＆ワイヤレスマイク',
+    grp_opt3_title: 'ヨガマット',
+    grp_opt4_title: '焚き火台',
+    grp_opt5_title: '３階多目的ルーム',
+    grp_room101_no: '101（海側）',
+    grp_room202_no: '202（海側）',
+    grp_room203_no: '203（海側）',
+    grp_room204_no: '204（海側）',
+    grp_room205_no: '205（海側）',
+    grp_room206_no: '206（山側）',
+    grp_room207_no: '207（山側）',
+    grp_room208_no: '208（山側）',
     faq_amenity_shampoo: 'シャンプー・リンス',
     faq_amenity_soap: 'ボディソープ・石鹸',
     faq_amenity_towel: 'タオル・バスタオル',
@@ -365,7 +458,7 @@ const i18n = {
     grp_benefit5_title: '貸切マイクロバスを手配してツアー化',
     grp_benefit5_body: '提携バス会社のマイクロバスを手配して送迎プランをアレンジ可能です。<br>三ノ宮・新神戸・神戸空港：約60分 ／ 伊丹空港：約90分 ／ 新大阪・関西空港：約120分',
     grp_rooms_sub: '部屋割り',
-    grp_rooms_intro: 'THE BLESS Awajiは全8室をご用意しており、部屋ごとに眺望や家具の配置が異なります。1階に1部屋（101）、2階に7部屋（202〜208）があります。',
+    grp_rooms_intro: 'THE BLESS Awajiは全8室をご用意しており、部屋ごとに眺望や家具の配置が異なります。<br>1階に1部屋（101）、2階に7部屋（202〜208）があります。',
     grp_room101: '52㎡：キングベッド1台＆ソファベッド1台（バスタブ有り）',
     grp_room202: '45㎡：セミダブル2台＆ソファベッド1台（バスタブ有り）',
     grp_room203: '37㎡：セミダブル2台（シャワールーム）',
@@ -392,9 +485,9 @@ const i18n = {
     grp_pricing_excl_val: 'コースに含まれるドリンク（コーヒー・紅茶等）以外の飲み物、有料オプション',
     grp_pricing_byo_label: '持込料',
     grp_pricing_byo_val: 'ディナー時はワイン・シャンパンのみ持込可。持込料1本あたり3,000円、上限5本。ビール・ウイスキー等の持込は不可',
-    grp_pricing_note: '2泊3日・3泊4日などの連日貸切や、さらに豪華なVIP貸切プランもご用意可能です。柔軟なアレンジや提案も可能ですので、ご希望される場合はぜひご相談ください。',
+    grp_pricing_note: '2泊3日・3泊4日などの連日貸切や、さらに豪華なVIP貸切プランもご用意可能です。<br>柔軟なアレンジや提案も可能ですので、ご希望される場合はぜひご相談ください。',
     grp_cases_sub: '貸切プラン主催で収益化した事例',
-    grp_cases_intro: 'THE BLESS Awajiでの特別な宿泊体験に各種研修・セミナー・リトリート・ファンミーティングなどの付加価値を提供することで、一人あたり宿泊費用以上の金額で募集をかけ、参加者の高い満足度と主催者様の収益を両立するプレミアムイベントとして実現いただけます。これまでのご利用事例としては、お１人様５万円から20万円前後の参加費で募集されていたケースがございます。',
+    grp_cases_intro: 'THE BLESS Awajiでの特別な宿泊体験に各種研修・セミナー・リトリート・ファンミーティングなどの付加価値を提供することで、一人あたり宿泊費用以上の金額で募集をかけ、参加者の高い満足度と主催者様の収益を両立するプレミアムイベントとして実現いただけます。<br><br>これまでのご利用事例としては、お１人様５万円から20万円前後の参加費で募集されていたケースがございます。',
     grp_case1_label: 'お１人様５万円 × 15名（主催者除く）',
     grp_case2_label: 'お１人様10万円 × 15名（主催者除く）',
     grp_case3_label: 'お１人様20万円 × 15名（主催者除く）',
@@ -755,12 +848,105 @@ const i18n = {
     faq_a_group: 'Yes, we offer full exclusive buyout of all 8 rooms, accommodating approximately 16–18 guests. Whether it\'s a family gathering, a trip with close friends, or a company retreat, each guest enjoys a private room while sharing a uniquely special atmosphere together. We are happy to tailor the experience to your budget and preferences — please feel free to reach out.',
     faq_q_storm_cancel: 'What happens with cancellation fees if a typhoon prevents us from reaching the island?',
     faq_a_storm_cancel: 'In the event that a natural disaster — such as a typhoon — causes the Akashi Kaikyo Bridge or Onaruto Bridge to close, making it physically impossible or unsafe to reach us, no cancellation fee will be charged. Your safety comes first. We would also be delighted to help you rebook for another perfect day.',
-    faq_contact_note: 'For any questions not covered above, please don\'t hesitate to contact us by phone or email.\nTel: 0799-22-7775　／　Email: awajiauberge★gmail.com (replace ★ with @)',
+    faq_contact_note: 'For any questions not covered above, please don\'t hesitate to contact us by phone or email.<br>Tel: <a href="tel:0799227775">0799-22-7775</a>　／　Email: awajiauberge★gmail.com (replace ★ with @)',
     faq_transport_text: 'Nearest bus stop: "Taikeguchi"\nApprox. 4-min walk from the bus stop\n\nKobe Sannomiya → Sumoto BC\nExpress bus, approx. 90 min\n\nOsaka Umeda → Sumoto BC\nApprox. 120 min\n\nSumoto BC → Taikeguchi\nLocal bus service',
     faq_transport_note: '* Please check the Awaji Kotsu website for timetables. The hotel is also accessible on foot (approx. 10 minutes) from Sumoto Bus Centre.',
     faq_car_text: 'Nearest IC: Sumoto IC\n(Kobe-Awaji-Naruto Expressway)\n\nSumoto IC → Route 28 toward Sumoto city, approx. 10 min → Straight ahead approx. 200m past Taikeguchi-kita intersection\n\nFrom Shin-Kobe: approx. 60 min\nFrom Osaka Umeda: approx. 90 min\nFrom Kyoto: approx. 120 min',
     faq_car_note: '* The Akashi Kaikyo Bridge may be subject to traffic restrictions in adverse weather. Please check road conditions in advance.\n* Free parking is available on site for hotel guests.',
     faq_transfer: 'Please contact us directly for details on our transfer service.',
+    faq_acc_location: 'Location',
+    faq_acc_address: '656-0025<br>247 Takenokuchi, Sumoto, Hyogo',
+    faq_acc_summary: 'About a 5-minute walk from Sumoto Bus Center. On-site parking is available for guests arriving by car.',
+    faq_acc_group_bus: 'By highway bus',
+    faq_acc_group_ferry: 'By ferry',
+    faq_acc_group_car: 'By car or rental car',
+    faq_acc_group_tokushima: 'From Tokushima Airport',
+    faq_acc_group_pickup: 'Complimentary pickup',
+    faq_acc_sannomiya: 'From Kobe-Sannomiya',
+    faq_acc_shinkobe: 'From Shin-Kobe Station',
+    faq_acc_maiko: 'From Maiko',
+    faq_acc_umeda: 'From Osaka-Umeda',
+    faq_acc_kobe_airport: 'From Kobe Airport',
+    faq_acc_fuke: 'From Fukae Port',
+    faq_acc_rental_hubs: 'Recommended pickup points',
+    faq_acc_rental_fees: 'Rates and rental companies',
+    faq_acc_taxi: 'By taxi',
+    faq_acc_pickup_title: 'Pickup from Sumoto Bus Center',
+    faq_acc_label_board: 'Boarding',
+    faq_acc_label_routes: 'Main routes',
+    faq_acc_label_time: 'Duration',
+    faq_acc_label_alight: 'Alight at',
+    faq_acc_label_route: 'Route',
+    faq_acc_label_feature: 'Note',
+    faq_acc_label_section: 'Route',
+    faq_acc_label_season: 'Season',
+    faq_acc_label_after: 'On arrival',
+    faq_acc_label_hubs: 'Hubs',
+    faq_acc_label_duration: 'Travel time',
+    faq_acc_label_price: 'Rates',
+    faq_acc_label_recommend: 'Recommended for',
+    faq_acc_label_who: 'For',
+    faq_acc_label_place: 'Pickup point',
+    faq_acc_label_notice: 'Please note',
+    faq_acc_label_contact: 'Contact',
+    faq_acc_sannomiya_board: '1F Mint Kobe. About a 3-minute walk from the east exit of JR Sannomiya Station, directly connected to Hanshin Kobe-Sannomiya.',
+    faq_acc_sannomiya_routes: 'Buses to Sumoto Bus Center, Fukura, and the west coast.',
+    faq_acc_sannomiya_time: 'Approx. 1 hour 24 minutes, ¥2,270 one way.',
+    faq_acc_alight_sumoto: 'Alight at Sumoto Bus Center.',
+    faq_acc_shinkobe_board: 'Shin-Kobe Station highway bus stop, bay 1.',
+    faq_acc_shinkobe_routes: 'Kobe–Sumoto line, Kuniumi Liner, and jointly operated services by Awaji Kotsu, Honshi-Kaikyo Bus, and Shinki Bus.',
+    faq_acc_shinkobe_time: 'Approx. 1 hour 30 minutes, about ¥2,270 one way.',
+    faq_acc_maiko_board: 'Kosoku Maiko bus stop. About a 5-minute walk from JR Maiko Station and Sanyo Electric Railway Maiko-Koen Station.',
+    faq_acc_maiko_routes: 'Buses to Sumoto Bus Center, Tsuna, and Fukura.',
+    faq_acc_maiko_time: 'Approx. 45–60 minutes, ¥1,900–2,300 one way.',
+    faq_acc_umeda_board: 'B1F HERBIS PLAZA ENT. About a 7-minute walk from the Sakurabashi exit of JR Osaka Station, or 3 minutes from Nishi-Umeda Station.',
+    faq_acc_umeda_routes: 'Buses to Sumoto Bus Center and Fukura.',
+    faq_acc_umeda_time: 'Approx. 2 hours, about ¥3,000 one way.',
+    faq_acc_kobeap_board: 'Kobe Airport Terminal 1, bus stop 7.',
+    faq_acc_kobeap_routes: 'Buses to Sumoto Onsen via Sumoto Bus Center, Fukura, and the west coast.',
+    faq_acc_kobeap_time: 'Approx. 1 hour 40 minutes, about ¥2,500 one way.',
+    faq_acc_fuke_section: 'Take the Fukae–Sumoto Liner from Fukae Port to Sumoto Port.',
+    faq_acc_fuke_time: 'Approx. 40 minutes. Adults ¥1,800, children ¥600.',
+    faq_acc_fuke_season: 'Weekends and public holidays only, 25 April – 8 November 2026.',
+    faq_acc_fuke_after: 'About a 5-minute taxi from Sumoto Port.',
+    faq_acc_car_hubs: 'Kobe Airport, Sannomiya, and Shin-Kobe.',
+    faq_acc_car_route: 'From Kobe, cross the Akashi-Kaikyo Bridge, take the Kobe-Awaji-Naruto Expressway, and exit at Sumoto IC.',
+    faq_acc_car_duration: 'About 1 hour from Kobe Airport. About 1 hour 10–20 minutes from Sannomiya or Shin-Kobe.',
+    faq_acc_car_price: 'Rental cars from about ¥6,000–15,000 per day. Expressway tolls around ¥2,000 with ETC, plus fuel.',
+    faq_acc_car_recommend: 'A rental car is recommended if you plan to explore Awaji Island or nearby restaurants. On-site parking is available.',
+    faq_acc_area_shinkobe: 'Around Shin-Kobe Station',
+    faq_acc_area_sannomiya: 'Around Sannomiya Station',
+    faq_acc_area_kobe_ap: 'Kobe Airport',
+    faq_acc_times_shinkobe: 'Times Car Shin-Kobe',
+    faq_acc_nippon: 'Nippon Rent-A-Car',
+    faq_acc_nissan: 'Nissan Rent-A-Car',
+    faq_acc_times: 'Times Car',
+    faq_acc_tokushima_route: 'From Tokushima Airport, cross the Onaruto Bridge and continue north through Awaji Island to the hotel.',
+    faq_acc_tokushima_time: 'Approx. 50–60 minutes, ¥15,000–20,000.',
+    faq_acc_tokushima_feature: 'Direct access with no transfers.',
+    faq_acc_pickup_who: 'Guests arriving by highway bus.',
+    faq_acc_pickup_place: 'Complimentary pickup from Sumoto Bus Center.',
+    faq_acc_pickup_notice: 'Please let us know your expected arrival time in advance.',
+    faq_acc_pickup_contact: '<a href="tel:0799227775">0799-22-7775</a>　／　Email: awajiauberge★gmail.com (replace ★ with @)',
+    open_map: 'Open Map',
+    faq_map_address: '656-0025 247 Takenokuchi, Sumoto, Hyogo',
+    idx_philosophy_jp: 'Food × Restore',
+    idx_tagline_jp: 'The world\'s island of food',
+    spa_intro_p1: 'The gentle radiant heat from the lava stones slowly penetrates deep into the body. Abundant natural minerals — potassium, magnesium, calcium and more — work kindly on the skin, drawing out inner beauty and vitality.',
+    spa_intro_p2: 'This is more than a place to simply get warm. Body and mind unwind from the core, and your original radiance awakens — a special space in which to meet yourself.',
+    grp_opt1_title: 'Projector & Screen',
+    grp_opt2_title: 'Speaker & Wireless Mics',
+    grp_opt3_title: 'Yoga Mats',
+    grp_opt4_title: 'Fire Pit',
+    grp_opt5_title: '3rd Floor Multipurpose Room',
+    grp_room101_no: '101 (Ocean side)',
+    grp_room202_no: '202 (Ocean side)',
+    grp_room203_no: '203 (Ocean side)',
+    grp_room204_no: '204 (Ocean side)',
+    grp_room205_no: '205 (Ocean side)',
+    grp_room206_no: '206 (Mountain side)',
+    grp_room207_no: '207 (Mountain side)',
+    grp_room208_no: '208 (Mountain side)',
     faq_amenity_shampoo: 'Shampoo & Conditioner',
     faq_amenity_soap: 'Body Wash & Soap',
     faq_amenity_towel: 'Towel & Bath Towel',
@@ -873,9 +1059,9 @@ const i18n = {
     grp_pricing_excl_val: 'All beverages beyond those included in the course (coffee, tea, etc.), paid optional extras',
     grp_pricing_byo_label: 'Corkage',
     grp_pricing_byo_val: 'Wine and Champagne only permitted at dinner; corkage ¥3,000/bottle, maximum 5 bottles. Beer, whisky, and other spirits may not be brought in.',
-    grp_pricing_note: 'Multi-night consecutive buyouts (2 nights/3 days, 3 nights/4 days, etc.) and premium VIP packages are also available. We are happy to discuss flexible arrangements — please do not hesitate to enquire.',
+    grp_pricing_note: 'Multi-night consecutive buyouts (2 nights/3 days, 3 nights/4 days, etc.) and premium VIP packages are also available.<br>We are happy to discuss flexible arrangements — please do not hesitate to enquire.',
     grp_cases_sub: 'Revenue Case Studies',
-    grp_cases_intro: 'By combining a premium stay experience at THE BLESS Awaji with added-value programming — training, seminars, retreats, fan meet-and-greets, and more — organisers have successfully charged above the per-person accommodation cost, achieving both high participant satisfaction and meaningful revenue. Past cases have seen ticket prices ranging from ¥50,000 to ¥200,000 per person.',
+    grp_cases_intro: 'By combining a premium stay experience at THE BLESS Awaji with added-value programming — training, seminars, retreats, fan meet-and-greets, and more — organisers have successfully charged above the per-person accommodation cost, achieving both high participant satisfaction and meaningful revenue.<br><br>Past cases have seen ticket prices ranging from ¥50,000 to ¥200,000 per person.',
     grp_case1_label: '¥50,000 × 15 guests (excl. organiser)',
     grp_case2_label: '¥100,000 × 15 guests (excl. organiser)',
     grp_case3_label: '¥200,000 × 15 guests (excl. organiser)',
@@ -982,7 +1168,9 @@ function t(key) {
 }
 
 function applyTranslations() {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
+    document.documentElement.lang = currentLang === 'en' ? 'en' : 'ja';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (i18n[currentLang][key] !== undefined) {
       el.textContent = i18n[currentLang][key];
@@ -1308,35 +1496,41 @@ function initHeroSlideshow() {
   let slideTimer   = null;
   let videoRafId   = null;
 
-  function activateSlide(index) {
-    // タイマー・RAF をクリア
-    if (slideTimer)  { clearTimeout(slideTimer);        slideTimer  = null; }
-    if (videoRafId)  { cancelAnimationFrame(videoRafId); videoRafId = null; }
-
-    // 前スライドを非アクティブ化
-    slides.forEach(s => s.classList.remove('is-active'));
-    indicators.forEach(ind => {
-      ind.classList.remove('active', 'is-video');
-      ind.style.removeProperty('--video-progress');
+  function loadSlideImage(slide) {
+    if (!slide) return Promise.resolve();
+    const img = slide.querySelector('img');
+    if (!img) return Promise.resolve();
+    const pending = img.getAttribute('data-src');
+    if (pending) {
+      return new Promise((resolve) => {
+        const done = () => resolve();
+        img.addEventListener('load', done, { once: true });
+        img.addEventListener('error', done, { once: true });
+        img.src = pending;
+        img.removeAttribute('data-src');
+        if (img.complete) resolve();
+      });
+    }
+    if (img.complete) return Promise.resolve();
+    return new Promise((resolve) => {
+      img.addEventListener('load', resolve, { once: true });
+      img.addEventListener('error', resolve, { once: true });
     });
+  }
 
-    const slide     = slides[index];
-    const indicator = indicators[index];
+  function startSlideMedia(slide, indicator, index) {
+    if (currentIndex !== index) return;
 
-    // インジケーターのアニメーション再起動（reflow トリック）
     void indicator.offsetWidth;
     slide.classList.add('is-active');
     indicator.classList.add('active');
-    currentIndex = index;
 
     const videoEl = slide.querySelector('video');
     if (videoEl) {
-      // 動画スライド: 全長再生し、終了したら次へ
       indicator.classList.add('is-video');
       videoEl.currentTime = 0;
       videoEl.play().catch(() => {});
 
-      // インジケーターを動画の進行に合わせてリアルタイム更新
       function trackVideo() {
         if (videoEl.duration) {
           const pct = (videoEl.currentTime / videoEl.duration) * 100;
@@ -1351,16 +1545,32 @@ function initHeroSlideshow() {
         advance();
       };
     } else {
-      // 画像スライド: 7 秒後に次へ
       slideTimer = setTimeout(advance, IMAGE_DURATION);
     }
+  }
+
+  function activateSlide(index) {
+    if (slideTimer)  { clearTimeout(slideTimer);        slideTimer  = null; }
+    if (videoRafId)  { cancelAnimationFrame(videoRafId); videoRafId = null; }
+
+    slides.forEach(s => s.classList.remove('is-active'));
+    indicators.forEach(ind => {
+      ind.classList.remove('active', 'is-video');
+      ind.style.removeProperty('--video-progress');
+    });
+
+    const slide     = slides[index];
+    const indicator = indicators[index];
+    currentIndex = index;
+
+    loadSlideImage(slides[(index + 1) % slides.length]);
+    loadSlideImage(slide).then(() => startSlideMedia(slide, indicator, index));
   }
 
   function advance() {
     activateSlide((currentIndex + 1) % slides.length);
   }
 
-  // インジケーターをクリックでジャンプ
   indicators.forEach((ind, i) => {
     ind.addEventListener('click', () => activateSlide(i));
   });

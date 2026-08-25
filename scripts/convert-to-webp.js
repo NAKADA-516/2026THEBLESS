@@ -3,6 +3,7 @@
  * Run: npm run webp
  *
  * Converts all JPG/JPEG/PNG images in public/images to WebP (quality 85).
+ * Resizes to a max width of 1920px so photos stay web-sized.
  * Deletes the original file after successful conversion.
  * Already-converted files are skipped (and their originals deleted if webp exists).
  * HEIC/GIF/SVG/WEBP files are skipped entirely.
@@ -46,7 +47,8 @@ async function processFile(filePath) {
   // Convert to webp then delete original
   try {
     await sharp(filePath)
-      .webp({ quality: QUALITY })
+      .resize({ width: 1920, withoutEnlargement: true })
+      .webp({ quality: QUALITY, effort: 6 })
       .toFile(webpPath);
 
     const origSize = fs.statSync(filePath).size;

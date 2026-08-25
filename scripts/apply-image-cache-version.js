@@ -20,6 +20,10 @@ function transform(url, version) {
 function patchContent(s, version) {
   s = s.replace(/\bsrc="([^"]*)"/g, (_, u) => `src="${transform(u, version)}"`);
   s = s.replace(/\bsrc='([^']*)'/g, (_, u) => `src='${transform(u, version)}'`);
+  s = s.replace(/\bdata-src="([^"]*)"/g, (_, u) => `data-src="${transform(u, version)}"`);
+  s = s.replace(/\bdata-src='([^']*)'/g, (_, u) => `data-src='${transform(u, version)}'`);
+  s = s.replace(/(<link[^>]*rel="preload"[^>]*as="image"[^>]*href=")([^"]*)(")/g, (_, a, u, b) => `${a}${transform(u, version)}${b}`);
+  s = s.replace(/(<link[^>]*as="image"[^>]*rel="preload"[^>]*href=")([^"]*)(")/g, (_, a, u, b) => `${a}${transform(u, version)}${b}`);
   return s;
 }
 

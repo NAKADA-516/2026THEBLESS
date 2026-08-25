@@ -18,6 +18,8 @@
   <meta property="og:image:height" content="630">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&display=swap">
+  <link rel="preload" as="image" href="images/hero/hero_1.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833" fetchpriority="high">
   <link rel="icon" type="image/png" href="images/logo-icon.png"><link rel="apple-touch-icon" href="images/logo-icon.png">
   <link rel="stylesheet" href="style.css">
   <style>
@@ -57,12 +59,14 @@
       object-position: center;
       transform-origin: center center;
       opacity: 0;
-      will-change: opacity, transform;
       transition: opacity 0.9s ease-in-out;
     }
 
     /* アクティブ時にフェードイン */
-    .hero-slide.is-active img        { opacity: 1; }
+    .hero-slide.is-active img {
+      opacity: 1;
+      will-change: opacity, transform;
+    }
     .hero-slide--video.is-active video { opacity: 1; }
 
     /* Ken Burns keyframes (transform のみ、opacity は transition で制御) */
@@ -489,7 +493,7 @@
       position: absolute; top: 0; left: 0;
       height: 1px; width: 0%;
       background: linear-gradient(to right, rgba(212,43,43,0.7), rgba(255,255,255,0.5));
-      animation: op-bar-fill 5.5s cubic-bezier(0.25,0.46,0.45,0.94) 1.6s forwards;
+      animation: op-bar-fill 2.2s cubic-bezier(0.25,0.46,0.45,0.94) 0.6s forwards;
     }
     @keyframes op-bar-fill {
       0%   { width: 0%; }
@@ -572,51 +576,66 @@
       <div class="hero-slides" aria-hidden="true">
         <div class="hero-slide">
           <img
-            src="images/hero/hero_1.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa"
+            src="images/hero/hero_1.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833"
             alt="THE BLESS AWAJI"
-            loading="eager"
+            width="1920"
+            height="1080"
+            fetchpriority="high"
+            decoding="async"
           >
         </div>
         <div class="hero-slide">
           <img
-            src="images/hero/hero_2.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa"
+            data-src="images/hero/hero_2.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833"
             alt="THE BLESS AWAJI"
-            loading="lazy"
+            width="1920"
+            height="1080"
+            decoding="async"
           >
         </div>
         <div class="hero-slide">
           <img
-            src="images/hero/hero_3.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa"
+            data-src="images/hero/hero_3.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833"
             alt="THE BLESS AWAJI"
-            loading="lazy"
+            width="1920"
+            height="1080"
+            decoding="async"
           >
         </div>
         <div class="hero-slide">
           <img
-            src="images/hero/hero_4.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa"
+            data-src="images/hero/hero_4.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833"
             alt="THE BLESS AWAJI"
-            loading="lazy"
+            width="1920"
+            height="1080"
+            decoding="async"
           >
         </div>
         <div class="hero-slide">
           <img
-            src="images/hero/hero_5.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa"
+            data-src="images/hero/hero_5.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833"
             alt="THE BLESS AWAJI"
-            loading="lazy"
+            width="1920"
+            height="1080"
+            decoding="async"
           >
         </div>
         <div class="hero-slide">
           <img
-            src="images/hero/hero_6.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa"
+            data-src="images/hero/hero_6.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833"
             alt="THE BLESS AWAJI"
-            loading="lazy"
+            width="1920"
+            height="1080"
+            decoding="async"
           >
         </div>
         <div class="hero-slide">
           <img
-            src="images/hero/hero_7.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa"
+            data-src="images/hero/hero_7.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833"
             alt="THE BLESS AWAJI"
-            loading="lazy"
+            width="1920"
+            height="1080"
+            decoding="async"
           >
         </div>
       </div>
@@ -651,7 +670,7 @@
           <span class="section-label reveal">About The Bless</span>
           <span class="section-line reveal reveal-delay-1"></span>
           <h2 class="en reveal reveal-delay-2">The Philosophy</h2>
-          <span class="section-title-jp reveal reveal-delay-2">食 × 整</span>
+          <span class="section-title-jp reveal reveal-delay-2" data-i18n="idx_philosophy_jp">食 × 整</span>
           <p class="reveal reveal-delay-3" data-i18n-html="idx_concept_body">
             私たちは、ただ美しい景色や贅沢な食事を提供するだけの宿泊施設ではありません。薪火料理とマグマ式スパで、心と体をリセットする特別な体験を。「魂が震える食事」と「心と体が満たされるオーベルジュ」——忘れられないひとときをお届けします。
           </p>
@@ -659,10 +678,10 @@
         </div>
         <div class="concept-photo reveal reveal-delay-2">
           <div class="concept-photo-item">
-            <img src="images/TOP/home1.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa" alt="THE BLESS AWAJI" loading="lazy">
+            <img src="images/TOP/home1.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833" alt="THE BLESS AWAJI" loading="lazy">
           </div>
           <div class="concept-photo-item">
-            <img src="images/TOP/home2.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa" alt="THE BLESS AWAJI" loading="lazy">
+            <img src="images/TOP/home2.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833" alt="THE BLESS AWAJI" loading="lazy">
           </div>
         </div>
       </div>
@@ -671,12 +690,12 @@
     <!-- ══ TAGLINE STRIP ══ -->
     <div class="tagline-strip reveal">
       <p class="tagline-strip__en">Awaji Island</p>
-      <p class="tagline-strip__jp">世界一の食の島</p>
+      <p class="tagline-strip__jp" data-i18n="idx_tagline_jp">世界一の食の島</p>
     </div>
 
     <!-- ══ DINING ══ -->
     <section id="dining" class="section-b">
-      <img src="images/dining/dining-07.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa" class="section-b-img" alt="THE BLESS AWAJI — 薪火ダイニング" loading="lazy">
+      <img src="images/dining/dining-07.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833" class="section-b-img" alt="THE BLESS AWAJI — 薪火ダイニング" loading="lazy">
       <div class="section-b-overlay"></div>
       <div class="section-b-content reveal">
         <span class="section-label section-label--light">Dining</span>
@@ -707,13 +726,13 @@
         </div>
         <div class="stay-photos">
           <div class="photo-item tall">
-            <img src="images/room-01.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa" alt="オーシャンスイート" loading="lazy">
+            <img src="images/room-01.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833" alt="オーシャンスイート" loading="lazy">
           </div>
           <div class="photo-item">
-            <img src="images/room-02.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa" alt="ジュニアスイート" loading="lazy">
+            <img src="images/room-02.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833" alt="ジュニアスイート" loading="lazy">
           </div>
           <div class="photo-item">
-            <img src="images/rooms/room-06.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa" alt="客室" loading="lazy">
+            <img src="images/rooms/room-06.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833" alt="客室" loading="lazy">
           </div>
         </div>
       </div>
@@ -721,7 +740,7 @@
 
     <!-- ══ SPA ══ -->
     <section id="spa" class="section-b">
-      <img src="images/TOP/spa-01.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa" class="section-b-img" alt="富士と雲海 — 静寂の中の整い" loading="lazy">
+      <img src="images/TOP/spa-01.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833" class="section-b-img" alt="富士と雲海 — 静寂の中の整い" loading="lazy">
       <div class="section-b-overlay"></div>
       <div class="section-b-content reveal">
         <span class="section-label section-label--light">Spa</span>
@@ -791,7 +810,7 @@
           </ul>
         </div>
         <div class="footer-image-col">
-          <img src="images/footer/footer_1.webp?v=835874bf-70ba-46c9-b33c-9b046688a6fa" alt="THE BLESS AWAJI" loading="lazy">
+          <img src="images/footer/footer_1.webp?v=5ea9daee-1d47-4645-9177-9b37feef7833" alt="THE BLESS AWAJI" loading="lazy">
         </div>
       </div>
       <div class="footer-bottom">
@@ -809,27 +828,44 @@
   <script>
     /* ══ OPENING ANIMATION ══ */
     (function() {
+      const op = document.getElementById('opening');
       if (sessionStorage.getItem('opened')) {
-        document.getElementById('opening').style.display = 'none';
+        op.style.display = 'none';
         return;
       }
       sessionStorage.setItem('opened', '1');
 
-      const op = document.getElementById('opening');
       const count = document.getElementById('op-count');
+      const heroImg = document.querySelector('#hero-section .hero-slide img');
+      const started = Date.now();
       let n = 0;
+      let finishing = false;
 
       const timer = setInterval(() => {
-        n = Math.min(n + Math.floor(Math.random() * 3) + 1, 100);
+        n = Math.min(n + Math.floor(Math.random() * 4) + 2, 96);
         count.textContent = n;
-        if (n >= 100) {
+      }, 70);
+
+      function finish() {
+        if (finishing) return;
+        finishing = true;
+        const wait = Math.max(0, 1200 - (Date.now() - started));
+        setTimeout(() => {
           clearInterval(timer);
-          setTimeout(() => {
-            op.classList.add('leave');
-            setTimeout(() => { op.style.display = 'none'; }, 950);
-          }, 1400);
+          count.textContent = '100';
+          op.classList.add('leave');
+          setTimeout(() => { op.style.display = 'none'; }, 700);
+        }, wait);
+      }
+
+      setTimeout(finish, 2800);
+      if (heroImg) {
+        if (heroImg.complete) finish();
+        else {
+          heroImg.addEventListener('load', finish, { once: true });
+          heroImg.addEventListener('error', finish, { once: true });
         }
-      }, 80);
+      }
     })();
   </script>
   <!-- Floating Reserve Button -->

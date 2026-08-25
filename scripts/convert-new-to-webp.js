@@ -3,6 +3,7 @@
  * Run: npm run webp-new
  *
  * public/images/new/ 内の JPG/PNG を WebP に変換し、元ファイルを削除する。
+ * 長辺は最大 1920px にリサイズする。
  * 変換後の WebP は new/ フォルダ内に残るので、適切なサブフォルダへ移動して使用する。
  */
 
@@ -35,7 +36,8 @@ async function processFile(filePath) {
 
   try {
     await sharp(filePath)
-      .webp({ quality: QUALITY })
+      .resize({ width: 1920, withoutEnlargement: true })
+      .webp({ quality: QUALITY, effort: 6 })
       .toFile(webpPath);
 
     const origSize = fs.statSync(filePath).size;

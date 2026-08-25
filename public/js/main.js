@@ -1575,7 +1575,18 @@ function initHeroSlideshow() {
     ind.addEventListener('click', () => activateSlide(i));
   });
 
-  activateSlide(0);
+  function startHero() {
+    activateSlide(0);
+  }
+
+  if (window.__blessOpeningDone) {
+    startHero();
+  } else {
+    window.addEventListener('bless:opening-done', startHero, { once: true });
+    setTimeout(() => {
+      if (!document.querySelector('.hero-slide.is-active')) startHero();
+    }, 8000);
+  }
 }
 
 /* ── Floating Reserve Button (bottom-right) ── */

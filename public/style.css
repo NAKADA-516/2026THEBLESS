@@ -1687,7 +1687,7 @@ p {
   }
 
   .hero-content {
-    padding: 0 1.5rem 3.5rem;
+    padding: 0 1.5rem calc(4.5rem + env(safe-area-inset-bottom));
   }
 
   .hero-scroll {
@@ -1981,12 +1981,13 @@ p {
     z-index: 1;
   }
 
-  /* ── Hero: Mobile aspect ratio ── */
+  /* ── Hero: Mobile ── */
   .hero {
-    height: auto;
+    margin-top: 3.5rem;
+    height: calc(100svh - 3.5rem);
     min-height: 0;
-    aspect-ratio: 3 / 2;
-    max-height: 70svh;
+    aspect-ratio: auto;
+    max-height: none;
   }
 
   .hero-bg::after {
@@ -2007,7 +2008,7 @@ p {
   }
 
   .hero-content {
-    padding: 0 1.5rem 3.5rem;
+    padding: 0 1.5rem calc(4.5rem + env(safe-area-inset-bottom));
     z-index: 3;
   }
 

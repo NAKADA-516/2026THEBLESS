@@ -1500,6 +1500,13 @@ function initHeroSlideshow() {
     if (!slide) return Promise.resolve();
     const img = slide.querySelector('img');
     if (!img) return Promise.resolve();
+
+    const source = slide.querySelector('source[data-srcset]');
+    if (source) {
+      source.srcset = source.getAttribute('data-srcset');
+      source.removeAttribute('data-srcset');
+    }
+
     const pending = img.getAttribute('data-src');
     if (pending) {
       return new Promise((resolve) => {

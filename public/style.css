@@ -1687,7 +1687,7 @@ p {
   }
 
   .hero-content {
-    padding: 0 2rem 5rem;
+    padding: 0 1.5rem 3.5rem;
   }
 
   .hero-scroll {
@@ -1983,8 +1983,10 @@ p {
 
   /* ── Hero: Mobile aspect ratio ── */
   .hero {
-    height: 100svh;
-    min-height: 600px;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+    max-height: 70svh;
   }
 
   .hero-bg::after {
@@ -2005,7 +2007,7 @@ p {
   }
 
   .hero-content {
-    padding: 0 1.5rem calc(5rem + env(safe-area-inset-bottom));
+    padding: 0 1.5rem 3.5rem;
     z-index: 3;
   }
 

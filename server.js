@@ -57,6 +57,7 @@ app.get('/gallery', (req, res) => res.sendFile(path.join(__dirname, 'public/gall
 app.get('/about',   (req, res) => res.sendFile(path.join(__dirname, 'public/about.html')));
 app.get('/group',   (req, res) => res.sendFile(path.join(__dirname, 'public/group.html')));
 app.get('/faq',     (req, res) => res.sendFile(path.join(__dirname, 'public/faq.html')));
+app.get('/recruit', (req, res) => res.sendFile(path.join(__dirname, 'public/recruit.html')));
 app.get('/terms',   (req, res) => res.sendFile(path.join(__dirname, 'public/terms.html')));
 app.get('/privacy', (req, res) => res.sendFile(path.join(__dirname, 'public/privacy.html')));
 app.get('/legal',   (req, res) => res.sendFile(path.join(__dirname, 'public/legal.html')));

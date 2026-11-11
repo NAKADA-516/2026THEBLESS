@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1C1C1A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>料理長候補を募集します | THE BLESS AWAJI</title>
+  <meta name="description" content="薪火と発酵、自家農園の恵みを一皿に。淡路島・洲本のオーベルジュ THE BLESS AWAJI で、一緒に料理をつくる料理長候補を募集します。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://the-bless.com/recruit">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="料理長候補を募集します | THE BLESS AWAJI">
+  <meta property="og:description" content="薪火と発酵、自家農園の恵みを一皿に。淡路島・洲本のオーベルジュで料理長候補を募集します。">
+  <meta property="og:image" content="https://the-bless.com/images/dining/misc-03.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&display=swap">
+  <link rel="icon" type="image/png" href="images/logo-icon.png">
+  <link rel="apple-touch-icon" href="images/logo-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "料理長候補",
+    "description": "淡路島・洲本のオーベルジュ THE BLESS Awaji で、一緒に料理をつくる料理長候補を募集します。テーマは薪火と発酵。自家農園ではお茶やシャインマスカット、ハーブ、根菜などを育てています。雇用形態は正社員、月給35万円から。休日は月6から8日。寮あり（寮費・光熱費は会社負担）。調理実務経験3年以上が目安。料理長経験は問いません。普通自動車免許必須（AT限定可）。勤務地は兵庫県洲本市炬口247。",
+    "datePosted": "2026-11-11",
+    "employmentType": "FULL_TIME",
+    "directApply": true,
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "THE BLESS Awaji",
+      "sameAs": "https://the-bless.com/",
+      "email": "awajiauberge@gmail.com",
+      "telephone": "+81-799-64-7445"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "炬口247",
+        "addressLocality": "洲本市",
+        "addressRegion": "兵庫県",
+        "addressCountry": "JP"
+      }
+    },
+    "baseSalary": {
+      "@type": "MonetaryAmount",
+      "currency": "JPY",
+      "value": {
+        "@type": "QuantitativeValue",
+        "minValue": 350000,
+        "unitText": "MONTH"
+      }
+    },
+    "experienceRequirements": "調理実務経験3年以上が目安。料理長経験は問いません。",
+    "qualifications": "普通自動車免許必須（AT限定可）"
+  }
+  </script>
+  <style>
+    .info-block .recruit-heading {
+      text-align: center;
+    }
+
+    .recruit-note {
+      margin-top: 1.5rem;
+      color: var(--gray-mid);
+    }
+
+    .recruit-themes {
+      background: var(--cream);
+      padding: 0 2rem 7rem;
+    }
+
+    .recruit-themes .inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .room-card-text > h2 {
+      font-family: var(--font-jp);
+      font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .recruit-heading {
+      font-family: var(--font-jp);
+      font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--charcoal);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .recruit-group-title {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .recruit-theme-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .recruit-theme-list h3 {
+      font-family: var(--font-jp);
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      margin-bottom: 0.35rem;
+    }
+
+    .recruit-theme-list p {
+      margin: 0;
+      font-size: 0.88rem;
+      line-height: 1.9;
+      color: var(--gray-light);
+    }
+
+    .recruit-garden {
+      margin: 3.5rem 0 0;
+    }
+
+    .recruit-garden img {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+    }
+
+    .recruit-garden figcaption {
+      margin-top: 0.85rem;
+      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      color: var(--gray-mid);
+    }
+
+    .recruit-terms {
+      margin: 0;
+    }
+
+    .recruit-term {
+      display: grid;
+      grid-template-columns: 5.5rem 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(28, 28, 26, 0.1);
+      text-align: left;
+    }
+
+    .recruit-term dt {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--gray-mid);
+    }
+
+    .recruit-term dd {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--charcoal);
+    }
+
+    .recruit-term a {
+      color: inherit;
+      border-bottom: 1px solid rgba(28, 28, 26, 0.25);
+    }
+
+    .recruit-apply h2 {
+      font-family: var(--font-jp);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      line-height: 1.6;
+    }
+
+    .recruit-apply p {
+      max-width: 34rem;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 2.2;
+    }
+
+    .recruit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+
+    .recruit-mail {
+      margin-top: 1.5rem;
+      margin-bottom: 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 768px) {
+      .recruit-garden img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .recruit-term {
+        grid-template-columns: 4.5rem 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header id="site-header">
+    <a href="/" class="header-logo en">THE BLESS AWAJI |</a>
+    <div class="header-right">
+      <div class="lang-toggle">
+        <span data-lang="jp" class="active">JP</span>
+        <span class="lang-sep">｜</span>
+        <span data-lang="en" class="inactive">EN</span>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Nav Overlay ── -->
+  <nav id="nav-overlay" aria-label="メインナビゲーション">
+    <ul class="nav-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/dining">Dining</a></li>
+      <li><a href="/stay">Stay</a></li>
+      <li><a href="/spa">Spa</a></li>
+      <li><a href="/gallery">Gallery</a></li>
+      <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
+      <li><a href="/group">Group &amp; Private</a></li>
+      <li><a href="/faq#access-detail">Access</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/recruit">Recruit</a></li>
+    </ul>
+    <div class="nav-sub">
+      <a href="tel:0799227775">0799-22-7775</a>
+      <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-hero" data-section="hero">
+      <div class="page-hero-bg">
+        <img
+          src="images/dining/misc-03.webp?v=ee25b24e-ba6a-453a-8863-f166c2d6cd1c"
+          alt="薪火グリルの前で調理するシェフ"
+          class="page-hero-img"
+          loading="eager"
+        >
+      </div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <h1 class="en">Recruit</h1>
+        <span class="page-subtitle">料理長候補を募集します</span>
+      </div>
+    </section>
+
+    <section class="section-a" data-section="letter">
+      <div class="inner">
+        <span class="section-label reveal">Join Us</span>
+        <span class="section-line reveal reveal-delay-1"></span>
+        <h2 class="recruit-heading reveal reveal-delay-2">一緒に料理をつくる人を探しています。</h2>
+        <p class="section-body reveal reveal-delay-3">淡路島・洲本のオーベルジュ「THE BLESS Awaji」で、一緒に料理をつくる料理長候補を募集します。</p>
+        <p class="section-body reveal">テーマは、薪火と発酵。自家農園では、お茶やシャインマスカット、ハーブ、根菜などを育てています。食材の持ち味をどう引き出し、お客様にどんな時間を届けるか。一緒に考え、料理に向き合ってくださる方をお待ちしています。</p>
+        <p class="section-body recruit-note reveal">調理の実務経験は3年以上を目安としていますが、料理長経験は問いません。これまでの経験を生かして、新しい環境に挑戦したい方も歓迎します。</p>
+        <a class="btn reveal" href="#apply"><span>応募する</span></a>
+      </div>
+    </section>
+
+    <section class="recruit-themes" data-section="themes">
+      <div class="inner">
+        <article class="room-card reveal">
+          <div class="room-card-img">
+            <img src="images/dining/dining-07.webp?v=ee25b24e-ba6a-453a-8863-f166c2d6cd1c" alt="薪火グリルで焼いている料理" loading="lazy">
+          </div>
+          <div class="room-card-text">
+            <span class="room-type">Fire &amp; Ferment</span>
+            <h2>テーマは、薪火と発酵。</h2>
+            <div class="recruit-theme-list">
+              <div>
+                <h3>薪火</h3>
+                <p>薪の火で、食材の持ち味を引き出します。</p>
+              </div>
+              <div>
+                <h3>発酵</h3>
+                <p>発酵を、料理のテーマにしています。</p>
+              </div>
+              <div>
+                <h3>自家農園</h3>
+                <p>お茶、シャインマスカット、ハーブ、根菜などを育てています。</p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <figure class="recruit-garden reveal">
+          <img src="images/about/about2.webp?v=ee25b24e-ba6a-453a-8863-f166c2d6cd1c" alt="森の中にあるTHE BLESS Awajiの外観" loading="lazy">
+          <figcaption>淡路島・洲本。森の中のオーベルジュ。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="info-block" data-section="terms" id="terms">
+      <div class="inner">
+        <span class="section-label reveal">Terms</span>
+        <span class="section-line reveal reveal-delay-1"></span>
+        <h2 class="recruit-heading reveal reveal-delay-2">勤務条件</h2>
+        <div class="info-grid reveal">
+          <div>
+            <h3 class="recruit-group-title">待遇</h3>
+            <dl class="recruit-terms">
+              <div class="recruit-term">
+                <dt>職種</dt>
+                <dd>料理長候補</dd>
+              </div>
+              <div class="recruit-term">
+                <dt>雇用</dt>
+                <dd>正社員</dd>
+              </div>
+              <div class="recruit-term">
+                <dt>給与</dt>
+                <dd>月給35万円〜</dd>
+              </div>
+              <div class="recruit-term">
+                <dt>休日</dt>
+                <dd>月6〜8日</dd>
+              </div>
+              <div class="recruit-term">
+                <dt>寮</dt>
+                <dd>あり。寮費・光熱費は会社負担。</dd>
+              </div>
+            </dl>
+          </div>
+          <div>
+            <h3 class="recruit-group-title">応募と勤務地</h3>
+            <dl class="recruit-terms">
+              <div class="recruit-term">
+                <dt>経験</dt>
+                <dd>調理実務経験3年以上が目安。料理長経験は問いません。</dd>
+              </div>
+              <div class="recruit-term">
+                <dt>免許</dt>
+                <dd>普通自動車免許必須（AT限定可）</dd>
+              </div>
+              <div class="recruit-term">
+                <dt>勤務地</dt>
+                <dd><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%85%B5%E5%BA%AB%E7%9C%8C%E6%B4%B2%E6%9C%AC%E5%B8%82%E7%82%AC%E5%8F%A3247">兵庫県洲本市炬口247</a></dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section recruit-apply" id="apply" data-section="apply">
+      <h2 class="reveal">これまでのことを、聞かせてください。</h2>
+      <p class="reveal reveal-delay-1">薪火や発酵に興味があり、淡路島の自然や食材とともに料理をつくりたい方。ぜひ、これまでの経験や、これから挑戦したいことを聞かせてください。</p>
+      <div class="recruit-actions reveal reveal-delay-2">
+        <a class="btn btn--light" href="mailto:awajiauberge@gmail.com?subject=%E6%96%99%E7%90%86%E9%95%B7%E5%80%99%E8%A3%9C%E3%81%B8%E3%81%AE%E5%BF%9C%E5%8B%9F&amp;body=%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E3%81%93%E3%82%8C%E3%81%BE%E3%81%A7%E3%81%AE%E7%B5%8C%E9%A8%93%EF%BC%9A%0A%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89%E6%8C%91%E6%88%A6%E3%81%97%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8%EF%BC%9A%0A"><span>応募する</span></a>
+        <a class="btn btn--light" href="tel:0799647445"><span>0799-64-7445</span></a>
+      </div>
+      <p class="recruit-mail reveal">メール：awajiauberge★gmail.com　★を@に変更してお送りください。</p>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer id="site-footer" class="footer--wide-visual">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo en">THE BLESS AWAJI</span>
+          <p data-i18n="footer_address">兵庫県洲本市炬口247</p>
+          <p><a href="tel:0799227775">0799-22-7775</a></p>
+          <p class="footer-email-line" data-i18n="footer_email_line">メール：awajiauberge★gmail.com</p>
+          <p class="footer-email-note" data-i18n="footer_email_note">★を@に変更してお送りください。</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/the_bless_awaji_official/" target="_blank" rel="noopener" data-i18n="footer_ig_official">Instagram official</a>
+            <a href="https://www.instagram.com/bless_awaji_staff/" target="_blank" rel="noopener" data-i18n="footer_ig_staff">Instagram staff</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/dining">Dining</a></li>
+            <li><a href="/stay">Stay</a></li>
+            <li><a href="/spa">Spa</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Reserve</h4>
+          <ul>
+            <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
+            <li><a href="/group">Group &amp; Private</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="/faq#access-detail">Access</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/recruit">Recruit</a></li>
+          </ul>
+        </div>
+        <div class="footer-image-col">
+          <img src="images/footer/footer_1.webp?v=ee25b24e-ba6a-453a-8863-f166c2d6cd1c" alt="THE BLESS AWAJI" loading="lazy">
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="en">© Copyright 2025 THE BLESS AWAJI All Right Reserved</span>
+        <div class="footer-legal">
+          <a href="/terms" data-i18n="footer_terms">宿泊約款</a>
+          <a href="/privacy" data-i18n="footer_privacy_link">プライバシーポリシー</a>
+          <a href="/legal" data-i18n="footer_legal_link">特商法に基づく表記</a>
+        </div>
+        <span class="en">Awaji Island, Hyogo, Japan</span>
+      </div>
+    </div>
+  </footer>
+  <a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener" class="float-reserve" aria-label="Reserve">
+    <div class="float-reserve__circle">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+      </svg>
+    </div>
+    <span class="float-reserve__label">Reserve</span>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

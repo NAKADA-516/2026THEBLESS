@@ -24,6 +24,7 @@ alwaysApply: true
     <li><a href="https://reserve.489ban.net/client/the-bless/0/plan/availability/daily" target="_blank" rel="noopener">Reserve</a></li>
     <li><a href="group.html">Group &amp; Private</a></li>
     <li><a href="faq.html">FAQ</a></li>
+    <li><a href="recruit.html">Recruit</a></li>
   </ul>
   <div class="nav-sub">
     <a href="tel:0799227775">0799-22-7775</a>
@@ -72,6 +73,7 @@ alwaysApply: true
         <h4>Info</h4>
         <ul>
           <li><a href="faq.html">FAQ</a></li>
+          <li><a href="recruit.html">Recruit</a></li>
         </ul>
       </div>
     </div>
